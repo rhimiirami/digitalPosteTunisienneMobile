@@ -23,20 +23,28 @@ class OneRun extends React.Component {
 
     componentDidMount() {
         //AsyncStorage.clear();
+       /*  setInterval(() => {
+            this.props.navigation.navigate('TwoRun')
+        }, 2000) */
     }
 
 
     render() {
 
         return (
-            <View style={styles.container}>
+            <View style={styles.container}
+            >
                 <View style={styles.header}>
                     <View style={{
                         justifyContent: "center",
                         alignItems: "center",
                         marginTop: '20%',
                     }}>
-                        <TogggleP></TogggleP>
+                        {/* <TogggleP></TogggleP> */}
+
+                        <Text>
+                            DiGiPost
+                        </Text>
 
                     </View>
                 </View>
@@ -44,12 +52,15 @@ class OneRun extends React.Component {
                     <Text style={{
                         marginTop: '3%', marginLeft: "15%", fontSize: 40, width: "70%",
                         color: '#FFFFFF', textAlign: "center", fontWeight: 'bold',
-                    }}>Decentralise your data</Text>
-                    <View style={{
+                    }}>Transférer de l'argent</Text>
+                    <TouchableOpacity style={{
                         marginTop: '5%',
                         justifyContent: "center",
                         alignItems: "center",
-                    }}>
+                    }} 
+                    onPress={() => {
+                        this.props.navigation.navigate('TwoRun')
+                    }} >
                         <Image
                             style={{
                                 marginTop: '0%', marginRight: "0%",
@@ -57,12 +68,13 @@ class OneRun extends React.Component {
                             }}
                             source={require('../Svg/Pe.png')} >
                         </Image>
-                    </View>
+                    </TouchableOpacity>
                     <Text style={{
                         marginTop: '5%', marginLeft: "10%", fontSize: 25, width: "80%",
                         color: '#FFFFFF', textAlign: "center"
-                    }}>Take back control and ownership of your digital identity and personal data</Text>
-                    <View style={{
+                    }}>	Transférer de l'argent et Consulter toutes les transactions effectuées..
+                    </Text>
+                    {/* <View style={{
                         justifyContent: "center",
                         alignItems: "center",
                     }}>
@@ -80,7 +92,7 @@ class OneRun extends React.Component {
                             >Next</Text>
                         </TouchableOpacity>
 
-                    </View>
+                    </View> */}
                 </View>
                 <View style={styles.footer}>
 
