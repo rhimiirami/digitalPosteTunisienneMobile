@@ -20,14 +20,14 @@ class ThreeRun extends React.Component {
     }
 
     componentDidMount() {
-
+       
     }
 
 
     render() {
 
         return (
-            <View style={styles.container}>
+            <View style={styles.container} >
                 <View style={styles.header}>
                     <TouchableOpacity style={{
                         //justifyContent: "flex-start",
@@ -53,10 +53,13 @@ class ThreeRun extends React.Component {
                         marginTop: '3%', marginLeft: "15%", fontSize: 40, width: "70%",
                         color: '#FFFFFF', textAlign: "center", fontWeight: 'bold',
                     }}>Take back control</Text>
-                    <View style={{
+                    <TouchableOpacity style={{
                         marginTop: '3%',
                         justifyContent: "center",
                         alignItems: "center",
+                    }}
+                    onPress={() => {
+                        this.props.navigation.navigate('SignIn')
                     }}>
                         <Image
                             style={{
@@ -65,12 +68,12 @@ class ThreeRun extends React.Component {
                             }}
                             source={require('../Svg/Three.png')} >
                         </Image>
-                    </View>
+                    </TouchableOpacity>
                     <Text style={{
                         marginTop: '10%', marginLeft: "10%", fontSize: 25, width: "80%",
                         color: '#FFFFFF', textAlign: "center"
                     }}>Earn rewards and manage who your data is shared with and how it’s used</Text>
-                    <View style={{
+                   {/*  <View style={{
                         justifyContent: "center",
                         alignItems: "center",
                     }}>
@@ -88,7 +91,7 @@ class ThreeRun extends React.Component {
                             >Create your account</Text>
                         </TouchableOpacity>
 
-                    </View>
+                    </View> */}
                 </View>
                 <View style={styles.footer}>
 

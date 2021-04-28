@@ -21,6 +21,7 @@ class TwoRun extends React.Component {
     }
 
     componentDidMount() {
+       
 
     }
 
@@ -54,11 +55,14 @@ class TwoRun extends React.Component {
                         marginTop: '3%', marginLeft: "15%", fontSize: 40, width: "70%",
                         color: '#FFFFFF', textAlign: "center", fontWeight: 'bold',
                     }}>Get complete transparency</Text>
-                    <View style={{
+                    <TouchableOpacity style={{
                         marginTop: '5%',
                         justifyContent: "center",
                         alignItems: "center",
-                    }}>
+                    }}
+                    onPress={() => {
+                        this.props.navigation.navigate('ThreeRun')
+                    }} >
                         <Image
                             style={{
                                 marginTop: '6%', marginRight: "0%",
@@ -66,12 +70,12 @@ class TwoRun extends React.Component {
                             }}
                             source={require('../Svg/Two.png')} >
                         </Image>
-                    </View>
+                    </TouchableOpacity>
                     <Text style={{
                         marginTop: '10%', marginLeft: "10%", fontSize: 25, width: "80%",
                         color: '#FFFFFF', textAlign: "center"
                     }}>See which companies are collecting your data and who it’s being shared with</Text>
-                    <View style={{
+                    {/* <View style={{
                         justifyContent: "center",
                         alignItems: "center",
                     }}>
@@ -89,7 +93,7 @@ class TwoRun extends React.Component {
                             >Next</Text>
                         </TouchableOpacity>
 
-                    </View>
+                    </View> */}
                 </View>
                 <View style={styles.footer}>
 
