@@ -26,6 +26,7 @@ function menu({ navigation }) {
                 marginLeft: 10,
                 marginRight: 10,
                 marginTop: "2%",
+                flex: 0.5,
                 //backgroundColor: "#00ACEE"
 
             }}>
@@ -44,28 +45,41 @@ function menu({ navigation }) {
 
             </View>
 
-            <View style={{ alignItems: "center" }}>
+            <View style={{ alignItems: "center", flex: 3 }}>
 
                 <PhotoProfil></PhotoProfil>
 
 
-                <View style={styles.information}>
 
 
-                    <Profile navigation={navigation}></Profile>
+
+                <Profile navigation={navigation}></Profile>
 
 
-                </View>
 
-                <View style={{
+
+                {/* <View style={{
                     marginRight: "9%", width: "100%", height: "100%"
                 }}>
 
                     <LogoutProfile navigation={navigation}> </LogoutProfile>
 
-                </View>
-
-
+                </View> */}
+            </View>
+            <View style={{
+                flex: 1, justifyContent: "center", alignItems: "center"
+            }}>
+                <TouchableOpacity
+                    style={styles.buttonNext}
+                //onPress={() => {this.props.navigation.navigate('TwoRun')}}
+                >
+                    <Text
+                        style={{
+                            fontSize: 20,
+                            color: '#FFFFFF', textAlign: "center"
+                        }}
+                    >Modifier</Text>
+                </TouchableOpacity>
             </View>
 
 
@@ -229,7 +243,19 @@ const styles = StyleSheet.create({
         fontSize: 14,
         //marginRight: "66%",
         padding: 10
-    }
+    },
+    buttonNext: {
+        backgroundColor: "#1066FF",
+        marginTop: "0%",
+        height: "30%",
+        width: "80%",
+        //borderColor: '#fff',
+        //borderWidth: 1,
+        //width: "100%",
+        borderRadius: 25,
+        justifyContent: "center",
+        alignItems: "center",
+    },
 
 
 
