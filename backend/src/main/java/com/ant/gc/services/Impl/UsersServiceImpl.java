@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ant.gc.dto.MessageResponse;
 import com.ant.gc.dto.PasswordDto;
 import com.ant.gc.entities.Users;
-import com.ant.gc.repositories.ContactRepository;
 import com.ant.gc.repositories.UserRepository;
 import com.ant.gc.services.UsersService;
 
@@ -20,14 +19,12 @@ public class UsersServiceImpl implements UsersService {
 	@Autowired
 	private UserRepository userRepository;
 	@Autowired
-	private ContactRepository contactRepository;
-	@Autowired
 	private PasswordEncoder passwordEncoder ;
    
 	@Transactional
 	@Override
 	public MessageResponse save(Users user) {
-		boolean exist = contactRepository.existsByEmail(user.getEmail());
+		boolean exist = userRepository.existsByEmail(user.getEmail());
 		if (exist) {
 			return new MessageResponse(false, "Attention", "Email existe déja !!");
 
@@ -51,9 +48,9 @@ public class UsersServiceImpl implements UsersService {
 	@Override
 	public MessageResponse update(Users user) {
 
-		boolean exist = contactRepository.existsByEmailAndId(user.getEmail(), user.getId());
+		boolean exist = userRepository.existsByEmailAndId(user.getEmail(), user.getId());
 		if (!exist) {
-			exist = contactRepository.existsByEmail(user.getEmail());
+			exist = userRepository.existsByEmail(user.getEmail());
 			if (exist) {
 				return new MessageResponse(false, "Attention", "Email existe déja !!");
 			}
@@ -100,6 +97,13 @@ public class UsersServiceImpl implements UsersService {
 
 	@Override
 	public MessageResponse changePassword(PasswordDto passwordDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/*@Override
+	public MessageResponse changePassword(PasswordDto passwordDto) {
       Users user = findById(passwordDto.getId());
       if (user == null) {
     	  return new MessageResponse(false,"Attention","Utilisateur introuvable");
@@ -116,6 +120,6 @@ public class UsersServiceImpl implements UsersService {
       user.setPasword(cryptedPassword);
       userRepository.save(user);
        return new MessageResponse(true,"Succès","Operation effectué");
-	}
+	}*/
 
 }
