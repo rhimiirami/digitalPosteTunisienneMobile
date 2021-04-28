@@ -1,42 +1,81 @@
-import * as React from 'react';
-import { View, TextInput, Text, TouchableOpacity, StyleSheet, useWindowDimensions, Image, ImageBackground, Dimensions } from 'react-native';
-import { useEffect, useState } from 'react';
+import React, { Component } from 'react';
+import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import Profile from "./Profile";
+import Menu from '../Svg/Menu'
+import LogoutProfile from "./LogoutProfile";
+import { Help, Home, LogoP, Notification, Profil, Setting, Transaction } from '../Svg/TimeTokenIcons'
+import PhotoProfil from './PhotoProfil';
 import {
     createDrawerNavigator,
     DrawerContentScrollView,
     DrawerItem,
 } from '@react-navigation/drawer';
-import Menu from '../Svg/Menu'
-import { Help, Home, LogoP, Notification, Profil, Setting, Transaction } from '../Svg/TimeTokenIcons'
-import PhotoProfil from './PhotoProfil';
-//const { height, width } = Dimensions.get('screen');
-function Loading({ navigation }) {
+
+
+
+function menu({ navigation }) {
 
     return (
+
+
         <View style={styles.container}>
 
-            <View style={styles.header}>
+            <View style={{
+                justifyContent: "space-between",
+                //flexDirection: "row",
+                marginLeft: 10,
+                marginRight: 10,
+                marginTop: "2%",
+                //backgroundColor: "#00ACEE"
+
+            }}>
                 <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.menu} >
-
-                    <View style={{ flexDirection: 'row', marginTop: "5%" }}>
-                        <Menu>
-                        </Menu>
-
-                    </View>
-
+                    <Menu>
+                    </Menu>
                 </TouchableOpacity>
+
+                {/* <View style={styles.logo}>
+                    <LogoP style={styles.logo}>
+                    </LogoP>
+
+                </View> */}
+
+
+
             </View>
 
+            <View style={{ alignItems: "center" }}>
 
-            <View style={styles.body}>
+                <PhotoProfil></PhotoProfil>
 
+
+                <View style={styles.information}>
+
+
+                    <Profile navigation={navigation}></Profile>
+
+
+                </View>
+
+                <View style={{
+                    marginRight: "9%", width: "100%", height: "100%"
+                }}>
+
+                    <LogoutProfile navigation={navigation}> </LogoutProfile>
+
+                </View>
 
 
             </View>
+
 
         </View>
+
+
     );
 }
+
+
 
 function CustomDrawerContent(props) {
     return (
@@ -51,7 +90,7 @@ function CustomDrawerContent(props) {
                 <PhotoProfil></PhotoProfil>
             </View>
             <TouchableOpacity
-                onPress={() => props.navigation.navigate('ProfilePage')}
+                //onPress={() => props.navigation.closeDrawer()} 
                 style={{ alignItems: "center", marginTop: '11%', marginLeft: "20%", flexDirection: "row" }}
             >
                 <View style={{ marginTop: '0%', marginLeft: "0%" }}>
@@ -125,48 +164,78 @@ function CustomDrawerContent(props) {
     );
 }
 
-const Drawer = createDrawerNavigator();
 
-export default function MyDrawer() {
-    const dimensions = useWindowDimensions();
-    const isLargeScreen = dimensions.width >= 768;
-    return (
-        <Drawer.Navigator
-            drawerType={isLargeScreen ? 'permanent' : 'back'}
-            drawerStyle={isLargeScreen ? null : { width: '90%' }}
-            overlayColor="transparent"
-            drawerContent={props => <CustomDrawerContent {...props} />}  >
-            <Drawer.Screen name=" " component={Loading} />
 
-        </Drawer.Navigator>
-    );
+export default class ProfilePage extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+
+        const { navigation } = this.props;
+        var self = this;
+    }
+
+    render() {
+        const Drawer = createDrawerNavigator();
+        return (
+            <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />} >
+                <Drawer.Screen name="Menu" component={menu} />
+
+            </Drawer.Navigator>
+        );
+    }
 }
 
-
-
-
-
-
 const styles = StyleSheet.create({
-    menu: {
-        //backgroundColor: "red",
-        marginTop: "5%",
-        marginLeft: "3%"
-    },
     container: {
         flex: 1,
         backgroundColor: "#27277A",
-    },
-    header: {
-        //backgroundColor: "red",
-        flex: 2
-    },
-    body: {
-        // marginTop: '5%',
-        flex: 3,
-        // backgroundColor: "red"
+        // alignItems: "center",
 
     },
+    image: {
+        width: 150,
+        height: 150,
+        backgroundColor: "#fff",
+        borderRadius: 500,
+        //justifyContent:"center"
+    },
+    information: {
+
+
+    },
+
+    menu: {
+        marginTop: "5%"
+    },
+    logo: {
+        marginLeft: '5%',
+        justifyContent: "center",
+        alignItems: "center",
+        alignContent: "center"
+    },
+    profile: {
+        alignItems: "center",
+        //height:"40%",
+        borderBottomColor: "#eee",
+        //borderBottomWidth: 1,
+        //paddingBottom: "1%",
+        flexDirection: "row"
+    },
+    textdata: {
+        color: "white",
+        fontSize: 14,
+        //marginRight: "66%",
+        padding: 10
+    }
+
 
 
 });
+
+
+
+
+
