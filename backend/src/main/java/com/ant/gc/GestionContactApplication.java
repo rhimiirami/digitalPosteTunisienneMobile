@@ -12,9 +12,8 @@ import org.springframework.security.config.authentication.UserServiceBeanDefinit
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.ant.gc.entities.Client;
 import com.ant.gc.entities.Users;
-import com.ant.gc.repositories.ClientRepository;
+import com.ant.gc.repositories.UserRepository;
 import com.ant.gc.services.UsersService;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -26,7 +25,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class GestionContactApplication implements CommandLineRunner {
 
 	@Autowired
-	private ClientRepository clientRepository;
+	private UserRepository userRepository;
 	@Autowired
 	private UsersService usersService;
 
@@ -37,7 +36,7 @@ public class GestionContactApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Users user = new Users();
+		/*Users user = new Users();
 		user.setNom("mourad");
 		user.setPrenom("bounassi");
 		user.setEmail("mourad1@gmail.com");
@@ -45,7 +44,7 @@ public class GestionContactApplication implements CommandLineRunner {
 		user.setUsername("admin1");
 		user.setPasword("admin");
 		user.setRole("ROLE_USER");
-		usersService.save(user);
+		usersService.save(user);*/
 
 		/*
 		 * Client clt =new Client(); clt.setNom("Rami"); clt.setPrenom("Rhimi");
