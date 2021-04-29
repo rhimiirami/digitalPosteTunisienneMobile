@@ -22,7 +22,7 @@ function menu({ navigation }) {
 
             <View style={{
                 justifyContent: "space-between",
-                //flexDirection: "row",
+                flexDirection: "row",
                 marginLeft: 10,
                 marginRight: 10,
                 marginTop: "2%",
@@ -34,7 +34,13 @@ function menu({ navigation }) {
                     <Menu>
                     </Menu>
                 </TouchableOpacity>
-
+                <Image
+                    style={{
+                        marginTop: '2%', marginRight: "17%",
+                        width: 250, height: 70
+                    }}
+                    source={require('../Svg/title.png')} >
+                </Image>
                 {/* <View style={styles.logo}>
                     <LogoP style={styles.logo}>
                     </LogoP>
@@ -45,7 +51,12 @@ function menu({ navigation }) {
 
             </View>
 
-            <View style={{ alignItems: "center", flex: 3 }}>
+            <View style={{ alignItems: "center", flex: 2 }}>
+
+
+
+
+
 
                 <PhotoProfil></PhotoProfil>
 
