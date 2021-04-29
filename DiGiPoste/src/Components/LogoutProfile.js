@@ -36,9 +36,9 @@ class LogoutProfile extends Component {
         return (
 
             <View style={styles.buttons}>
-                <TouchableOpacity style={styles.button}><Text style={{ color: "#fff", fontSize: 17, textAlign: "center" }}>Share the TimeToken App!</Text></TouchableOpacity>
+
                 <TouchableOpacity style={styles.button} onPress={this._EditUser}><Text style={{ color: "#fff", fontSize: 17, textAlign: "center" }} >Edit</Text></TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={this._logOut}><Text style={{ color: "#fff", fontSize: 17, textAlign: "center" }}>Log Out</Text></TouchableOpacity>
+
             </View>
 
         )

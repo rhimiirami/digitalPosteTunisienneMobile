@@ -74,41 +74,34 @@ class Profile extends Component {
         // var {photo} = this.state;
         return (
 
-            <View style={{ alignItems: "center", marginTop: "1%", borderRadius: 15 }}>
-                {this.state.listInformations.length > 0 &&
-                    this.state.listInformations.map(information => {
-                        return <View style={{}}>
+            <View style={{}}>
 
-                            <Text style={{ fontSize: 24, fontWeight: "700", color: "#fff", marginTop: "1%", textAlign: "center" }}> {information.firstname}    {information.lastname}  </Text>
-                            <View >
+                <Text style={{ fontSize: 24, fontWeight: "700", color: "#fff", marginTop: "1%", textAlign: "center" }}> </Text>
+                <View >
 
-                                <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "4%" }}>
-                                    Date of Birth : <Text style={styles.textdate}> {information.DateOfBirth.substring(0, 10)}</Text>
-                                </Text>
+                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "4%" }}>
+                        Nom : <Text style={styles.textdate}> </Text>
+                    </Text>
 
-                            </View>
+                </View>
 
-                            <View>
-                                <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "3%", }}>
-                                    Location :<Text style={styles.textdata2}> {information.location}</Text>
-                                </Text>
-                            </View>
+                <View>
+                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "3%", }}>
+                        Prénom :<Text style={styles.textdata2}> </Text>
+                    </Text>
+                </View>
 
-                            <View>
-                                <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "3%", }}>
-                                    Number of Claims :<Text style={styles.textdata2}> {information.numberOfClaims}</Text>
-                                </Text>
-                            </View>
+                <View>
+                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "3%", }}>
+                        Email :<Text style={styles.textdata2}> </Text>
+                    </Text>
+                </View>
 
-                            <View>
-                                <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "3%", }}>
-                                    All time earned :<Text style={styles.textdata2}> {information.AllTimeEarned} ₮</Text>
-                                </Text>
-                            </View>
-
-                        </View>
-                    })
-                }
+                <View>
+                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "3%", }}>
+                        Adress:<Text style={styles.textdata2}> </Text>
+                    </Text>
+                </View>
 
             </View>
 
