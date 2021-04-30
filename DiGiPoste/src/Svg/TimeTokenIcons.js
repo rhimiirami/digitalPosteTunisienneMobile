@@ -2,6 +2,8 @@ import React, { component } from "react";
 import { Svg, Path, G, Circle, Defs, Pattern, Image, Rect, Text, Tspan } from "react-native-svg";
 //import { Component } from "react";
 
+
+
 function CircleR() {
   return (
     <Svg
@@ -670,6 +672,13 @@ function Recherche() {
     </Svg>
   );
 }
+function Flech0() {
+  return (
+    <Svg xmlns="http://www.w3.org/2000/svg" width="10.961" height="18.062" viewBox="0 0 10.961 18.062">
+      <Path id="FontAwsome_chevron-right_" data-name="FontAwsome (chevron-right)" d="M38.165,47.39l-8.038,8.038a.993.993,0,0,1-1.4,0l-.938-.938a.993.993,0,0,1,0-1.4l6.37-6.4-6.37-6.4a.993.993,0,0,1,0-1.4l.938-.938a.993.993,0,0,1,1.4,0l8.038,8.038A.993.993,0,0,1,38.165,47.39Z" transform="translate(-27.494 -37.657)" fill="#fff" />
+    </Svg>
+  );
+}
 export {
   LogoN,
   Menu,
@@ -694,5 +703,6 @@ export {
   Dropdown,
   BackIn,
   CircleR,
-  Recherche
+  Recherche,
+  Flech0
 }

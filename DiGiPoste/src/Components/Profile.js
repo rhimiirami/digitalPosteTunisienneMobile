@@ -80,26 +80,31 @@ class Profile extends Component {
                 <View >
 
                     <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "4%" }}>
-                        Nom : <Text style={styles.textdate}> </Text>
+                        Nom :Trabelsi  <Text style={styles.textdate}> </Text>
                     </Text>
 
                 </View>
 
                 <View>
-                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "3%", }}>
-                        Prénom :<Text style={styles.textdata2}> </Text>
+                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
+                        Prénom : Aymen<Text style={styles.textdata2}> </Text>
                     </Text>
                 </View>
 
                 <View>
-                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "3%", }}>
-                        Email :<Text style={styles.textdata2}> </Text>
+                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
+                        Email: trabelsiaymen@email.com <Text style={styles.textdata2}> </Text>
                     </Text>
                 </View>
 
                 <View>
-                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "3%", }}>
-                        Adress:<Text style={styles.textdata2}> </Text>
+                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
+                        Adress: Tunis<Text style={styles.textdata2}> </Text>
+                    </Text>
+                </View>
+                <View>
+                    <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
+                        Poste: Chef de service <Text style={styles.textdata2}> </Text>
                     </Text>
                 </View>
 

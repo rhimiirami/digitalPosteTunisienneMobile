@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     image: {
         width: 150,
         height: 150,
-        backgroundColor: "#27277A",
+        //backgroundColor: "#27277A",
         borderRadius: 500,
         //justifyContent:"center"
     },

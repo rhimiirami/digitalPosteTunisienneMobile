@@ -13,6 +13,8 @@ import HomeClient from './src/Components/HomeClient';
 import ProfilePage from './src/Components/ProfilePage';
 import ProfileClient from './src/Components/ProfileClient';
 import Profile from './src/Components/Profile';
+import SignUp from './src/Components/SignUp';
+import SignUpAccount from './src/Components/SignUpAccount';
 
 
 
@@ -21,7 +23,7 @@ class App extends Component {
     const Stack = createStackNavigator();
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="HomeClient" screenOptions={{
+        <Stack.Navigator initialRouteName="HomeAdmin" screenOptions={{
           headerShown: false
         }} >
           <Stack.Screen name="Home" component={Home} />
@@ -34,6 +36,8 @@ class App extends Component {
           <Stack.Screen name="ProfileClient" component={ProfileClient} />
           <Stack.Screen name="ProfilePage" component={ProfilePage} />
           <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="SignUpAccount" component={SignUpAccount} />
         </Stack.Navigator>
       </NavigationContainer >
     )
