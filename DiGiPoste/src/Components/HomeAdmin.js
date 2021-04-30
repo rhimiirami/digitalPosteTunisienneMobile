@@ -103,16 +103,18 @@ function Loading({ navigation }) {
                     </Text>
                     <Flech0></Flech0>
                 </TouchableOpacity>
-                {(!ChangedDemandes) === false && <View style={styles.select}>
+                {(!ChangedDemandes) === false && <TouchableOpacity
+                    onPress={() => navigation.navigate('DemandeCarteCredit')} style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 16, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
                         Gérer les demandes de carte de crédit
                     </Text>
-                </View>
+                </TouchableOpacity>
                 }
-                {(!ChangedDemandes) === false && <View style={styles.select}>
+                {(!ChangedDemandes) === false && <TouchableOpacity
+                    onPress={() => navigation.navigate('DemandeCarnetCheque')} style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 16, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
@@ -120,7 +122,7 @@ function Loading({ navigation }) {
                         Gérer les demandes de carent de chéque
                     </Text>
 
-                </View>
+                </TouchableOpacity>
                 }
                 <TouchableOpacity onPress={showClients}
                     style={styles.buttonNext}>
@@ -132,14 +134,15 @@ function Loading({ navigation }) {
                     </Text>
                     <Flech0></Flech0>
                 </TouchableOpacity>
-                {(!ChangedClients) === false && <View style={styles.select}>
+                {(!ChangedClients) === false && <TouchableOpacity
+                    onPress={() => navigation.navigate('ListeClients')} style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 16, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
                         Liste des clients
                     </Text>
-                </View>
+                </TouchableOpacity>
                 }
                 {(!ChangedClients) === false && <TouchableOpacity
                     onPress={() => navigation.navigate('SignUp')} style={styles.select}>
@@ -161,14 +164,15 @@ function Loading({ navigation }) {
                     </Text>
                     <Flech0></Flech0>
                 </TouchableOpacity>
-                {(!ChangedComptes) === false && <View style={styles.select}>
+                {(!ChangedComptes) === false && <TouchableOpacity
+                    onPress={() => navigation.navigate('ListeComptesPostales')} style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 16, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
                         Liste des Comptes postales
                     </Text>
-                </View>
+                </TouchableOpacity>
                 }
                 {(!ChangedComptes) === false && <TouchableOpacity
                     onPress={() => navigation.navigate('SignUpAccount')} style={styles.select}>
@@ -275,14 +279,28 @@ function CustomDrawerContent(props) {
                     <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Help</Text>
                 </View>
             </TouchableOpacity>
-            <View style={{ alignItems: "center" }}>
+             <View style={{ alignItems: "center" }}>
                 <Image
                     source={require('../Svg/poste.gif')}
                     //source={{ uri: `data:image/jpeg;base64,${photoUser}` }}
                     resizeMode="cover"
-                    style={{ marginTop: "20%", marginLeft: "0%" }}
+                    style={{ marginTop: "10%", marginLeft: "0%" }}
                 ></Image>
-            </View >
+            </View > 
+
+            <TouchableOpacity
+                //onPress={() => props.navigation.closeDrawer()} 
+                style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
+            >
+                <View style={{ marginTop: '0%', marginLeft: "0%" }}>
+                    <Help></Help>
+                </View>
+
+                <View style={{ marginLeft: "10%" }}>
+                    <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Déconnexion</Text>
+                </View>
+            </TouchableOpacity>
+
         </View >
     );
 }
