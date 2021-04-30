@@ -27,37 +27,6 @@ class PhotoProfil extends Component {
 
     }
 
-    getInformationsById = (userId) => {
-
-        //alert(userId)
-        var self = this;
-
-        fetch(self.urlBackOffice + 'user/getUserById?id=' + userId, {
-            method: "GET"
-        })
-            .then(function (response) {
-                //console.log(JSON.stringify(response))
-                if (response.ok) {
-
-                    response.json().then(function (json) {
-                        //alert(JSON.stringify(json))
-                        //console.log("photoUser" + json.photo)
-                        //console.log("date" + json.lastname)
-                        self.setState({
-                            photoUser: json.photo
-                        })
-
-                    }).catch(err => alert(err))
-
-                } else {
-
-                    console.log('Network request for backoffice failed with response ' + response.status);
-
-
-                }
-            }).catch(err => alert(err));
-
-    }
 
     render() {
         var { photoUser } = this.state;
