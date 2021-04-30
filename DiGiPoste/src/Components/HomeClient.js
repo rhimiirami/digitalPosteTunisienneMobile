@@ -1,0 +1,234 @@
+import * as React from 'react';
+import { View, TextInput, Text, TouchableOpacity, StyleSheet, useWindowDimensions, Image, ImageBackground, Dimensions } from 'react-native';
+import { useEffect, useState } from 'react';
+import {
+    createDrawerNavigator,
+    DrawerContentScrollView,
+    DrawerItem,
+} from '@react-navigation/drawer';
+import Menu from '../Svg/Menu'
+import { Help, Home, LogoP, Notification, Profil, Setting, Transaction } from '../Svg/TimeTokenIcons'
+import PhotoProfil from './PhotoProfil';
+import {
+    LineChart,
+  } from "react-native-chart-kit";
+//const { height, width } = Dimensions.get('screen');
+const chartConfig = {
+    backgroundGradientFrom: "#1E2923",
+    backgroundGradientFromOpacity: 0,
+    backgroundGradientTo: "#08130D",
+    backgroundGradientToOpacity: 0.5,
+    color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
+    strokeWidth: 2, // optional, default 3
+    barPercentage: 0.5,
+    useShadowColorFromDataset: false // optional
+  };
+  
+function Loading({ navigation }) {
+
+    return (
+        <View style={styles.container}>
+
+            <View style={styles.header}>
+                <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.menu} >
+
+                    <View style={{ flexDirection: 'row', marginTop: "5%" }}>
+                        <Menu>
+                        </Menu>
+
+                    </View>
+
+                </TouchableOpacity>
+            </View>
+
+
+            <View style={styles.body}>
+             
+             <Text>ffffffffffffffff</Text>
+             <View>
+  <Text>Bezier Line Chart</Text>
+  <LineChart
+    data={{
+      labels: ["January", "February", "March", "April", "May", "June"],
+      datasets: [
+        {
+          data: [
+            Math.random() * 100,
+            Math.random() * 100,
+            Math.random() * 100,
+            Math.random() * 100,
+            Math.random() * 100,
+            Math.random() * 100
+          ]
+        }
+      ]
+    }}
+    width={Dimensions.get("window").width} // from react-native
+    height={220}
+    yAxisLabel="$"
+    yAxisSuffix="k"
+    yAxisInterval={1} // optional, defaults to 1
+    chartConfig={{
+      backgroundColor: "#e26a00",
+      backgroundGradientFrom: "#fb8c00",
+      backgroundGradientTo: "#ffa726",
+      decimalPlaces: 2, // optional, defaults to 2dp
+      color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+      labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+      style: {
+        borderRadius: 16
+      },
+      propsForDots: {
+        r: "6",
+        strokeWidth: "2",
+        stroke: "#ffa726"
+      }
+    }}
+    bezier
+    style={{
+      marginVertical: 8,
+      borderRadius: 16
+    }}
+  />
+</View>
+            </View>
+
+        </View>
+    );
+}
+
+function CustomDrawerContent(props) {
+    return (
+        <View {...props} style={{ flex: 1, backgroundColor: '#FAF5F0' }}>
+
+
+             <View >
+                 <Text style={{fontSize:24,fontWeight:"bold",color:'#27277A',textAlign:"center",marginTop:"10%"}}>Espace client</Text>
+             </View>
+            {/* <TouchableOpacity onPress={() => props.navigation.closeDrawer()} style={{ marginTop: '11%', marginLeft: "50%" }}  >
+                <Text>Close</Text>
+            </TouchableOpacity> */}
+            <View style={{ marginTop: '11%', alignItems: "center" }}>
+                <PhotoProfil></PhotoProfil>
+            </View>
+            <TouchableOpacity
+                onPress={() => props.navigation.navigate('ProfileClient')}
+                style={{ alignItems: "center", marginTop: '11%', marginLeft: "20%", flexDirection: "row" }}
+            >
+                <View style={{ marginTop: '0%', marginLeft: "0%" }}>
+                    <Profil></Profil>
+                </View>
+
+                <View style={{ marginTop: '0%', marginLeft: "10%" }}>
+                    <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Profil</Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                //onPress={() => props.navigation.closeDrawer()} 
+                style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
+            >
+                <View style={{ marginTop: '0%', marginLeft: "0%" }}>
+                    <Notification></Notification>
+                </View>
+
+                <View style={{ marginTop: '0%', marginLeft: "10%" }}>
+                    <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Notification</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+                //onPress={() => props.navigation.closeDrawer()} 
+                style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
+            >
+                <View style={{ marginTop: '0%', marginLeft: "0%" }}>
+                    <Transaction></Transaction>
+                </View>
+
+                <View style={{ marginTop: '0%', marginLeft: "10%" }}>
+                    <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Transaction</Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                //onPress={() => props.navigation.closeDrawer()} 
+                style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
+            >
+                <View style={{ marginTop: '0%', marginLeft: "0%" }}>
+                    <Setting></Setting>
+                </View>
+
+                <View style={{ marginTop: '0%', marginLeft: "10%" }}>
+                    <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Setting</Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                //onPress={() => props.navigation.closeDrawer()} 
+                style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
+            >
+                <View style={{ marginTop: '0%', marginLeft: "0%" }}>
+                    <Help></Help>
+                </View>
+
+                <View style={{ marginTop: '0%', marginLeft: "10%" }}>
+                    <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Help</Text>
+                </View>
+            </TouchableOpacity>
+            <View style={{ alignItems: "center" }}>
+                <Image
+                    source={require('../Svg/poste.gif')}
+                    //source={{ uri: `data:image/jpeg;base64,${photoUser}` }}
+                    resizeMode="cover"
+                    style={{ marginTop: "30%", marginLeft: "0%" }}
+                ></Image>
+            </View >
+        </View >
+    );
+}
+
+const Drawer = createDrawerNavigator();
+
+export default function MyDrawer() {
+    const dimensions = useWindowDimensions();
+    const isLargeScreen = dimensions.width >= 768;
+    return (
+        <Drawer.Navigator
+            drawerType={isLargeScreen ? 'permanent' : 'back'}
+            drawerStyle={isLargeScreen ? null : { width: '90%' }}
+            overlayColor="transparent"
+            drawerContent={props => <CustomDrawerContent {...props} />}  >
+            <Drawer.Screen name=" " component={Loading} />
+
+        </Drawer.Navigator>
+    );
+}
+
+
+
+
+
+
+const styles = StyleSheet.create({
+    menu: {
+        //backgroundColor: "red",
+        marginTop: "5%",
+        marginLeft: "3%"
+    },
+    container: {
+        flex: 1,
+        backgroundColor: "#27277A",
+    },
+    header: {
+        //backgroundColor: "red",
+        flex: 2
+    },
+    body: {
+        // marginTop: '5%',
+        flex: 3,
+        // backgroundColor: "red"
+
+    },
+   
+
+
+});
