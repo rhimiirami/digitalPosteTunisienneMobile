@@ -10,9 +10,9 @@ import ThreeRun from './src/Components/ThreeRun';
 import SignIn from './src/Components/SignIn';
 import HomeAdmin from './src/Components/HomeAdmin';
 import HomeClient from './src/Components/HomeClient';
-import ProfilePage from './src/Components/ProfilePage';
+
 import ProfileClient from './src/Components/ProfileClient';
-import Profile from './src/Components/Profile';
+import ProfileAdmin from './src/Components/ProfileAdmin';
 import SignUp from './src/Components/SignUp';
 import SignUpAccount from './src/Components/SignUpAccount';
 import DemandeCarteCredit from './src/Components/DemandeCarteCredit';
@@ -27,7 +27,7 @@ class App extends Component {
     const Stack = createStackNavigator();
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="ListeClients" screenOptions={{ headerShown: false }} >
+        <Stack.Navigator initialRouteName="ProfileClient" screenOptions={{ headerShown: false }} >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="OneRun" component={OneRun} />
           <Stack.Screen name="TwoRun" component={TwoRun} />
@@ -36,8 +36,7 @@ class App extends Component {
           <Stack.Screen name="HomeAdmin" component={HomeAdmin} />
           <Stack.Screen name="HomeClient" component={HomeClient} />
           <Stack.Screen name="ProfileClient" component={ProfileClient} />
-          <Stack.Screen name="ProfilePage" component={ProfilePage} />
-          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="ProfileAdmin" component={ProfileAdmin} />
           <Stack.Screen name="SignUp" component={SignUp} />
           <Stack.Screen name="DemandeCarteCredit" component={DemandeCarteCredit} />
           <Stack.Screen name="DemandeCarnetCheque" component={DemandeCarnetCheque} />

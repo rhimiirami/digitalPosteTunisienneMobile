@@ -217,7 +217,7 @@ function CustomDrawerContent(props) {
                 <PhotoProfil></PhotoProfil>
             </View>
             <TouchableOpacity
-                onPress={() => props.navigation.navigate('ProfilePage')}
+                onPress={() => props.navigation.navigate('Profile'), () => { props.navigation.closeDrawer() }}
                 style={{ alignItems: "center", marginTop: '11%', marginLeft: "20%", flexDirection: "row" }}
             >
                 <View style={{ marginTop: '0%', marginLeft: "0%" }}>
@@ -279,14 +279,14 @@ function CustomDrawerContent(props) {
                     <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Help</Text>
                 </View>
             </TouchableOpacity>
-             <View style={{ alignItems: "center" }}>
+            <View style={{ alignItems: "center" }}>
                 <Image
                     source={require('../Svg/poste.gif')}
                     //source={{ uri: `data:image/jpeg;base64,${photoUser}` }}
                     resizeMode="cover"
                     style={{ marginTop: "10%", marginLeft: "0%" }}
                 ></Image>
-            </View > 
+            </View >
 
             <TouchableOpacity
                 //onPress={() => props.navigation.closeDrawer()} 

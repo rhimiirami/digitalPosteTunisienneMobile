@@ -7,8 +7,6 @@ import {
 } from 'react-native';
 import TwoIconC from '../Svg/TwoIconC';
 
-import TogggleP from '../Svg/TogggleP';
-import BackPage from '../Svg/BackPage';
 
 class TwoRun extends React.Component {
 
@@ -21,7 +19,7 @@ class TwoRun extends React.Component {
     }
 
     componentDidMount() {
-       
+
 
     }
 
@@ -60,9 +58,9 @@ class TwoRun extends React.Component {
                         justifyContent: "center",
                         alignItems: "center",
                     }}
-                    onPress={() => {
-                        this.props.navigation.navigate('ThreeRun')
-                    }} >
+                        onPress={() => {
+                            this.props.navigation.navigate('ThreeRun')
+                        }} >
                         <Image
                             style={{
                                 marginTop: '6%', marginRight: "0%",

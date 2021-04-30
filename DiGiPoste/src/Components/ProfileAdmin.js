@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import PhotoProfil from './PhotoProfil';
 
 
-class ProfileClient extends Component {
+class ProfileAdmin extends Component {
 
     constructor(props) {
         super(props);
@@ -124,7 +124,7 @@ class ProfileClient extends Component {
 
 
 
-export default ProfileClient;
+export default ProfileAdmin;
 
 const styles = StyleSheet.create({
 
