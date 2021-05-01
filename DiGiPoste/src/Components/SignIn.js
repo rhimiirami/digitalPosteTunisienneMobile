@@ -88,7 +88,17 @@ class SignIn extends React.Component {
                             <Text style={{
                                 marginTop: '0%', fontSize: 18,
                                 color: '#FAF5F0', textAlign: 'center'
-                            }}>{this.state.busyClick ? "PLEASE WAIT..." : "Sign in"}</Text>
+                            }}>{this.state.busyClick ? "PLEASE WAIT..." : "Sign in Admin"}</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.buttonSign}
+                            onPress={() => { this.props.navigation.navigate('HomeClient') }}
+                        //disabled={busyClick}
+
+                        >
+                            <Text style={{
+                                marginTop: '0%', fontSize: 18,
+                                color: '#FAF5F0', textAlign: 'center'
+                            }}>{this.state.busyClick ? "PLEASE WAIT..." : "Sign in Client"}</Text>
                         </TouchableOpacity>
                         <Text style={{
                             marginTop: '7%', marginLeft: "0%", fontSize: 16, width: "70%",

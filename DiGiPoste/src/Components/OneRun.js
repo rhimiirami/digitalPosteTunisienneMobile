@@ -23,9 +23,9 @@ class OneRun extends React.Component {
 
     componentDidMount() {
         //AsyncStorage.clear();
-       /*  setInterval(() => {
-            this.props.navigation.navigate('TwoRun')
-        }, 2000) */
+        /*  setInterval(() => {
+             this.props.navigation.navigate('TwoRun')
+         }, 2000) */
     }
 
 
@@ -35,32 +35,31 @@ class OneRun extends React.Component {
             <View style={styles.container}
             >
                 <View style={styles.header}>
-                    <View style={{
-                        justifyContent: "center",
-                        alignItems: "center",
-                        marginTop: '20%',
-                    }}>
-                        {/* <TogggleP></TogggleP> */}
+                    
 
-                        <Text>
-                            DiGiPost
-                        </Text>
+                        <Image
+                            style={{
+                                marginTop: '10%', marginRight: "5%",
+                                width: 250, height: 70
+                            }}
+                            source={require('../Svg/title.png')} >
+                        </Image>
 
-                    </View>
+                   
                 </View>
                 <View style={styles.body}>
-                    <Text style={{
+                    {/* <Text style={{
                         marginTop: '3%', marginLeft: "15%", fontSize: 40, width: "70%",
                         color: '#FFFFFF', textAlign: "center", fontWeight: 'bold',
-                    }}>Transférer de l'argent</Text>
+                    }}>Transférer de l'argent</Text> */}
                     <TouchableOpacity style={{
                         marginTop: '5%',
                         justifyContent: "center",
                         alignItems: "center",
-                    }} 
-                    onPress={() => {
-                        this.props.navigation.navigate('TwoRun')
-                    }} >
+                    }}
+                        onPress={() => {
+                            this.props.navigation.navigate('TwoRun')
+                        }} >
                         <Image
                             style={{
                                 marginTop: '0%', marginRight: "0%",
@@ -112,8 +111,8 @@ const styles = StyleSheet.create({
     header: {
         //backgroundColor: "red",
         flex: 1,
-        //justifyContent: "center",
-        //alignItems: "center",
+        justifyContent: "center",
+        alignItems: "center",
     },
     body: {
         //backgroundColor: "red",
