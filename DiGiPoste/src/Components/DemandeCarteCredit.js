@@ -20,7 +20,7 @@ class DemandeCarteCredit extends React.Component {
             <View style={styles.container}>
                  <View style={styles.header}>
                     <TouchableOpacity style={{marginTop: '0%', marginLeft: "5%"}}
-                        onPress={() => {this.props.navigation.navigate('HomeAdmin')}}>
+                        onPress={() => {this.props.navigation.navigate('HomeClient')}}>
                         <Image
                             style={{
                                 marginTop: '6%', marginRight: "0%",
