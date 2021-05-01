@@ -136,36 +136,7 @@ function Loading({ navigation }) {
 
                 </TouchableOpacity>
                 }
-                <TouchableOpacity onPress={showClients}
-                    style={styles.buttonNext}>
-                    <Text style={{
-                        color: "#fff", fontSize: 20, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Contacter nous..
-                    </Text>
-                    <Flech0></Flech0>
-                </TouchableOpacity>
-                {(!ChangedClients) === false && <TouchableOpacity onPress={dialCall}
-                    style={styles.select}>
-                    <Text style={{
-                        color: "#1066FF", fontSize: 16, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Contacter l'Administrateur
-                    </Text>
-                </TouchableOpacity>
-                }
-                {(!ChangedClients) === false && <TouchableOpacity  onPress={() => navigation.navigate('ContactSiege')}
-                     style={styles.select}>
-                    <Text style={{
-                        color: "#1066FF", fontSize: 16, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Contacter le siège
-                    </Text>
-                </TouchableOpacity>
-                }
+                
                  <TouchableOpacity onPress={showComptes}
                     style={styles.buttonNext}>
                     <Text style={{
@@ -218,6 +189,37 @@ function Loading({ navigation }) {
                     </Text>
                     <Flech0></Flech0>
                 </TouchableOpacity>
+
+                <TouchableOpacity onPress={showClients}
+                    style={styles.buttonNext}>
+                    <Text style={{
+                        color: "#fff", fontSize: 20, fontWeight: "bold",
+                        textAlign: "auto", marginTop: "0%"
+                    }}>
+                        Contacter nous..
+                    </Text>
+                    <Flech0></Flech0>
+                </TouchableOpacity>
+                {(!ChangedClients) === false && <TouchableOpacity onPress={dialCall}
+                    style={styles.select}>
+                    <Text style={{
+                        color: "#1066FF", fontSize: 16, fontWeight: "bold",
+                        textAlign: "auto", marginTop: "0%"
+                    }}>
+                        Contacter l'Administrateur
+                    </Text>
+                </TouchableOpacity>
+                }
+                {(!ChangedClients) === false && <TouchableOpacity  onPress={() => navigation.navigate('ContactSiege')}
+                     style={styles.select}>
+                    <Text style={{
+                        color: "#1066FF", fontSize: 16, fontWeight: "bold",
+                        textAlign: "auto", marginTop: "0%"
+                    }}>
+                        Contacter le siège
+                    </Text>
+                </TouchableOpacity>
+                }
                 <View style={{ alignItems: "center" ,marginTop:"15%"}}>
                 <Image
                     style={{

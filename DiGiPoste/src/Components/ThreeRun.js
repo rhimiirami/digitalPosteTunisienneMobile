@@ -29,15 +29,7 @@ class ThreeRun extends React.Component {
         return (
             <View style={styles.container} >
                 <View style={styles.header}>
-                    <TouchableOpacity style={{
-                        //justifyContent: "flex-start",
-                        //alignItems: "center",
-                        marginTop: '5%', marginLeft: "5%"
-                    }}
-                        onPress={() => {
-                            this.props.navigation.navigate('TwoRun')
-                        }}
-                    >
+                    {/* <TouchableOpacity style={{marginTop: '5%', marginLeft: "5%" }} onPress={() => { this.props.navigation.navigate('TwoRun')}}>
                         <Image
                             style={{
                                 marginTop: '6%', marginRight: "0%",
@@ -45,14 +37,20 @@ class ThreeRun extends React.Component {
                             }}
                             source={require('../Svg/b.png')} >
                         </Image>
-                        {/* <BackPage></BackPage> */}
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
+                    <Image
+                            style={{
+                                marginTop: '10%',
+                                width: 250, height: 70
+                            }}
+                            source={require('../Svg/title.png')} >
+                        </Image>
                 </View>
                 <View style={styles.body}>
-                    <Text style={{
+                   {/*  <Text style={{
                         marginTop: '3%', marginLeft: "15%", fontSize: 40, width: "70%",
                         color: '#FFFFFF', textAlign: "center", fontWeight: 'bold',
-                    }}>Take back control</Text>
+                    }}>Take back control</Text> */}
                     <TouchableOpacity style={{
                         marginTop: '3%',
                         justifyContent: "center",
@@ -110,14 +108,14 @@ const styles = StyleSheet.create({
     header: {
         //backgroundColor: "red",
         flex: 1,
-        //justifyContent: "center",
-        //alignItems: "center",
+        justifyContent: "center",
+        alignItems: "center",
     },
     body: {
         //backgroundColor: "red",
         flex: 4,
-        //justifyContent: "center",
-        //alignItems: "center",
+        justifyContent: "center",
+        alignItems: "center",
     },
     footer: {
         //backgroundColor: "red",
