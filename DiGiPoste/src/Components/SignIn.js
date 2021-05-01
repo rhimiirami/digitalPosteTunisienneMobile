@@ -40,9 +40,15 @@ class SignIn extends React.Component {
                     <View style={{
                         justifyContent: "center",
                         alignItems: "center",
-                        marginTop: '20%',
+                        marginTop: '15%',
                     }}>
-                        <TogggleP></TogggleP>
+                        <Image
+                            style={{
+                                marginTop: '0%', marginRight: "0%",
+                                width: 250, height: 70
+                            }}
+                            source={require('../Svg/title.png')} >
+                        </Image>
 
                     </View>
                 </View>
@@ -57,7 +63,7 @@ class SignIn extends React.Component {
                         }}>Explore your data</Text>
                     </View>
                     <View style={{
-                        alignItems: "center", marginTop: "25%", width: "99%", height: "100%"
+                        alignItems: "center", marginTop: "25%", width: "100%", height: "100%"
                     }} >
                         <TextInput style={styles.inputStyle}
                             placeholder='Email address'
@@ -75,8 +81,8 @@ class SignIn extends React.Component {
                             onChangeText={(text) => this.setState({ password: text })}
                         ></TextInput>
                         <TouchableOpacity style={styles.buttonSign}
-                            //onPress={this.loginImap.bind(this)} 
-                            disabled={busyClick}
+                            onPress={() => { this.props.navigation.navigate('HomeAdmin') }}
+                        //disabled={busyClick}
 
                         >
                             <Text style={{
@@ -145,7 +151,7 @@ const styles = StyleSheet.create({
         //backgroundColor: "black",
         fontSize: 18,
         marginTop: '3%',
-        marginLeft: "10%",
+        //marginLeft: "10%",
         paddingLeft: 30,
         borderWidth: 1,
         color: '#FAF5F0',
