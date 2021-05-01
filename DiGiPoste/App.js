@@ -19,6 +19,7 @@ import DemandeCarteCredit from './src/Components/DemandeCarteCredit';
 import DemandeCarnetCheque from './src/Components/DemandeCarnetCheque';
 import ListeClients from './src/Components/ListeClients';
 import ListeComptesPostales from './src/Components/ListeComptesPostales';
+import ContactSiege from './src/Components/ContactSiege';
 
 
 
@@ -27,7 +28,7 @@ class App extends Component {
     const Stack = createStackNavigator();
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="ListeClients" screenOptions={{ headerShown: false }} >
+        <Stack.Navigator initialRouteName="ContactSiege" screenOptions={{ headerShown: false }} >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="OneRun" component={OneRun} />
           <Stack.Screen name="TwoRun" component={TwoRun} />
@@ -43,7 +44,7 @@ class App extends Component {
           <Stack.Screen name="SignUpAccount" component={SignUpAccount} />
           <Stack.Screen name="ListeClients" component={ListeClients} />
           <Stack.Screen name="ListeComptesPostales" component={ListeComptesPostales} />
-
+          <Stack.Screen name="ContactSiege" component={ContactSiege} />
         </Stack.Navigator>
       </NavigationContainer >
     )
