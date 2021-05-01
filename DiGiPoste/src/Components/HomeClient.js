@@ -148,7 +148,7 @@ function Loading({ navigation }) {
                     <Flech0></Flech0>
                 </TouchableOpacity>
                 {(!ChangedComptes) === false && <TouchableOpacity
-                    onPress={() => navigation.navigate('ListeComptesPostales')} style={styles.select}>
+                    onPress={() => navigation.navigate('CovertisseurDevises')} style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 16, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
@@ -158,7 +158,7 @@ function Loading({ navigation }) {
                 </TouchableOpacity>
                 }
                 {(!ChangedComptes) === false && <TouchableOpacity
-                    onPress={() => navigation.navigate('SignUpAccount')} style={styles.select}>
+                    onPress={() => navigation.navigate('CovertisseurDevises')} style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 16, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"

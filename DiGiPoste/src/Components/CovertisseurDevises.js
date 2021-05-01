@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View,TouchableOpacity,Image} from 'react-native';
 import TogggleP from '../Svg/TogggleP';
 
-class DemandeCarnetCheque extends React.Component {
+class CovertisseurDevises extends React.Component {
 
     constructor(props) {
         super(props);
@@ -18,7 +18,7 @@ class DemandeCarnetCheque extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.header}>
+                 <View style={styles.header}>
                     <TouchableOpacity style={{marginTop: '0%', marginLeft: "5%"}}
                         onPress={() => {this.props.navigation.navigate('HomeClient')}}>
                         <Image
@@ -47,6 +47,6 @@ const styles = StyleSheet.create({
     }
 });
 
-export default DemandeCarnetCheque;
+export default CovertisseurDevises;
 
 
