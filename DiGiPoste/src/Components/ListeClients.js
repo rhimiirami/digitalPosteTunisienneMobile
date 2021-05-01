@@ -9,12 +9,12 @@ import {
     TextInput
 } from 'react-native';
 import { color } from 'react-native-reanimated';
-import {EditP,SearchIcon,Delete}  from '../Svg/TimeTokenIcons'
-
-   
+import { EditP, SearchIcon, Delete } from '../Svg/TimeTokenIcons'
 
 
- 
+
+
+
 
 
 
@@ -24,83 +24,106 @@ class ListeClients extends React.Component {
         super(props);
         this.state = {
             busy: true,
-           listeClients :[
-            {"id":1,"nom":"aymen", "prenom":"darajii"},
-            {"id":2,"nom":"tafwik","prenom":"darajii"},
-            {"id":3,"nom":"rami","prenom":"darajii"},
-            {"id":4,"nom":"tom","prenom":"darajii"},
-            {"id":1,"nom":"aymen", "prenom":"darajii"},
-                {"id":2,"nom":"tafwik","prenom":"darajii"},
-                {"id":3,"nom":"rami","prenom":"darajii"},
-                {"id":4,"nom":"tom","prenom":"darajii"},
-                {"id":1,"nom":"aymen", "prenom":"darajii"},
-                {"id":2,"nom":"tafwik","prenom":"darajii"},
-                {"id":3,"nom":"rami","prenom":"darajii"},
-                {"id":4,"nom":"tom","prenom":"darajii"},
-                {"id":5,"nom":"ali","prenom":"darajii"}]
-           
+            listeClients: [
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 5, "nom": "ali", "prenom": "darajii" },
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 5, "nom": "ali", "prenom": "darajii" }]
+
         };
     }
-   
+
     componentDidMount() {
-      
+
     }
 
-   
-     rendergetListClient (){
+
+    rendergetListClient() {
         if (this.state.listeClients.length == 0) {
             return (
-              <View style={{ flexDirection: "row", height: "100%", width: "100%" }}>
-                <View style={{ height: "100%", width: "100%", padding: 5, alignItems: "center" }}>
-                  <ActivityIndicator size="large" color="green" />
-                  <Text>Chargement...</Text>
+                <View style={{ flexDirection: "row", height: "100%", width: "100%" }}>
+                    <ActivityIndicator size="large" color="green" />
+                    <Text>Chargement...</Text>
                 </View>
-              </View>
             )
-          }
-          else {
-              return(
-                this.state.listeClients.map((element,index) => {
+        }
+        else {
+            return (
+                this.state.listeClients.map((element, index) => {
                     return (
-                              <View key={index}>
-                            <ScrollView showsVerticalScrollIndicator={false}>
-                            <View style={{ width: "100%", marginTop: '0%', marginLeft: "0%", alignItems: "center" ,height:"100%"}}>
-                       <View style={styles.item}>
-                            <Image
-                                style={{  marginLeft: "0%",width: 50, height: 50}}
-                                source={require('../Svg/bPro.png')} >
-                            </Image>
 
-                            <Text key={index} style={{color:"#27277A",fontWeight:"bold",fontSize:16,textAlign:"center",marginLeft:"-10%"}}>{element.nom} {element.prenom}</Text>
-                            <View style={{justifyContent:"space-evenly",flexDirection:"row",alignItems:"center"}}>
-                            <EditP></EditP>
-                            <Delete></Delete>
-                            </View>
-                            
-                           
+                        <ScrollView key={index} showsVerticalScrollIndicator={false}>
+                            <View style={{
+                                width: "100%", marginTop: '0%', marginLeft: "0%",
+                                alignItems: "center", height: "100%"
+                            }}>
+                                <View style={styles.item}>
+                                    <TouchableOpacity style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}
+                                        onPress={() => this.props.navigation.navigate('ProfileClient')}>
+                                        <Image
+                                            style={{ marginLeft: "0%", width: 50, height: 45 }}
+                                            source={require('../Svg/bPro.png')} >
+                                        </Image>
 
-                       </View>
-                    </View>
-                            </ScrollView>
+                                        <Text key={index} style={{
+                                            color: "#27277A", fontWeight: "bold",
+                                            fontSize: 16, textAlign: "center", marginLeft: "5%"
+                                        }}>{element.nom} {element.prenom}</Text>
+                                    </TouchableOpacity>
+                                    <View style={{
+                                        justifyContent: "space-evenly", flexDirection: "row",
+                                        alignItems: "center"
+                                    }}>
+                                        <EditP></EditP>
+                                        <Delete></Delete>
+                                    </View>
+
+
+
+                                </View>
                             </View>
-                       
+                        </ScrollView>
+
+
                     )
                 })
-              )
-          }
+            )
+        }
 
-     }
+    }
 
-  
+
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <View style={{ flexDirection: "row", alignItems:"center" , marginTop:"5%"}}>
+                    <View style={{ flexDirection: "row", alignItems: "center", marginTop: "5%" }}>
 
 
-                        <TouchableOpacity style={{ marginLeft: "3%"}}
-                        onPress={() => this.props.navigation.navigate('HomeAdmin')}>
+                        <TouchableOpacity style={{ marginLeft: "3%" }}
+                            onPress={() => this.props.navigation.navigate('HomeAdmin')}>
                             <Image
                                 style={{
                                     marginTop: '6%', marginRight: "0%",
@@ -111,38 +134,38 @@ class ListeClients extends React.Component {
                         </TouchableOpacity>
 
 
-                        <Text style={{color:"#27277A",fontWeight:"bold",fontSize:24,textAlign:"center",marginLeft:"10%"}}>Liste des clients</Text>
-                        
+                        <Text style={{ color: "#27277A", fontWeight: "bold", fontSize: 24, textAlign: "center", marginLeft: "10%" }}>Liste des clients</Text>
+
                     </View>
-                    
+
                 </View>
 
-               
-   
-                
+
+
+
                 <View style={styles.body}>
                     <View style={styles.inputStyle}>
-                    <View style={{ marginTop: "0%" }}>
-                        <SearchIcon></SearchIcon>
-                    </View>
+                        <View style={{ marginTop: "0%" }}>
+                            <SearchIcon></SearchIcon>
+                        </View>
 
-                    <TextInput
-                        placeholder='Rechercher'
-                        autoCapitalize='none'
+                        <TextInput
+                            placeholder='Rechercher'
+                            autoCapitalize='none'
                         // onChangeText={(search) => this.value(search)}
-                    ></TextInput>
-                  
+                        ></TextInput>
+
+
+                    </View>
+                    <View style={{ width: "100%", height: "100%", marginTop: "5%" }}>
+                        <ScrollView>
+                            {this.rendergetListClient()}
+                        </ScrollView>
+                    </View>
+
 
                 </View>
-                    <View style={{width:"100%",height:"90%",marginTop:"5%"}}>
-                    <ScrollView>
-                          {this.rendergetListClient()}
-                      </ScrollView>
-                    </View>
-                     
-                   
-                </View>
-               
+
 
             </View>
         );
@@ -156,12 +179,12 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 0.75,
-       
+
     },
     body: {
         flex: 4,
-        alignItems:"center"
-    
+        alignItems: "center"
+
     },
     footer: {
         backgroundColor: "#FAF5F0",
@@ -177,10 +200,10 @@ const styles = StyleSheet.create({
         width: "90%",
         marginLeft: "2%",
         marginTop: "3%",
-        borderWidth:1,
-        borderColor:"#27277A",
+        borderWidth: 1,
+        borderColor: "#27277A",
         flexDirection: "row",
-        alignItems:"center"
+        alignItems: "center"
     },
     buttonNext: {
         backgroundColor: "#FAF5F0",
@@ -238,26 +261,27 @@ const styles = StyleSheet.create({
         borderRadius: 25,
     },
     item: {
-        flexDirection:"row",
+        flexDirection: "row",
         width: '90%',
         justifyContent: "space-around",
         alignItems: "center",
-        height: '73%',
+        height: '70%',
         borderWidth: 1,
         borderColor: '#27277A',
         marginTop: '5%',
-      //  marginLeft: '10%',
+        //  marginLeft: '10%',
         borderRadius: 25,
+        //backgroundColor: "red",
     },
-    serach :{
-    width :"100%",
-    height:"90%",
-    color:"black",
-    borderColor: '#27277A',
-    borderWidth:1,
-    alignItems:"center",
-    flexDirection:"row",
-    justifyContent:"space-around"
+    serach: {
+        width: "100%",
+        height: "90%",
+        color: "black",
+        borderColor: '#27277A',
+        borderWidth: 1,
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "space-around"
     },
     contentContainer: {
         height: 1500,

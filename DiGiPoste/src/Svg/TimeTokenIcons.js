@@ -699,13 +699,13 @@ function DeleteP() {
 function SearchIcon() {
   return (
 
-<Svg xmlns="http://www.w3.org/2000/svg"  width="25" height="25" viewBox="0 0 16 16">
+    <Svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16">
 
-<G id="Symbol_62_8" data-name="Symbol 62 – 8" clip-path="url(#clip-path)">
-  <Rect id="Rectangle_176" data-name="Rectangle 176" width="16" height="16" fill="none"/>
-  <Path id="Tracé_99" data-name="Tracé 99" d="M15.9,14.5l-3.3-3.3A6.847,6.847,0,0,0,14,7,6.957,6.957,0,0,0,7,0,6.957,6.957,0,0,0,0,7a6.957,6.957,0,0,0,7,7,6.847,6.847,0,0,0,4.2-1.4l3.3,3.3ZM2,7A4.951,4.951,0,0,1,7,2a4.951,4.951,0,0,1,5,5,4.951,4.951,0,0,1-5,5A4.951,4.951,0,0,1,2,7Z" fill="#27277A"/>
-</G>
-</Svg>
+      <G id="Symbol_62_8" data-name="Symbol 62 – 8" clip-path="url(#clip-path)">
+        <Rect id="Rectangle_176" data-name="Rectangle 176" width="16" height="16" fill="none" />
+        <Path id="Tracé_99" data-name="Tracé 99" d="M15.9,14.5l-3.3-3.3A6.847,6.847,0,0,0,14,7,6.957,6.957,0,0,0,7,0,6.957,6.957,0,0,0,0,7a6.957,6.957,0,0,0,7,7,6.847,6.847,0,0,0,4.2-1.4l3.3,3.3ZM2,7A4.951,4.951,0,0,1,7,2a4.951,4.951,0,0,1,5,5,4.951,4.951,0,0,1-5,5A4.951,4.951,0,0,1,2,7Z" fill="#27277A" />
+      </G>
+    </Svg>
 
 
   );
@@ -716,21 +716,21 @@ function Delete() {
   return (
 
 
-<Svg id="no" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 56 56">
-<Defs>
-</Defs>
-<G id="Ellipse_212" data-name="Ellipse 212" fill="#FAF5F0" stroke="#FAF5F0" stroke-width="1">
-<Circle cx="28" cy="28" r="28" stroke="none"/>
-<Circle cx="28" cy="28" r="27.5" fill="none"/>
-</G>
-<G id="Symbol_71_5" data-name="Symbol 71 – 5" transform="translate(20 20)" clip-path="url(#clip-path)">
-<Rect id="Rectangle_1445" data-name="Rectangle 1445" width="16" height="16" fill="none"/>
-<Path id="Union_3" data-name="Union 3" d="M7.778,9.192,1.414,15.557,0,14.142,6.364,7.778,0,1.414,1.414,0,7.778,6.364,14.142,0l1.415,1.414L9.192,7.778l6.364,6.364-1.415,1.415Z" fill="#FFCCE9"/>
-</G>
-</Svg>
+    <Svg id="no" xmlns="http://www.w3.org/2000/svg" width="50" height="45" viewBox="0 0 56 56">
+      <Defs>
+      </Defs>
+      <G id="Ellipse_212" data-name="Ellipse 212" fill="#FAF5F0" stroke="#FAF5F0" stroke-width="1">
+        <Circle cx="28" cy="28" r="28" stroke="none" />
+        <Circle cx="28" cy="28" r="27.5" fill="none" />
+      </G>
+      <G id="Symbol_71_5" data-name="Symbol 71 – 5" transform="translate(20 20)" clip-path="url(#clip-path)">
+        <Rect id="Rectangle_1445" data-name="Rectangle 1445" width="16" height="16" fill="none" />
+        <Path id="Union_3" data-name="Union 3" d="M7.778,9.192,1.414,15.557,0,14.142,6.364,7.778,0,1.414,1.414,0,7.778,6.364,14.142,0l1.415,1.414L9.192,7.778l6.364,6.364-1.415,1.415Z" fill="#FFCCE9" />
+      </G>
+    </Svg>
 
 
-      
+
 
   );
 }
