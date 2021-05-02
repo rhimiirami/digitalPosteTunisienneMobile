@@ -8,7 +8,6 @@ import {
     AsyncStorage
 } from 'react-native';
 
-import TogggleP from '../Svg/TogggleP';
 
 class SignIn extends React.Component {
 
@@ -18,8 +17,7 @@ class SignIn extends React.Component {
             busyClick: false,
             email: "",
             password: "",
-            //email: "tawfikmaghraoui50@gmail.com",
-            //password: "t@wfik.aset.14",
+            message:"",
             helpVisiblle: false,
             modalVisible: false,
 
@@ -42,6 +40,15 @@ class SignIn extends React.Component {
                         alignItems: "center",
                         marginTop: '15%',
                     }}>
+                         <View style={{ alignItems: "center" ,marginTop:"15%"}}>
+                <Image
+                    style={{
+                        marginTop: '0%',
+                        width: 80, height: 80
+                    }}
+                    source={require('../Svg/logo.png')} >
+                </Image>
+            </View>
                         <Image
                             style={{
                                 marginTop: '0%', marginRight: "0%",
@@ -49,24 +56,16 @@ class SignIn extends React.Component {
                             }}
                             source={require('../Svg/title.png')} >
                         </Image>
+                        
 
                     </View>
                 </View>
                 <View style={styles.body}>
                     <View style={{
-                        alignItems: "center", justifyContent: "center"
-                    }} >
-                        <Text style={{
-                            marginTop: '10%', marginLeft: "0%",
-                            fontSize: 40, width: "50%",
-                            color: '#FAF5F0', textAlign: "center", fontWeight: 'bold',
-                        }}>Explore your data</Text>
-                    </View>
-                    <View style={{
-                        alignItems: "center", marginTop: "25%", width: "100%", height: "100%"
+                        alignItems: "center", marginTop: "45%", width: "100%", height: "100%"
                     }} >
                         <TextInput style={styles.inputStyle}
-                            placeholder='Email address'
+                            placeholder='Login'
                             autoCapitalize='none'
                             placeholderTextColor="#FAF5F0"
                             onChangeText={(text) => this.setState({ email: text })}
@@ -74,7 +73,7 @@ class SignIn extends React.Component {
 
 
                         <TextInput style={styles.inputStyle}
-                            placeholder='Password'
+                            placeholder='Mot de passe'
                             autoCapitalize='none'
                             placeholderTextColor="#FAF5F0"
                             secureTextEntry
@@ -100,15 +99,18 @@ class SignIn extends React.Component {
                                 color: '#FAF5F0', textAlign: 'center'
                             }}>{this.state.busyClick ? "PLEASE WAIT..." : "Sign in Client"}</Text>
                         </TouchableOpacity>
-                        <Text style={{
+                        {/* <Text style={{
                             marginTop: '7%', marginLeft: "0%", fontSize: 16, width: "70%",
                             color: '#8CD1C4', textAlign: "center", fontWeight: 'bold',
-                        }}>Don’t have an account? <Text style={{
-                            marginTop: '5%', marginLeft: "0%", fontSize: 16, width: "70%",
-                            color: '#FAF5F0', textAlign: "center", fontWeight: 'bold',
-                        }}
-                        //onPress={() => {this.props.navigation.navigate('SignUpOne')}}
-                        >Sign up</Text></Text>
+                        }}>Vous n'avez pas un compte? <Text style={{marginTop: '5%', marginLeft: "0%", fontSize: 16,
+                         width: "70%",color: '#FAF5F0', textAlign: "center", fontWeight: 'bold'}}
+                        onPress={() => {this.setState({message:"Pour s'inscrire il faut oligatoirement que votre role doit etre ADMIN "})}}
+                        >S'inscrire</Text></Text>
+                        <Text style={{marginTop: '5%', marginLeft: "0%", fontSize: 16,
+                         width: "70%",color: '#FAF5F0', textAlign: "center", fontWeight: 'bold'}}
+                       
+                        >{this.state.message}</Text> */}
+                        
                     </View>
 
                 </View>

@@ -104,7 +104,7 @@ function Loading({ navigation }) {
                     <Flech0></Flech0>
                 </TouchableOpacity>
                 {(!ChangedDemandes) === false && <TouchableOpacity
-                    onPress={() => navigation.navigate('DemandeCarteCredit')} style={styles.select}>
+                    onPress={() => navigation.navigate('ListeDemandeCarteCredit')} style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 16, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
@@ -114,7 +114,7 @@ function Loading({ navigation }) {
                 </TouchableOpacity>
                 }
                 {(!ChangedDemandes) === false && <TouchableOpacity
-                    onPress={() => navigation.navigate('DemandeCarnetCheque')} style={styles.select}>
+                    onPress={() => navigation.navigate('ListeDemandeCarnetCheque')} style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 16, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
