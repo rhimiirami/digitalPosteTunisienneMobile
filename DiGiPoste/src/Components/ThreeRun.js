@@ -61,7 +61,7 @@ class ThreeRun extends React.Component {
                     }}>
                         <Image
                             style={{
-                                marginTop: '0%', marginRight: "0%",
+                                marginTop: '-20%', marginRight: "0%",
                                 //width: 250, height: 250
                             }}
                             source={require('../Svg/Three.png')} >
@@ -70,7 +70,7 @@ class ThreeRun extends React.Component {
                     <Text style={{
                         marginTop: '10%', marginLeft: "10%", fontSize: 25, width: "80%",
                         color: '#FFFFFF', textAlign: "center"
-                    }}>Earn rewards and manage who your data is shared with and how it’s used</Text>
+                    }}>Voir l'echange des devises avec un convertisseur et graph</Text>
                    {/*  <View style={{
                         justifyContent: "center",
                         alignItems: "center",

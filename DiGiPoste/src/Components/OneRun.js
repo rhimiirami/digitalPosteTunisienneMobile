@@ -48,12 +48,9 @@ class OneRun extends React.Component {
                    
                 </View>
                 <View style={styles.body}>
-                    {/* <Text style={{
-                        marginTop: '3%', marginLeft: "15%", fontSize: 40, width: "70%",
-                        color: '#FFFFFF', textAlign: "center", fontWeight: 'bold',
-                    }}>Transférer de l'argent</Text> */}
+                  
                     <TouchableOpacity style={{
-                        marginTop: '5%',
+                        marginTop: '15%',
                         justifyContent: "center",
                         alignItems: "center",
                     }}
@@ -69,7 +66,7 @@ class OneRun extends React.Component {
                         </Image>
                     </TouchableOpacity>
                     <Text style={{
-                        marginTop: '5%', marginLeft: "10%", fontSize: 25, width: "80%",
+                        marginTop: '10%', marginLeft: "10%", fontSize: 25, width: "80%",
                         color: '#FFFFFF', textAlign: "center"
                     }}>	Transférer de l'argent et Consulter toutes les transactions effectuées..
                     </Text>

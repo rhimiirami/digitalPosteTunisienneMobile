@@ -70,9 +70,9 @@ class TwoRun extends React.Component {
                         </Image>
                     </TouchableOpacity>
                     <Text style={{
-                        marginTop: '10%', marginLeft: "10%", fontSize: 25, width: "80%",
+                        marginTop: '20%', marginLeft: "10%", fontSize: 25, width: "80%",
                         color: '#FFFFFF', textAlign: "center"
-                    }}>See which companies are collecting your data and who it’s being shared with</Text>
+                    }}>Consulter vos transactions par détails en toutes sécurité</Text>
                     {/* <View style={{
                         justifyContent: "center",
                         alignItems: "center",

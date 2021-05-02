@@ -21,6 +21,8 @@ import ListeClients from './src/Components/ListeClients';
 import ListeComptesPostales from './src/Components/ListeComptesPostales';
 import ContactSiege from './src/Components/ContactSiege';
 import CovertisseurDevises from './src/Components/CovertisseurDevises';
+import ListeDemandeCarteCredit from './src/Components/ListeDemandeCarteCredit';
+import ListeDemandeCarnetCheque from './src/Components/ListeDemandeCarnetCheque';
 
 
 
@@ -47,6 +49,9 @@ class App extends Component {
           <Stack.Screen name="ListeComptesPostales" component={ListeComptesPostales} />
           <Stack.Screen name="ContactSiege" component={ContactSiege} />
           <Stack.Screen name="CovertisseurDevises" component={CovertisseurDevises} />
+          <Stack.Screen name="ListeDemandeCarteCredit" component={ListeDemandeCarteCredit} />
+          <Stack.Screen name="ListeDemandeCarnetCheque" component={ListeDemandeCarnetCheque} />
+
         </Stack.Navigator>
       </NavigationContainer >
     )
