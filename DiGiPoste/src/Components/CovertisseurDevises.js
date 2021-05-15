@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View,TouchableOpacity,Image} from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
 import TogggleP from '../Svg/TogggleP';
 
 class CovertisseurDevises extends React.Component {
@@ -18,9 +18,9 @@ class CovertisseurDevises extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                 <View style={styles.header}>
-                    <TouchableOpacity style={{marginTop: '0%', marginLeft: "5%"}}
-                        onPress={() => {this.props.navigation.navigate('HomeClient')}}>
+                <View style={styles.header}>
+                    <TouchableOpacity style={{ marginTop: '0%', marginLeft: "5%" }}
+                        onPress={() => { this.props.navigation.navigate('Acceuil') }}>
                         <Image
                             style={{
                                 marginTop: '6%', marginRight: "0%",
