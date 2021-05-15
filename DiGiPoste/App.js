@@ -10,7 +10,7 @@ import ThreeRun from './src/Components/ThreeRun';
 import SignIn from './src/Components/SignIn';
 import HomeAdmin from './src/Components/HomeAdmin';
 import HomeClient from './src/Components/HomeClient';
-
+import Acceuil from './src/Components/Acceuil';
 import ProfileClient from './src/Components/ProfileClient';
 import ProfileAdmin from './src/Components/ProfileAdmin';
 import SignUp from './src/Components/SignUp';
@@ -39,6 +39,7 @@ class App extends Component {
           <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="HomeAdmin" component={HomeAdmin} />
           <Stack.Screen name="HomeClient" component={HomeClient} />
+          <Stack.Screen name="Acceuil" component={Acceuil} />
           <Stack.Screen name="ProfileClient" component={ProfileClient} />
           <Stack.Screen name="ProfileAdmin" component={ProfileAdmin} />
           <Stack.Screen name="SignUp" component={SignUp} />
