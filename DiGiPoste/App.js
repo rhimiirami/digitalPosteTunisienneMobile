@@ -23,6 +23,8 @@ import ContactSiege from './src/Components/ContactSiege';
 import CovertisseurDevises from './src/Components/CovertisseurDevises';
 import ListeDemandeCarteCredit from './src/Components/ListeDemandeCarteCredit';
 import ListeDemandeCarnetCheque from './src/Components/ListeDemandeCarnetCheque';
+import Simuler from './src/Components/Simuler';
+import Graph from './src/Components/Graph';
 
 
 
@@ -31,7 +33,7 @@ class App extends Component {
     const Stack = createStackNavigator();
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="OneRun" screenOptions={{ headerShown: false }} >
+        <Stack.Navigator initialRouteName="Acceuil" screenOptions={{ headerShown: false }} >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="OneRun" component={OneRun} />
           <Stack.Screen name="TwoRun" component={TwoRun} />
@@ -52,6 +54,9 @@ class App extends Component {
           <Stack.Screen name="CovertisseurDevises" component={CovertisseurDevises} />
           <Stack.Screen name="ListeDemandeCarteCredit" component={ListeDemandeCarteCredit} />
           <Stack.Screen name="ListeDemandeCarnetCheque" component={ListeDemandeCarnetCheque} />
+          <Stack.Screen name="Simuler" component={Simuler} />
+          <Stack.Screen name="Graph" component={Graph} />
+
 
         </Stack.Navigator>
       </NavigationContainer >
