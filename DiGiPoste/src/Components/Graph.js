@@ -3,17 +3,20 @@ import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
 import WebView from 'react-native-webview';
 
 const myScript = `
-      document.body.style.backgroundColor = '#27277A';
-      
-      //document.querySelector("header").remove();
-      //document.getElementById("real_estate_loan_amount_simulator-simulator").remove("");
-     
-      //document.querySelector(".wysiwyg-container").remove();
-      //document.querySelector("footer").remove();
+      document.body.style.backgroundColor = 'red';
+      document.querySelector(".tribal-fusion-ad__AdWrapper-sc-7nznaa-0.gKugcA.advertSlot").remove();
+      document.querySelector("header").remove();
+      document.querySelector(".tab-box__TabRow-sc-28io75-1.bCvmkT").remove();
+      document.getElementById("tfasyncid_ad_4ab31180-b5f0-11eb-b989-9797d0f7bf0e").remove("");
+      document.querySelector(".fluid-container__BaseFluidContainer-qoidzu-0.gHjEXY").remove(".large-container-sc-1j708v7-0.fsQASC");
+      document.querySelector(".large-container-sc-1j708v7-0.fsQASC").remove();
+      document.querySelector(".fluid-container__BaseFluidContainer-qoidzu-0.Czysz").remove();
+      document.querySelector("footer").remove();
+    
       true; // note: this is required, or you'll sometimes get silent failures
     `;
 
-class CovertisseurDevises extends React.Component {
+class Graph extends React.Component {
 
     constructor(props) {
         super(props);
@@ -47,7 +50,7 @@ class CovertisseurDevises extends React.Component {
                 <View style={styles.body}>
 
                     <WebView source={{
-                        uri: 'https://www.xe.com/fr/'
+                        uri: 'https://www.xe.com/fr/currencycharts/'
                     }}
                         //useWebKit={true}
                         injectedJavaScript={myScript}
@@ -96,7 +99,6 @@ const styles = StyleSheet.create({
 
 });
 
-
-export default CovertisseurDevises;
+export default Graph;
 
 

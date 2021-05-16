@@ -146,7 +146,7 @@ class CovertisseurDevises extends React.Component {
                     </TouchableOpacity>
                     }
                     {(!this.state.ChangedComptes) === false && <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate('CovertisseurDevises')} style={styles.select}>
+                        onPress={() => this.props.navigation.navigate('Graph')} style={styles.select}>
                         <Text style={{
                             color: "#1066FF", fontSize: 16, fontWeight: "bold",
                             textAlign: "auto", marginTop: "0%"
@@ -174,7 +174,7 @@ class CovertisseurDevises extends React.Component {
                     </Text>
                     }
 
-                    <TouchableOpacity
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Simuler')}
                         style={styles.buttonNext}>
                         <Text style={{
                             color: "#fff", fontSize: 20, fontWeight: "bold",
