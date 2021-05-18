@@ -9,7 +9,7 @@ const myScript = `
       //document.getElementById("real_estate_loan_amount_simulator-simulator").remove("");
      
       //document.querySelector(".wysiwyg-container").remove();
-      //document.querySelector("footer").remove();
+       document.querySelector("footer").remove();
       true; // note: this is required, or you'll sometimes get silent failures
     `;
 

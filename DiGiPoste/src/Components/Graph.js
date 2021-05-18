@@ -50,7 +50,7 @@ class Graph extends React.Component {
                 <View style={styles.body}>
 
                     <WebView source={{
-                        uri: 'https://www.xe.com/fr/currencycharts/'
+                        uri: 'https://www.xe.com/fr/currencycharts/?from=TND&to=EUR'
                     }}
                         //useWebKit={true}
                         injectedJavaScript={myScript}
