@@ -18,6 +18,7 @@ class OneRun extends React.Component {
         this.state = {
 
 
+
         };
     }
 
@@ -35,20 +36,20 @@ class OneRun extends React.Component {
             <View style={styles.container}
             >
                 <View style={styles.header}>
-                    
 
-                        <Image
-                            style={{
-                                marginTop: '10%', marginRight: "5%",
-                                width: 250, height: 70
-                            }}
-                            source={require('../Svg/title.png')} >
-                        </Image>
 
-                   
+                    <Image
+                        style={{
+                            marginTop: '10%', marginRight: "5%",
+                            width: 250, height: 70
+                        }}
+                        source={require('../Svg/title.png')} >
+                    </Image>
+
+
                 </View>
                 <View style={styles.body}>
-                  
+
                     <TouchableOpacity style={{
                         marginTop: '15%',
                         justifyContent: "center",
