@@ -57,7 +57,7 @@ class ThreeRun extends React.Component {
                         alignItems: "center",
                     }}
                     onPress={() => {
-                        this.props.navigation.navigate('SignIn')
+                        this.props.navigation.navigate('Acceuil')
                     }}>
                         <Image
                             style={{

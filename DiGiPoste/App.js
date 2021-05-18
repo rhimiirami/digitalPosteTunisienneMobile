@@ -10,7 +10,7 @@ import ThreeRun from './src/Components/ThreeRun';
 import SignIn from './src/Components/SignIn';
 import HomeAdmin from './src/Components/HomeAdmin';
 import HomeClient from './src/Components/HomeClient';
-
+import Acceuil from './src/Components/Acceuil';
 import ProfileClient from './src/Components/ProfileClient';
 import ProfileAdmin from './src/Components/ProfileAdmin';
 import SignUp from './src/Components/SignUp';
@@ -23,6 +23,8 @@ import ContactSiege from './src/Components/ContactSiege';
 import CovertisseurDevises from './src/Components/CovertisseurDevises';
 import ListeDemandeCarteCredit from './src/Components/ListeDemandeCarteCredit';
 import ListeDemandeCarnetCheque from './src/Components/ListeDemandeCarnetCheque';
+import Simuler from './src/Components/Simuler';
+import Graph from './src/Components/Graph';
 
 
 
@@ -31,7 +33,7 @@ class App extends Component {
     const Stack = createStackNavigator();
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="OneRun" screenOptions={{ headerShown: false }} >
+        <Stack.Navigator initialRouteName="Acceuil" screenOptions={{ headerShown: false }} >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="OneRun" component={OneRun} />
           <Stack.Screen name="TwoRun" component={TwoRun} />
@@ -39,6 +41,7 @@ class App extends Component {
           <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="HomeAdmin" component={HomeAdmin} />
           <Stack.Screen name="HomeClient" component={HomeClient} />
+          <Stack.Screen name="Acceuil" component={Acceuil} />
           <Stack.Screen name="ProfileClient" component={ProfileClient} />
           <Stack.Screen name="ProfileAdmin" component={ProfileAdmin} />
           <Stack.Screen name="SignUp" component={SignUp} />
@@ -51,6 +54,9 @@ class App extends Component {
           <Stack.Screen name="CovertisseurDevises" component={CovertisseurDevises} />
           <Stack.Screen name="ListeDemandeCarteCredit" component={ListeDemandeCarteCredit} />
           <Stack.Screen name="ListeDemandeCarnetCheque" component={ListeDemandeCarnetCheque} />
+          <Stack.Screen name="Simuler" component={Simuler} />
+          <Stack.Screen name="Graph" component={Graph} />
+
 
         </Stack.Navigator>
       </NavigationContainer >
