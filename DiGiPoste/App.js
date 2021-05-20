@@ -25,6 +25,9 @@ import ListeDemandeCarteCredit from './src/Components/ListeDemandeCarteCredit';
 import ListeDemandeCarnetCheque from './src/Components/ListeDemandeCarnetCheque';
 import Simuler from './src/Components/Simuler';
 import Graph from './src/Components/Graph';
+import LocalisationAgences from './src/Components/LocalisationAgences';
+import TransactionsClient from './src/Components/TransactionsClient';
+import DetailsTransactions from './src/Components/DetailsTransactions';
 
 
 
@@ -56,7 +59,9 @@ class App extends Component {
           <Stack.Screen name="ListeDemandeCarnetCheque" component={ListeDemandeCarnetCheque} />
           <Stack.Screen name="Simuler" component={Simuler} />
           <Stack.Screen name="Graph" component={Graph} />
-
+          <Stack.Screen name="LocalisationAgences" component={LocalisationAgences} />
+          <Stack.Screen name="TransactionsClient" component={TransactionsClient} />
+          <Stack.Screen name="DetailsTransactions" component={DetailsTransactions} />
 
         </Stack.Navigator>
       </NavigationContainer >

@@ -204,42 +204,42 @@ const myScript = `
 const PolicyHTML = require('./../Poste.html');
 class CovertisseurDevises extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
+  constructor(props) {
+    super(props);
+    this.state = {
 
 
-        };
-    }
+    };
+  }
 
-    componentDidMount() {
+  componentDidMount() {
 
-    }
+  }
 
 
-    render() {
+  render() {
 
-        return (
-            <View style={styles.container}>
-                <View style={styles.header}>
-                    <TouchableOpacity style={{ marginTop: '0%', marginLeft: "5%" }}
-                        onPress={() => { this.props.navigation.navigate('Acceuil') }}>
-                        <Image
-                            style={{
-                                marginTop: '1%', marginRight: "0%",
-                                width: 60, height: 60
-                            }}
-                            source={require('../Svg/b.png')} >
-                        </Image>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.body}>
+    return (
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <TouchableOpacity style={{ marginTop: '0%', marginLeft: "5%" }}
+            onPress={() => { this.props.navigation.navigate('Acceuil') }}>
+            <Image
+              style={{
+                marginTop: '1%', marginRight: "0%",
+                width: 60, height: 60
+              }}
+              source={require('../Svg/b.png')} >
+            </Image>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.body}>
 
-                    <WebView
-                        originWhitelist={['*']}
-                        source={{ html }}
-                    />
-                    {/* <WebView
+          <WebView
+            originWhitelist={['*']}
+            source={{ html }}
+          />
+          {/* <WebView
                         source={PolicyHTML}
                         //source={{ html: '<iframe width="100%" height="100%" src="https://www.xe.com/fr/" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' }}
                         /* source={{
@@ -248,7 +248,7 @@ class CovertisseurDevises extends React.Component {
                         //useWebKit={true}
                         injectedJavaScript={myScript}
                     /> */}
-                    {/* <WebView
+          {/* <WebView
                         //source={{ html: '<iframe width="100%" height="100%" src="https://adssettings.google.com/authenticated" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' }}
                         source={{
                             uri: 'https://adssettings.google.com/authenticated'
@@ -257,37 +257,34 @@ class CovertisseurDevises extends React.Component {
                         useWebKit={true}
                     /> */}
 
-                </View>
-                {/* <View style={styles.footer}>
+        </View>
 
-
-                </View> */}
-            </View>
-        );
-    }
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: "#27277A",
-        flex: 1
-    },
-    header: {
-        flex: 0,
-    }, body: {
-        // marginTop: '15%',
-        flex: 3,
-        //alignItems: "center",
-        //justifyContent: "center"
-        //backgroundColor: "red"
+  container: {
+    backgroundColor: "#27277A",
+    flex: 1
+  },
+  header: {
+    flex: 0,
+  }, body: {
+    // marginTop: '15%',
+    flex: 3,
+    //alignItems: "center",
+    //justifyContent: "center"
+    //backgroundColor: "red"
 
-    },
-    footer: {
-        //backgroundColor: "red",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
+  },
+  footer: {
+    //backgroundColor: "red",
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 
 
 });

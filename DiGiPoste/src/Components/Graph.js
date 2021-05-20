@@ -3,7 +3,7 @@ import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
 import WebView from 'react-native-webview';
 const scalesPageToFit = Platform.OS === 'android';
 const myScript = `
-      document.body.style.backgroundColor = 'red';
+      document.body.style.backgroundColor = 'white';
       document.querySelector(".tribal-fusion-ad__AdWrapper-sc-7nznaa-0.gKugcA.advertSlot").remove();
       document.querySelector("header").remove();
       document.querySelector(".tab-box__TabRow-sc-28io75-1.bCvmkT").remove();
@@ -51,7 +51,7 @@ class Graph extends React.Component {
 
 
                     <WebView source={{
-                        uri: 'https://www.xe.com/fr/currencycharts/?from=TND&to=EUR'
+                        uri: 'https://www.xe.com/fr/currencycharts/'
                     }}
                         //scalesPageToFit={false}
                         scalesPageToFit={scalesPageToFit}
@@ -82,10 +82,7 @@ class Graph extends React.Component {
                     /> */}
 
                 </View>
-                {/* <View style={styles.footer}>
 
-
-                </View> */}
             </View>
         );
     }
