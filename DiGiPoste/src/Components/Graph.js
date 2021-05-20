@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
 import WebView from 'react-native-webview';
-
+const scalesPageToFit = Platform.OS === 'android';
 const myScript = `
       document.body.style.backgroundColor = 'red';
       document.querySelector(".tribal-fusion-ad__AdWrapper-sc-7nznaa-0.gKugcA.advertSlot").remove();
@@ -49,12 +49,29 @@ class Graph extends React.Component {
                 </View>
                 <View style={styles.body}>
 
+
                     <WebView source={{
                         uri: 'https://www.xe.com/fr/currencycharts/?from=TND&to=EUR'
                     }}
-                        //useWebKit={true}
-                        injectedJavaScript={myScript}
+                        //scalesPageToFit={false}
+                        scalesPageToFit={scalesPageToFit}
+                        bounces={false}
+                        scrollEnabled={false}
+
+                    //useWebKit={true}
+                    //injectedJavaScript={myScript}
                     />
+
+                    {/* <WebView source={{
+                        uri: 'https://www.xe.com/fr/currencycharts/?from=TND&to=EUR'
+                    }}
+                        scalesPageToFit={false}
+                        bounces={false}
+                        scrollEnabled={false}
+
+                    //useWebKit={true}
+                    //injectedJavaScript={myScript}
+                    /> */}
                     {/* <WebView
                         //source={{ html: '<iframe width="100%" height="100%" src="https://adssettings.google.com/authenticated" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' }}
                         source={{
