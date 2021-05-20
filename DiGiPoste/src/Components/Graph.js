@@ -3,7 +3,7 @@ import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
 import WebView from 'react-native-webview';
 
 const myScript = `
-      document.body.style.backgroundColor = 'red';
+      document.body.style.backgroundColor = 'white';
       document.querySelector(".tribal-fusion-ad__AdWrapper-sc-7nznaa-0.gKugcA.advertSlot").remove();
       document.querySelector("header").remove();
       document.querySelector(".tab-box__TabRow-sc-28io75-1.bCvmkT").remove();
@@ -50,25 +50,15 @@ class Graph extends React.Component {
                 <View style={styles.body}>
 
                     <WebView source={{
-                        uri: 'https://www.xe.com/fr/currencycharts/?from=TND&to=EUR'
+                        uri: 'https://www.xe.com/fr/currencycharts/'
                     }}
-                        //useWebKit={true}
+                      
                         injectedJavaScript={myScript}
                     />
-                    {/* <WebView
-                        //source={{ html: '<iframe width="100%" height="100%" src="https://adssettings.google.com/authenticated" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' }}
-                        source={{
-                            uri: 'https://adssettings.google.com/authenticated'
-                        }}
-                        injectedJavaScript={myScript}
-                        useWebKit={true}
-                    /> */}
+                
 
                 </View>
-                {/* <View style={styles.footer}>
-
-
-                </View> */}
+               
             </View>
         );
     }

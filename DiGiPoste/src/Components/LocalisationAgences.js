@@ -2,18 +2,7 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
 import WebView from 'react-native-webview';
 
-const myScript = `
-      document.body.style.backgroundColor = '#27277A';
-      
-      //document.querySelector("header").remove();
-      //document.getElementById("real_estate_loan_amount_simulator-simulator").remove("");
-     
-      //document.querySelector(".wysiwyg-container").remove();
-       document.querySelector("footer").remove();
-      true; // note: this is required, or you'll sometimes get silent failures
-    `;
-
-class CovertisseurDevises extends React.Component {
+class LocalisationAgences extends React.Component {
 
     constructor(props) {
         super(props);
@@ -47,12 +36,9 @@ class CovertisseurDevises extends React.Component {
                 <View style={styles.body}>
 
                     <WebView source={{
-                        uri: 'https://www.xe.com/fr/'
-                    }}
-                       
-                        injectedJavaScript={myScript}
-                    />
-                   
+                        uri: 'https://umap.openstreetmap.fr/fr/map/digipost_614276#13/36.8570/11.0785'
+                    }}/>
+                    
 
                 </View>
                 
@@ -87,6 +73,6 @@ const styles = StyleSheet.create({
 });
 
 
-export default CovertisseurDevises;
+export default LocalisationAgences;
 
 

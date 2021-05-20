@@ -108,7 +108,7 @@ function Loading({ navigation }) {
                 <TouchableOpacity onPress={showDemandes}
                     style={styles.buttonNext0}>
                     <Text style={{
-                        color: "#fff", fontSize: 20, fontWeight: "bold",
+                        color: "#fff", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
                         Effectuer une demande
@@ -118,7 +118,7 @@ function Loading({ navigation }) {
                 {(!ChangedDemandes) === false && <TouchableOpacity
                     onPress={() => navigation.navigate('DemandeCarteCredit')} style={styles.select}>
                     <Text style={{
-                        color: "#1066FF", fontSize: 16, fontWeight: "bold",
+                        color: "#1066FF", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
                         Demander une carte de crédit
@@ -128,7 +128,7 @@ function Loading({ navigation }) {
                 {(!ChangedDemandes) === false && <TouchableOpacity
                     onPress={() => navigation.navigate('DemandeCarnetCheque')} style={styles.select}>
                     <Text style={{
-                        color: "#1066FF", fontSize: 16, fontWeight: "bold",
+                        color: "#1066FF", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
                         Demander un carnet de chèque
@@ -140,8 +140,8 @@ function Loading({ navigation }) {
                  <TouchableOpacity onPress={showComptes}
                     style={styles.buttonNext}>
                     <Text style={{
-                        color: "#fff", fontSize: 20, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
+                        color: "#fff", fontSize: 15, fontWeight: "bold",
+                        textAlign: "auto",  marginRight:"35%"
                     }}>
                         Devises
                     </Text>
@@ -150,7 +150,7 @@ function Loading({ navigation }) {
                 {(!ChangedComptes) === false && <TouchableOpacity
                     onPress={() => navigation.navigate('CovertisseurDevises')} style={styles.select}>
                     <Text style={{
-                        color: "#1066FF", fontSize: 16, fontWeight: "bold",
+                        color: "#1066FF", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
                         Convertisseur
@@ -160,19 +160,32 @@ function Loading({ navigation }) {
                 {(!ChangedComptes) === false && <TouchableOpacity
                     onPress={() => navigation.navigate('CovertisseurDevises')} style={styles.select}>
                     <Text style={{
-                        color: "#1066FF", fontSize: 16, fontWeight: "bold",
+                        color: "#1066FF", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
                         Graph
                     </Text>
                 </TouchableOpacity>
                 } 
+                
 
                 <TouchableOpacity 
                     style={styles.buttonNext}>
                     <Text style={{
-                        color: "#fff", fontSize: 20, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
+                        color: "#fff", fontSize: 15, fontWeight: "bold",
+                        textAlign: "auto", marginRight:"10%"
+                    }}>
+                        Transfert d'argent
+                    </Text>
+                    <Flech0></Flech0>
+                </TouchableOpacity>
+
+
+                <TouchableOpacity onPress={() => navigation.navigate('TransactionsClient')}
+                    style={styles.buttonNext}>
+                    <Text style={{
+                        color: "#fff", fontSize: 15, fontWeight: "bold",
+                        textAlign: "auto", marginRight:"20%"
                     }}>
                         Transactions
                     </Text>
@@ -182,19 +195,30 @@ function Loading({ navigation }) {
                 <TouchableOpacity 
                     style={styles.buttonNext}>
                     <Text style={{
-                        color: "#fff", fontSize: 20, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
+                        color: "#fff", fontSize: 15, fontWeight: "bold",
+                        textAlign: "auto",marginRight:"10%"
                     }}>
                         Simuler un crédit
                     </Text>
                     <Flech0></Flech0>
                 </TouchableOpacity>
 
+                <TouchableOpacity  onPress={() => navigation.navigate('LocalisationAgences')}
+                    style={styles.buttonNext}>
+                    <Text style={{
+                        color: "#fff", fontSize: 15, fontWeight: "bold",
+                        textAlign: "auto", marginRight:"15%"
+                    }}>
+                         Trouver Agence
+                    </Text>
+                    <Flech0 style={{ marginLeft:"-4%"}}></Flech0>
+                </TouchableOpacity>
+
                 <TouchableOpacity onPress={showClients}
                     style={styles.buttonNext}>
                     <Text style={{
-                        color: "#fff", fontSize: 20, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
+                        color: "#fff", fontSize: 15, fontWeight: "bold",
+                        textAlign: "auto",marginRight:"12%"
                     }}>
                         Contacter nous..
                     </Text>
@@ -203,7 +227,7 @@ function Loading({ navigation }) {
                 {(!ChangedClients) === false && <TouchableOpacity onPress={dialCall}
                     style={styles.select}>
                     <Text style={{
-                        color: "#1066FF", fontSize: 16, fontWeight: "bold",
+                        color: "#1066FF", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
                         Contacter l'Administrateur
@@ -213,7 +237,7 @@ function Loading({ navigation }) {
                 {(!ChangedClients) === false && <TouchableOpacity  onPress={() => navigation.navigate('ContactSiege')}
                      style={styles.select}>
                     <Text style={{
-                        color: "#1066FF", fontSize: 16, fontWeight: "bold",
+                        color: "#1066FF", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
                         Contacter le siège
@@ -289,7 +313,7 @@ function CustomDrawerContent(props) {
                 </View>
             </TouchableOpacity>
             <TouchableOpacity
-                //onPress={() => props.navigation.closeDrawer()} 
+               onPress={() => props.navigation.navigate('TransactionsClient')}
                 style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
             >
                 <View style={{ marginTop: '0%', marginLeft: "0%" }}>
@@ -399,12 +423,8 @@ const styles = StyleSheet.create({
     },
     buttonNext0: {
         backgroundColor: "#1066FF",
-        //marginTop: "8%",
-        height: "10%",
-        width: "80%",
-        //borderColor: '#fff',
-        //borderWidth: 1,
-        //width: "100%",
+        height: "8%",
+        width: "70%",
         borderRadius: 15,
         flexDirection: "row",
         justifyContent: "space-around",
@@ -412,12 +432,10 @@ const styles = StyleSheet.create({
     },
     buttonNext: {
         backgroundColor: "#1066FF",
-        marginTop: "8%",
-        height: "10%",
-        width: "80%",
-        //borderColor: '#fff',
-        //borderWidth: 1,
-        //width: "100%",
+        marginTop: "6%",
+        height: "8%",
+        width: "70%",
+       
         borderRadius: 15,
         flexDirection: "row",
         justifyContent: "space-around",
@@ -426,11 +444,8 @@ const styles = StyleSheet.create({
     select: {
         backgroundColor: "#FFD99C",
         marginTop: "4%",
-        height: "10%",
-        width: "80%",
-        //borderColor: '#fff',
-        //borderWidth: 1,
-        //width: "100%",
+        height: "8%",
+        width: "70%",
         borderRadius: 15,
         flexDirection: "row",
         justifyContent: "space-around",
