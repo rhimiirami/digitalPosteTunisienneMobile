@@ -16,7 +16,7 @@ function Loading({ navigation }) {
     const [ChangedDemandes, setChangedDemandes] = useState(false);
     const [ChangedClients, setChangedClients] = useState(false);
     const [ChangedComptes, setChangedComptes] = useState(false);
-   
+
 
     function showDemandes() {
         //alert('test')
@@ -64,8 +64,8 @@ function Loading({ navigation }) {
     function disabled() {
         alert('te')
     }
-    function dialCall () {
-        let numeroSiege="222222"
+    function dialCall() {
+        let numeroSiege = "222222"
         let phoneNumber = '';
         if (Platform.OS === 'android') {
             phoneNumber = `tel:${numeroSiege}`;
@@ -136,19 +136,19 @@ function Loading({ navigation }) {
 
                 </TouchableOpacity>
                 }
-                
-                 <TouchableOpacity onPress={showComptes}
+
+                <TouchableOpacity onPress={showComptes}
                     style={styles.buttonNext}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",
-                        textAlign: "auto",  marginRight:"35%"
+                        textAlign: "auto", marginRight: "35%"
                     }}>
                         Devises
                     </Text>
                     <Flech0></Flech0>
                 </TouchableOpacity>
                 {(!ChangedComptes) === false && <TouchableOpacity
-                    onPress={() => navigation.navigate('CovertisseurDevises')} style={styles.select}>
+                    onPress={() => navigation.navigate('CovertisseurDevises', { userClient: "client" })} style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
@@ -158,7 +158,7 @@ function Loading({ navigation }) {
                 </TouchableOpacity>
                 }
                 {(!ChangedComptes) === false && <TouchableOpacity
-                    onPress={() => navigation.navigate('CovertisseurDevises')} style={styles.select}>
+                    onPress={() => navigation.navigate('Graph', { userClient: "client" })} style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
@@ -166,14 +166,14 @@ function Loading({ navigation }) {
                         Graph
                     </Text>
                 </TouchableOpacity>
-                } 
-                
+                }
 
-                <TouchableOpacity 
+
+                <TouchableOpacity
                     style={styles.buttonNext}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",
-                        textAlign: "auto", marginRight:"10%"
+                        textAlign: "auto", marginRight: "10%"
                     }}>
                         Transfert d'argent
                     </Text>
@@ -185,40 +185,40 @@ function Loading({ navigation }) {
                     style={styles.buttonNext}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",
-                        textAlign: "auto", marginRight:"20%"
+                        textAlign: "auto", marginRight: "20%"
                     }}>
                         Transactions
                     </Text>
                     <Flech0></Flech0>
                 </TouchableOpacity>
 
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={styles.buttonNext}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",
-                        textAlign: "auto",marginRight:"10%"
+                        textAlign: "auto", marginRight: "10%"
                     }}>
                         Simuler un crédit
                     </Text>
                     <Flech0></Flech0>
                 </TouchableOpacity>
 
-                <TouchableOpacity  onPress={() => navigation.navigate('LocalisationAgences')}
+                <TouchableOpacity onPress={() => navigation.navigate('LocalisationAgences', { userClient: "client" })}
                     style={styles.buttonNext}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",
-                        textAlign: "auto", marginRight:"15%"
+                        textAlign: "auto", marginRight: "15%"
                     }}>
-                         Trouver Agence
+                        Trouver Agence
                     </Text>
-                    <Flech0 style={{ marginLeft:"-4%"}}></Flech0>
+                    <Flech0 style={{ marginLeft: "-4%" }}></Flech0>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={showClients}
                     style={styles.buttonNext}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",
-                        textAlign: "auto",marginRight:"12%"
+                        textAlign: "auto", marginRight: "12%"
                     }}>
                         Contacter nous..
                     </Text>
@@ -234,8 +234,8 @@ function Loading({ navigation }) {
                     </Text>
                 </TouchableOpacity>
                 }
-                {(!ChangedClients) === false && <TouchableOpacity  onPress={() => navigation.navigate('ContactSiege')}
-                     style={styles.select}>
+                {(!ChangedClients) === false && <TouchableOpacity onPress={() => navigation.navigate('ContactSiege')}
+                    style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
@@ -244,19 +244,19 @@ function Loading({ navigation }) {
                     </Text>
                 </TouchableOpacity>
                 }
-                <View style={{ alignItems: "center" ,marginTop:"15%"}}>
-                <Image
-                    style={{
-                        marginTop: '0%',
-                        width: 80, height: 80
-                    }}
-                    source={require('../Svg/logo.png')} >
-                </Image>
-            </View>
+                <View style={{ alignItems: "center", marginTop: "15%" }}>
+                    <Image
+                        style={{
+                            marginTop: '0%',
+                            width: 80, height: 80
+                        }}
+                        source={require('../Svg/logo.png')} >
+                    </Image>
+                </View>
 
             </View>
-            
- 
+
+
 
         </View>
     );
@@ -313,7 +313,7 @@ function CustomDrawerContent(props) {
                 </View>
             </TouchableOpacity>
             <TouchableOpacity
-               onPress={() => props.navigation.navigate('TransactionsClient')}
+                onPress={() => props.navigation.navigate('TransactionsClient')}
                 style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
             >
                 <View style={{ marginTop: '0%', marginLeft: "0%" }}>
@@ -414,7 +414,7 @@ const styles = StyleSheet.create({
         flex: 0.75
     },
     body: {
-       // marginTop: '15%',
+        // marginTop: '15%',
         flex: 3,
         alignItems: "center",
         //justifyContent: "center"
@@ -435,7 +435,7 @@ const styles = StyleSheet.create({
         marginTop: "6%",
         height: "8%",
         width: "70%",
-       
+
         borderRadius: 15,
         flexDirection: "row",
         justifyContent: "space-around",

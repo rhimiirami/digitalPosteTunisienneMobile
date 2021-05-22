@@ -23,7 +23,9 @@ class Connect extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            userAcceuil: (this.props.route.params) ? this.props.route.params : "",
+            userClient: (this.props.route.params) ? this.props.route.params : "",
+            userAdmin: (this.props.route.params) ? this.props.route.params : "",
 
         };
     }
@@ -31,7 +33,16 @@ class Connect extends React.Component {
     componentDidMount() {
 
     }
-
+    goBack() {
+        //alert("im here0")
+        if (this.props.route.params.userAcceuil === "acceuil") {
+            this.props.navigation.navigate('Acceuil')
+            //alert("im here")
+        } else if (this.props.route.params.userClient === "client") {
+            this.props.navigation.navigate('HomeClient')
+            // alert("im here----")
+        }
+    }
 
     render() {
 
@@ -39,7 +50,7 @@ class Connect extends React.Component {
             <View style={styles.container}>
                 <View style={styles.header}>
                     <TouchableOpacity style={{ marginTop: '0%', marginLeft: "5%" }}
-                        onPress={() => { this.props.navigation.navigate('Acceuil') }}>
+                        onPress={() => { this.goBack() }}>
                         <Image
                             style={{
                                 marginTop: '1%', marginRight: "0%",
