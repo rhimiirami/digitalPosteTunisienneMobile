@@ -46,7 +46,7 @@ class CovertisseurDevises extends React.Component {
         <View style={styles.body}>
 
           
-           <WebView
+           <WebView 
                         
                         source={{ html: '<iframe width="100%" height="100%" src="https://www.xe.com/fr/" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' }}
                         /* source={{

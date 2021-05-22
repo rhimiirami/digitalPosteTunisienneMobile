@@ -169,13 +169,13 @@ function Loading({ navigation }) {
                 } 
                 
 
-                <TouchableOpacity 
+                <TouchableOpacity  onPress={() => navigation.navigate('TransfertArgent')}
                     style={styles.buttonNext}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginRight:"10%"
                     }}>
-                        Transfert d'argent
+                        Transferer de l'argent
                     </Text>
                     <Flech0></Flech0>
                 </TouchableOpacity>

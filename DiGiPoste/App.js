@@ -28,6 +28,7 @@ import Graph from './src/Components/Graph';
 import LocalisationAgences from './src/Components/LocalisationAgences';
 import TransactionsClient from './src/Components/TransactionsClient';
 import DetailsTransactions from './src/Components/DetailsTransactions';
+import TransfertArgent from './src/Components/TransfertArgent';
 
 
 
@@ -36,7 +37,7 @@ class App extends Component {
     const Stack = createStackNavigator();
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="CovertisseurDevises" screenOptions={{ headerShown: false }} >
+        <Stack.Navigator initialRouteName="Simuler" screenOptions={{ headerShown: false }} >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="OneRun" component={OneRun} />
           <Stack.Screen name="TwoRun" component={TwoRun} />
@@ -62,6 +63,7 @@ class App extends Component {
           <Stack.Screen name="LocalisationAgences" component={LocalisationAgences} />
           <Stack.Screen name="TransactionsClient" component={TransactionsClient} />
           <Stack.Screen name="DetailsTransactions" component={DetailsTransactions} />
+          <Stack.Screen name="TransfertArgent" component={TransfertArgent} />
 
         </Stack.Navigator>
       </NavigationContainer >

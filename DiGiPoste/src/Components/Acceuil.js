@@ -175,11 +175,11 @@ class CovertisseurDevises extends React.Component {
                             color: "#fff", fontSize: 15, fontWeight: "bold",
                             textAlign: "auto", marginRight:"13%"
                         }}>
-                            Transfert d'argent
+                            Transferer de l'argent
                     </Text>
                         <FermeSVG></FermeSVG>
                     </TouchableOpacity>
-                    {(!this.state.ChangeTransactions) === false && <Text style={{
+                    {(!this.state.ChangeTransfert) === false && <Text style={{
                         color: "red", fontSize: 15, fontWeight: "bold",
                         textAlign: "auto", marginTop: "2%"
                     }} onPress={() => this.props.navigation.navigate('SignIn')}>
@@ -276,8 +276,8 @@ class CovertisseurDevises extends React.Component {
                             source={require('../Svg/logo.png')} >
                         </Image>
                         <Text style={{
-                            color: "#fff", fontSize: 20, fontWeight: "bold",
-                            textAlign: "auto", marginTop: "2%"
+                            color: "#fff", fontSize: 18, fontWeight: "bold",
+                            textAlign: "auto", marginTop: "1%"
                         }} onPress={() => this.props.navigation.navigate('SignIn')}>
                             SIGN IN
                     </Text>

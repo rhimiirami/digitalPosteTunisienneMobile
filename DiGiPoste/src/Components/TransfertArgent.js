@@ -1,36 +1,16 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Image, TextInput ,Text} from 'react-native';
 
-class Simuler extends React.Component {
+class TransfertArgent extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-          montant:"",
-          mois:"",
-          taux:"5",
-          simulation:""
 
         };
     }
 
     componentDidMount() {
-      this.handleInputTextChange()
-    }
-
-    handleInputTextChange(){
-      var self =this
-      console.log("////////////////")
-      console.log("montant="+self.state.montant)
-      console.log("mois="+self.state.mois)
-      console.log("taux="+self.state.taux)
-      let interet = ((self.state.montant*self.state.taux/100)+self.state.montant)/self.state.mois
-     // let montantfinal = self.state.montant+interet
-      //let x = montantfinal/self.state.mois;
-      this.setState({ simulation: interet })
-      console.log("Simulation="+self.state.simulation)
-
-     
     }
 
 
@@ -59,7 +39,7 @@ class Simuler extends React.Component {
                 //backgroundColor: "#00ACEE"
 
             }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.menu} >
                 </TouchableOpacity>
                 <Image
                     style={{
@@ -84,45 +64,55 @@ class Simuler extends React.Component {
                     
                    
                     <TextInput style={styles.inputStyle}
-                        placeholder='Montant (DT)'
+                        placeholder='De'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        onChangeText={(itemValue, itemIndex) => this.setState({ montant: itemValue })}
+                        secureTextEntry
+                        onChangeText={(text) => this.setState({ password: text })}
                     ></TextInput>
                      <TextInput style={styles.inputStyle}
-                        placeholder='Duree (Mois)'
+                        placeholder='A'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        onChangeText={(itemValue, itemIndex) => this.setState({ mois: itemValue })}
+                        secureTextEntry
+                        onChangeText={(text) => this.setState({ password: text })}
                     ></TextInput>
-                    <Text style={styles.inputStyle}
-                        placeholder='Taux du crédit (%)'
+                     <TextInput style={styles.inputStyle}
+                        placeholder='carte bancaire'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        value="5"
-                        onChangeText={(itemValue, itemIndex) => this.setState({ taux: itemValue })}
-                    ></Text>
-
-
-
-                    {(this.state.simulation)===NaN ? (<Text></Text>)
-                      :(<Text>   {this.state.simulation}DT </Text>)
-                    }
-                    
-                     
-                    
-                     <TouchableOpacity style={styles.buttonSign} onPress={this.handleInputTextChange.bind(this)}>
-                        <Text style={{
-                            marginTop: '0%', fontSize: 18,
-                            color: '#FAF5F0', textAlign: 'center'
-                        }}>{this.state.busyClick ? "S'il vous plaît, attendez ..." : "Simuler"}</Text>
-                    </TouchableOpacity>
+                        secureTextEntry
+                        onChangeText={(text) => this.setState({ password: text })}
+                    ></TextInput>
+                    <TextInput style={styles.inputStyle}
+                        placeholder='CVC'
+                        autoCapitalize='none'
+                        placeholderTextColor="#FAF5F0"
+                        secureTextEntry
+                        onChangeText={(text) => this.setState({ password: text })}
+                    ></TextInput>
+                    <TextInput style={styles.inputStyle}
+                        placeholder='Montant'
+                        autoCapitalize='none'
+                        placeholderTextColor="#FAF5F0"
+                        secureTextEntry
+                        onChangeText={(text) => this.setState({ password: text })}
+                    ></TextInput>
                     
 
                     </View>
               
                    <View style={styles.footer}>
-                 
+                   <TouchableOpacity style={styles.buttonSign}
+                        onPress={() => {
+                            this.props.navigation.navigate('TransactionsClient')
+                        }}
+                    >
+                        <Text style={{
+                            marginTop: '0%', fontSize: 18,
+                            color: '#FAF5F0', textAlign: 'center'
+                        }}>{this.state.busyClick ? "S'il vous plaît, attendez ..." : "Transferer"}</Text>
+                    </TouchableOpacity>
                    </View>
             </View>
         );
@@ -161,20 +151,20 @@ const styles = StyleSheet.create({
         //marginLeft: "10%",
         paddingLeft: 30,
         borderWidth: 1,
-        color: '#FFFFFF',
+        color: '#FAF5F0',
         borderColor: '#FAF5F0',
     },
     buttonSign: {
         backgroundColor: "#1066FF",
         marginTop: "3%",
-        height: "15%",
-        width: "50%",
+        height: "30%",
+        width: "80%",
         borderRadius: 25,
         justifyContent: "center",
         alignItems: "center",
     },
 });
 
-export default Simuler;
+export default TransfertArgent;
 
 

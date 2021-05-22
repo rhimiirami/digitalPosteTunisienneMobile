@@ -50,13 +50,13 @@ class Graph extends React.Component {
                 <View style={styles.body}>
 
 
-                    <WebView source={{
-                        uri: 'https://www.xe.com/fr/currencycharts/'
-                    }}
+                    <WebView   
+                //    source={{ html: '<iframe width="100%" height="100%" src="https://www.xe.com/fr/currencycharts/" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' }}
                         //scalesPageToFit={false}
+                        source={{uri:'https://www.xe.com/fr/currencycharts/'}}
                         scalesPageToFit={scalesPageToFit}
                         bounces={false}
-                        scrollEnabled={false}
+                        scrollEnabled={true}
 
                     //useWebKit={true}
                     //injectedJavaScript={myScript}
@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     }, body: {
         // marginTop: '15%',
         flex: 3,
+        
         //alignItems: "center",
         //justifyContent: "center"
         //backgroundColor: "red"
