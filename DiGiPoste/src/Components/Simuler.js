@@ -9,7 +9,10 @@ class Simuler extends React.Component {
           montant:"",
           mois:"",
           taux:"5",
-          simulation:""
+          simulation:"",
+            userAcceuil: (this.props.route.params) ? this.props.route.params : "",
+            userClient: (this.props.route.params) ? this.props.route.params : "",
+            userAdmin: (this.props.route.params) ? this.props.route.params : "",
 
         };
     }
@@ -32,14 +35,23 @@ class Simuler extends React.Component {
 
      
     }
-
+    goBack() {
+        //alert("im here0")
+        if (this.props.route.params.userAcceuil === "acceuil") {
+            this.props.navigation.navigate('Acceuil')
+            //alert("im here")
+        } else if (this.props.route.params.userClient === "client") {
+            this.props.navigation.navigate('HomeClient')
+            // alert("im here----")
+        }
+    }
 
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
                     <TouchableOpacity style={{ marginTop: '0%', marginLeft: "5%" }}
-                        onPress={() => { this.props.navigation.navigate('HomeClient') }}>
+                        onPress={() => { this.goBack() }}>
                         <Image
                             style={{
                                 marginTop: '6%', marginRight: "0%",

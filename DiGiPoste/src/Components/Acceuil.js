@@ -10,10 +10,10 @@ class CovertisseurDevises extends React.Component {
         super(props);
         this.state = {
             ChangedDemandes: false,
-            ChangedClients: false,
+            Changedacceuils: false,
             ChangedComptes: false,
             ChangeTransactions: false,
-            ChangeTransfert:false
+            ChangeTransfert: false
 
         };
     }
@@ -24,22 +24,22 @@ class CovertisseurDevises extends React.Component {
     showDemandes() {
         if (this.state.ChangedDemandes === false) {
             this.setState({ ChangedDemandes: true });
-            this.setState({ ChangedClients: false });
+            this.setState({ Changedacceuils: false });
             this.setState({ ChangeTransfert: false });
             this.setState({ ChangedComptes: false });
         } else if (this.state.ChangedDemandes === true) {
             this.setState({ ChangedDemandes: false });
         }
     }
-    showClients() {
-        //alert(this.state.ChangedClients)
-        if (this.state.ChangedClients === false) {
-            this.setState({ ChangedClients: true });
+    showacceuils() {
+        //alert(this.state.Changedacceuils)
+        if (this.state.Changedacceuils === false) {
+            this.setState({ Changedacceuils: true });
             this.setState({ ChangedDemandes: false });
             this.setState({ ChangeTransfert: false });
             this.setState({ ChangedComptes: false });
-        } else if (this.state.ChangedClients === true) {
-            this.setState({ ChangedClients: false });
+        } else if (this.state.Changedacceuils === true) {
+            this.setState({ Changedacceuils: false });
         }
     }
     showComptes() {
@@ -47,7 +47,7 @@ class CovertisseurDevises extends React.Component {
             this.setState({ ChangedComptes: true });
             this.setState({ ChangedDemandes: false });
             this.setState({ ChangeTransfert: false });
-            this.setState({ ChangedClients: false });
+            this.setState({ Changedacceuils: false });
         } else if (this.state.ChangedComptes === true) {
             this.setState({ ChangedComptes: false });
         }
@@ -59,7 +59,7 @@ class CovertisseurDevises extends React.Component {
             this.setState({ ChangedComptes: false });
             this.setState({ ChangeTransfert: false });
             this.setState({ ChangedDemandes: false });
-            this.setState({ ChangedClients: false });
+            this.setState({ Changedacceuils: false });
         } else if (this.state.ChangeTransactions === true) {
             this.setState({ ChangeTransactions: false });
         }
@@ -72,7 +72,7 @@ class CovertisseurDevises extends React.Component {
             this.setState({ ChangeTransactions: false });
             this.setState({ ChangedComptes: false });
             this.setState({ ChangedDemandes: false });
-            this.setState({ ChangedClients: false });
+            this.setState({ Changedacceuils: false });
         } else if (this.state.ChangeTransfert === true) {
             this.setState({ ChangeTransfert: false });
         }
@@ -136,7 +136,7 @@ class CovertisseurDevises extends React.Component {
                         style={styles.buttonNext}>
                         <Text style={{
                             color: "#fff", fontSize: 15, fontWeight: "bold",
-                            textAlign: "auto", marginRight:"40%"
+                            textAlign: "auto", marginRight: "40%"
                         }}>
                             Devises
                     </Text>
@@ -146,7 +146,7 @@ class CovertisseurDevises extends React.Component {
 
 
                     {(!this.state.ChangedComptes) === false && <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate('CovertisseurDevises')} style={styles.select}>
+                        onPress={() => this.props.navigation.navigate('CovertisseurDevises', { userAcceuil: "acceuil" })} style={styles.select}>
                         <Text style={{
                             color: "#1066FF", fontSize: 15, fontWeight: "bold",
                             textAlign: "auto", marginTop: "0%"
@@ -156,7 +156,7 @@ class CovertisseurDevises extends React.Component {
                     </TouchableOpacity>
                     }
                     {(!this.state.ChangedComptes) === false && <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate('Graph')} style={styles.select}>
+                        onPress={() => this.props.navigation.navigate('Graph', { userAcceuil: "acceuil" })} style={styles.select}>
                         <Text style={{
                             color: "#1066FF", fontSize: 15, fontWeight: "bold",
                             textAlign: "auto", marginTop: "0%"
@@ -173,7 +173,7 @@ class CovertisseurDevises extends React.Component {
                         style={styles.buttonNext}>
                         <Text style={{
                             color: "#fff", fontSize: 15, fontWeight: "bold",
-                            textAlign: "auto", marginRight:"13%"
+                            textAlign: "auto", marginRight: "13%"
                         }}>
                             Transferer de l'argent
                     </Text>
@@ -191,11 +191,11 @@ class CovertisseurDevises extends React.Component {
 
 
 
-                        <TouchableOpacity onPress={() => { this.showTransaction() }}
+                    <TouchableOpacity onPress={() => { this.showTransaction() }}
                         style={styles.buttonNext}>
                         <Text style={{
                             color: "#fff", fontSize: 15, fontWeight: "bold",
-                            textAlign: "auto", marginRight:"25%"
+                            textAlign: "auto", marginRight: "25%"
                         }}>
                             Transactions
                     </Text>
@@ -211,11 +211,11 @@ class CovertisseurDevises extends React.Component {
 
 
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Simuler')}
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Simuler', { userAcceuil: "acceuil" })}
                         style={styles.buttonNext}>
                         <Text style={{
                             color: "#fff", fontSize: 15, fontWeight: "bold",
-                            textAlign: "auto", marginRight:"20%"
+                            textAlign: "auto", marginRight: "20%"
                         }}>
                             Simuler un crédit
                     </Text>
@@ -224,30 +224,30 @@ class CovertisseurDevises extends React.Component {
 
 
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('LocalisationAgences')}
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('LocalisationAgences', { userAcceuil: "acceuil" })}
                         style={styles.buttonNext}>
                         <Text style={{
                             color: "#fff", fontSize: 15, fontWeight: "bold",
-                            textAlign: "auto", marginRight:"20%"
+                            textAlign: "auto", marginRight: "20%"
                         }}>
-                             Trouver Agence
+                            Trouver Agence
                     </Text>
                         <Flech0></Flech0>
                     </TouchableOpacity>
 
 
 
-                    <TouchableOpacity onPress={() => { this.showClients() }}
+                    <TouchableOpacity onPress={() => { this.showacceuils() }}
                         style={styles.buttonNext}>
                         <Text style={{
                             color: "#fff", fontSize: 15, fontWeight: "bold",
-                            textAlign: "auto", marginRight:"20%"
+                            textAlign: "auto", marginRight: "20%"
                         }}>
                             Contacter nous..
                     </Text>
                         <Flech0></Flech0>
                     </TouchableOpacity>
-                    {(!this.state.ChangedClients) === false && <TouchableOpacity onPress={this.dialCall}
+                    {(!this.state.Changedacceuils) === false && <TouchableOpacity onPress={this.dialCall}
                         style={styles.select}>
                         <Text style={{
                             color: "#1066FF", fontSize: 15, fontWeight: "bold",
@@ -257,7 +257,7 @@ class CovertisseurDevises extends React.Component {
                     </Text>
                     </TouchableOpacity>
                     }
-                    {(!this.state.ChangedClients) === false && <TouchableOpacity onPress={() => this.props.navigation.navigate('ContactSiege')}
+                    {(!this.state.Changedacceuils) === false && <TouchableOpacity onPress={() => this.props.navigation.navigate('ContactSiege', { user: "acceuil" })}
                         style={styles.select}>
                         <Text style={{
                             color: "#1066FF", fontSize: 15, fontWeight: "bold",

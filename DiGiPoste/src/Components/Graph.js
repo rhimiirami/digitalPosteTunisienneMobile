@@ -22,7 +22,9 @@ class Graph extends React.Component {
         super(props);
         this.state = {
 
-
+            userAcceuil: (this.props.route.params) ? this.props.route.params : "",
+            userClient: (this.props.route.params) ? this.props.route.params : "",
+            userAdmin: (this.props.route.params) ? this.props.route.params : "",
         };
     }
 
@@ -30,14 +32,24 @@ class Graph extends React.Component {
 
     }
 
+    goBack() {
+        //alert("im here0")
+        if (this.props.route.params.userAcceuil === "acceuil") {
+            this.props.navigation.navigate('Acceuil')
+            //alert("im here")
+        } else if (this.props.route.params.userClient === "client") {
+            this.props.navigation.navigate('HomeClient')
+            // alert("im here----")
+        }
+    }
 
     render() {
-
+        alert("userClient==>" + this.props.route.params.userClient + "=========>userAcceuil==>" + this.props.route.params.userAcceuil + "=========>userAcceuil==>" + this.props.route.params.userAcceuil)
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
                     <TouchableOpacity style={{ marginTop: '0%', marginLeft: "5%" }}
-                        onPress={() => { this.props.navigation.navigate('Acceuil') }}>
+                        onPress={() => { this.goBack() }}>
                         <Image
                             style={{
                                 marginTop: '1%', marginRight: "0%",
