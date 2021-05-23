@@ -169,7 +169,7 @@ function Loading({ navigation }) {
                 }
 
 
-                <TouchableOpacity  onPress={() => navigation.navigate('TransfertArgent')}
+                <TouchableOpacity onPress={() => navigation.navigate('TransfertArgent')}
                     style={styles.buttonNext}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",
@@ -244,7 +244,7 @@ function Loading({ navigation }) {
                     </Text>
                 </TouchableOpacity>
                 }
-                <View style={{ alignItems: "center", marginTop: "15%" }}>
+                <View style={{ alignItems: "center", marginTop: "5%" }}>
                     <Image
                         style={{
                             marginTop: '0%',

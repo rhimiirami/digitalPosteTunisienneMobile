@@ -1,7 +1,7 @@
 import * as React from "react"
 import Svg, { Rect, Path } from "react-native-svg"
 
-function BackPage(props) {
+function eyeSVG(props) {
     return (
         <Svg
             x="0px"
@@ -48,5 +48,4 @@ function BackPage(props) {
     )
 }
 
-export default BackPage
-
+export default eyeSVG

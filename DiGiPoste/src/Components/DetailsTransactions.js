@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View,Text,TouchableOpacity,Image} from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 
 class DetailsTransactions extends React.Component {
 
@@ -17,9 +17,9 @@ class DetailsTransactions extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                 <View style={styles.header}>
-                    <TouchableOpacity style={{marginTop: '0%', marginLeft: "5%"}}
-                        onPress={() => {this.props.navigation.navigate('HomeClient')}}>
+                <View style={styles.header}>
+                    <TouchableOpacity style={{ marginTop: '0%', marginLeft: "5%" }}
+                        onPress={() => { this.props.navigation.navigate('HomeClient') }}>
                         <Image
                             style={{
                                 marginTop: '6%', marginRight: "0%",
@@ -31,24 +31,24 @@ class DetailsTransactions extends React.Component {
                 </View>
                 <View style={styles.body}>
                     <View style={styles.viewtext}>
-                    <Text style={styles.text}>Transaction Num:</Text>
-                    <Text style={styles.text}> 0x45458a1sb444e44d5646</Text>
-                    </View>
-                    <View style={styles.viewtext}>
-                    <Text style={styles.text}>From:</Text>
-                    <Text style={styles.text}>319562879563275127841</Text>
-                    </View>
-                    <View style={styles.viewtext}>
-                    <Text style={styles.text}>To:</Text>
-                    <Text style={styles.text}>789562879563287512498</Text>
-                    </View>
-                    <View style={styles.viewtext}>
-                    <Text style={styles.text}>Date:</Text>
-                    <Text style={styles.text}>01/02/2021</Text>
-                    </View>
-                    
+                        <Text style={styles.text}>Transaction Num:<Text style={styles.text}> 0x45458a1sb444e44d5646</Text></Text>
 
                     </View>
+                    <View style={styles.viewtext}>
+                        <Text style={styles.text}>From:<Text style={styles.text}>319562879563275127841</Text></Text>
+
+                    </View>
+                    <View style={styles.viewtext}>
+                        <Text style={styles.text}>To:<Text style={styles.text}>789562879563287512498</Text></Text>
+
+                    </View>
+                    <View style={styles.viewtext}>
+                        <Text style={styles.text}>Date:<Text style={styles.text}>01/02/2021</Text></Text>
+
+                    </View>
+
+
+                </View>
 
             </View>
         );
@@ -64,18 +64,18 @@ const styles = StyleSheet.create({
     header: {
         flex: 1,
     },
-    body:{
-        flex:4,
-       // backgroundColor:"red"
+    body: {
+        flex: 4,
+        // backgroundColor:"red"
     },
-    viewtext:{
-        width:"100%",
-        flexDirection:"row",
-        justifyContent:"center",
-        
+    viewtext: {
+        width: "100%",
+        flexDirection: "row",
+        justifyContent: "center",
+
     },
-    text:{
-        color:"#FFFFFF"
+    text: {
+        color: "#FFFFFF"
     }
 });
 

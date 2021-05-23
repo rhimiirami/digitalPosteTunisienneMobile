@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Image, TextInput ,Text} from 'react-native';
+import { StyleSheet, View, TouchableOpacity,ScrollView, Image, TextInput ,Text} from 'react-native';
 
 class TransfertArgent extends React.Component {
 
@@ -55,14 +55,14 @@ class TransfertArgent extends React.Component {
 
                 <View style={styles.body}>
                    
-                <Text style={{marginTop: '-40%',fontSize: 20, width: "70%",
+                <Text style={{marginTop: '0%',fontSize: 20, width: "70%",
                 color: '#FAF5F0', textAlign: "center", fontWeight: 'bold'}}>
                 Transferer de l'argent
                     
                     </Text>
 
-                    
-                   
+                    <ScrollView style={{ width: "100%", height: "100%" }}> 
+                    <View style={{ width: "100%", height: "100%",alignItems: "center"}}> 
                     <TextInput style={styles.inputStyle}
                         placeholder='De'
                         autoCapitalize='none'
@@ -98,8 +98,8 @@ class TransfertArgent extends React.Component {
                         secureTextEntry
                         onChangeText={(text) => this.setState({ password: text })}
                     ></TextInput>
-                    
-
+                    </View>
+                   </ScrollView>
                     </View>
               
                    <View style={styles.footer}>
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     header: {
-        flex: 2,
+        flex: 0.25,
     },
     body:{
         //backgroundColor:"red",
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     },
     footer: {
       //  backgroundColor: "green",
-        flex: 2,
+        flex: 1,
         justifyContent: "center",
         alignItems: "center",
     },
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     buttonSign: {
         backgroundColor: "#1066FF",
         marginTop: "3%",
-        height: "30%",
+        height: "45%",
         width: "80%",
         borderRadius: 25,
         justifyContent: "center",
