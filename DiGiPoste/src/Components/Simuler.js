@@ -1,15 +1,29 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Image, TextInput ,Text} from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
+import WebView from 'react-native-webview';
+import FlechBackSVG from '../Svg/FlechBackSVG';
+
+const myScript = `
+      document.body.style.backgroundColor = '#27277A';
+      
+      //document.querySelector('.VYPuyc.vmi1sd').remove();
+      //document.querySelector('.OB3zUb.a1l33d').remove();
+      document.querySelector(".heading-text").remove();
+      document.querySelector(".header-banner").remove();
+      document.querySelector("header").remove();
+      document.getElementById("real_estate_loan_amount_simulator-simulator").remove("");
+      document.getElementById("real_estate_loan_payback_duration_simulator-simulator").remove("");
+      document.querySelector(".content-footer-container").remove();
+      document.querySelector(".wysiwyg-container").remove();
+      document.querySelector("footer").remove();
+      true; // note: this is required, or you'll sometimes get silent failures
+    `;
 
 class Simuler extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-          montant:"",
-          mois:"",
-          taux:"5",
-          simulation:"",
             userAcceuil: (this.props.route.params) ? this.props.route.params : "",
             userClient: (this.props.route.params) ? this.props.route.params : "",
             userAdmin: (this.props.route.params) ? this.props.route.params : "",
@@ -18,23 +32,9 @@ class Simuler extends React.Component {
     }
 
     componentDidMount() {
-      this.handleInputTextChange()
+
     }
 
-    handleInputTextChange(){
-      var self =this
-      console.log("////////////////")
-      console.log("montant="+self.state.montant)
-      console.log("mois="+self.state.mois)
-      console.log("taux="+self.state.taux)
-      let interet = ((self.state.montant*self.state.taux/100)+self.state.montant)/self.state.mois
-     // let montantfinal = self.state.montant+interet
-      //let x = montantfinal/self.state.mois;
-      this.setState({ simulation: interet })
-      console.log("Simulation="+self.state.simulation)
-
-     
-    }
     goBack() {
         //alert("im here0")
         if (this.props.route.params.userAcceuil === "acceuil") {
@@ -45,8 +45,8 @@ class Simuler extends React.Component {
             // alert("im here----")
         }
     }
-
     render() {
+
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
@@ -60,86 +60,32 @@ class Simuler extends React.Component {
                             source={require('../Svg/b.png')} >
                         </Image>
                     </TouchableOpacity>
-                    
-            <View style={{
-                justifyContent: "space-between",
-                flexDirection: "row",
-                marginLeft: 10,
-                marginRight: 10,
-                marginTop: "2%",
-                //flex: 0.5,
-                //backgroundColor: "#00ACEE"
-
-            }}>
-                <TouchableOpacity>
-                </TouchableOpacity>
-                <Image
-                    style={{
-                        marginTop: '2%', marginRight: "17%",
-                        width: 250, height: 70
-                    }}
-                    source={require('../Svg/title.png')} >
-                </Image>
-
-            </View>
-                    
                 </View>
-
                 <View style={styles.body}>
-                   
-                <Text style={{marginTop: '-40%',fontSize: 20, width: "70%",
-                color: '#FAF5F0', textAlign: "center", fontWeight: 'bold'}}>
-                Transferer de l'argent
-                    
-                    </Text>
+                    {/* <FlechBackSVG></FlechBackSVG> */}
+                    <WebView source={{
+                        uri: 'https://www.lacentraledefinancement.fr/pret-credit-immobilier/les-simulateurs-de-prets-et-de-credit-immobilier/simulateur-pret-immobilier/'
+                    }}
+                        //useWebKit={true}
+                        injectedJavaScript={myScript}
+                    />
+                    {/* <WebView
+                        //source={{ html: '<iframe width="100%" height="100%" src="https://adssettings.google.com/authenticated" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' }}
+                        source={{
+                            uri: 'https://adssettings.google.com/authenticated'
+                        }}
+                        injectedJavaScript={myScript}
+                        useWebKit={true}
+                    /> */}
 
-                    
-                   
-                    <TextInput style={styles.inputStyle}
-                        placeholder='Montant (DT)'
-                        autoCapitalize='none'
-                        placeholderTextColor="#FAF5F0"
-                        onChangeText={(itemValue, itemIndex) => this.setState({ montant: itemValue })}
-                    ></TextInput>
-                     <TextInput style={styles.inputStyle}
-                        placeholder='Duree (Mois)'
-                        autoCapitalize='none'
-                        placeholderTextColor="#FAF5F0"
-                        onChangeText={(itemValue, itemIndex) => this.setState({ mois: itemValue })}
-                    ></TextInput>
-                    <Text style={styles.inputStyle}
-                        placeholder='Taux du crédit (%)'
-                        autoCapitalize='none'
-                        placeholderTextColor="#FAF5F0"
-                        value="5"
-                        onChangeText={(itemValue, itemIndex) => this.setState({ taux: itemValue })}
-                    ></Text>
+                </View>
+                {/* <View style={styles.footer}>
 
 
-
-                    {(this.state.simulation)===NaN ? (<Text></Text>)
-                      :(<Text>   {this.state.simulation}DT </Text>)
-                    }
-                    
-                     
-                    
-                     <TouchableOpacity style={styles.buttonSign} onPress={this.handleInputTextChange.bind(this)}>
-                        <Text style={{
-                            marginTop: '0%', fontSize: 18,
-                            color: '#FAF5F0', textAlign: 'center'
-                        }}>{this.state.busyClick ? "S'il vous plaît, attendez ..." : "Simuler"}</Text>
-                    </TouchableOpacity>
-                    
-
-                    </View>
-              
-                   <View style={styles.footer}>
-                 
-                   </View>
+                </View> */}
             </View>
         );
     }
-
 }
 
 const styles = StyleSheet.create({
@@ -148,45 +94,26 @@ const styles = StyleSheet.create({
         flex: 1
     },
     header: {
-        flex: 2,
-    },
-    body:{
-        //backgroundColor:"red",
-        flex:4,
-        alignItems:"center",
-        justifyContent:"center",
-        marginTop:"40%"
+        flex: 0,
+    }, body: {
+        // marginTop: '15%',
+        flex: 3,
+        //alignItems: "center",
+        //justifyContent: "center"
+        //backgroundColor: "red"
+
     },
     footer: {
-      //  backgroundColor: "green",
-        flex: 2,
+        //backgroundColor: "red",
+        flex: 1,
         justifyContent: "center",
         alignItems: "center",
     },
- 
-    inputStyle: {
-        borderRadius: 25,
-        height: "15%",
-        width: '80%',
-        fontSize: 18,
-        marginTop: '3%',
-        //marginLeft: "10%",
-        paddingLeft: 30,
-        borderWidth: 1,
-        color: '#FFFFFF',
-        borderColor: '#FAF5F0',
-    },
-    buttonSign: {
-        backgroundColor: "#1066FF",
-        marginTop: "3%",
-        height: "15%",
-        width: "50%",
-        borderRadius: 25,
-        justifyContent: "center",
-        alignItems: "center",
-    },
+
+
 });
 
 export default Simuler;
+
 
 

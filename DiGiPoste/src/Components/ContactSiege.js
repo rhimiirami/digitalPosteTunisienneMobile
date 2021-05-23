@@ -8,21 +8,16 @@ import {
 } from 'react-native';
 import { AppelIcon,Facebook,Youtube,Gmail,Twitter } from '../Svg/telSVG';
 
-
-
-
-
-
-
-
 class ContactSiege extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             busy: true,
-            numeroSiege: "121212121212"
-
+            numeroSiege: "121212121212",
+            userAcceuil: (this.props.route.params) ? this.props.route.params : "",
+            userClient: (this.props.route.params) ? this.props.route.params : "",
+            userAdmin: (this.props.route.params) ? this.props.route.params : "",
         };
     }
 
@@ -43,17 +38,24 @@ class ContactSiege extends React.Component {
         Linking.openURL(phoneNumber);
     };
 
-
+    goBack() {
+        //alert("im here0")
+        if (this.props.route.params.userAcceuil === "acceuil") {
+            this.props.navigation.navigate('Acceuil')
+            //alert("im here")
+        } else if (this.props.route.params.userClient === "client") {
+            this.props.navigation.navigate('HomeClient')
+            // alert("im here----")
+        }
+    }
 
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
                     <View style={{ flexDirection: "row", alignItems: "center", marginTop: "5%" }}>
-
-
                         <TouchableOpacity style={{ marginLeft: "3%" }}
-                            onPress={() => this.props.navigation.navigate('HomeClient')}>
+                            onPress={() => { this.goBack() }}>
                             <Image
                                 style={{
                                     marginTop: '6%', marginRight: "0%",
@@ -231,8 +233,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center",
         borderWidth: 2,
-        borderColor: "#27277A",
-        
+        borderColor: "#27277A"
     },
 });
 

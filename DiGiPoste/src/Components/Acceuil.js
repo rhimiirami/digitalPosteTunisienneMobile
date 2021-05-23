@@ -257,7 +257,7 @@ class CovertisseurDevises extends React.Component {
                     </Text>
                     </TouchableOpacity>
                     }
-                    {(!this.state.Changedacceuils) === false && <TouchableOpacity onPress={() => this.props.navigation.navigate('ContactSiege', { user: "acceuil" })}
+                    {(!this.state.Changedacceuils) === false && <TouchableOpacity onPress={() => this.props.navigation.navigate('ContactSiege', { userAcceuil: "acceuil" })}
                         style={styles.select}>
                         <Text style={{
                             color: "#1066FF", fontSize: 15, fontWeight: "bold",
