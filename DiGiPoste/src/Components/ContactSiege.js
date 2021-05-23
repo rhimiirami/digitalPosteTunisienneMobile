@@ -4,12 +4,9 @@ import {
     Text, StyleSheet, View,
     TouchableOpacity,
     Image,
-    ScrollView,
-    ActivityIndicator,
-    TextInput,
     Linking
 } from 'react-native';
-import { EditP, SearchIcon, Delete } from '../Svg/TimeTokenIcons'
+import { AppelIcon,Facebook,Youtube,Gmail,Twitter } from '../Svg/telSVG';
 
 
 
@@ -46,7 +43,7 @@ class ContactSiege extends React.Component {
         Linking.openURL(phoneNumber);
     };
 
-    
+
 
     render() {
         return (
@@ -88,6 +85,13 @@ class ContactSiege extends React.Component {
                             }}>
                                 Site web
                     </Text>
+                    <Image
+                            style={{
+                                marginTop: '0%',
+                                width: 25, height: 25
+                            }}
+                            source={require('../Svg/logo.png')} >
+                        </Image>
                         </TouchableOpacity>
                         <View style={{ width: "10%" }}>
 
@@ -101,7 +105,7 @@ class ContactSiege extends React.Component {
                             }}>
                                 Facebook
                     </Text>
-
+                              <Facebook></Facebook>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.cadre1}>
@@ -115,6 +119,7 @@ class ContactSiege extends React.Component {
                             }}>
                                 YouTube
                     </Text>
+                    <Youtube></Youtube>
 
                         </TouchableOpacity>
 
@@ -129,6 +134,7 @@ class ContactSiege extends React.Component {
                             }}>
                                 Twitter
                     </Text>
+                    <Twitter></Twitter>
 
                         </TouchableOpacity>
                     </View>
@@ -146,6 +152,7 @@ class ContactSiege extends React.Component {
                             }}>
                                 Téléphone
                     </Text>
+                    <AppelIcon></AppelIcon>
 
                         </TouchableOpacity>
                         <View style={{ width: "10%" }}>
@@ -159,6 +166,7 @@ class ContactSiege extends React.Component {
                             }}>
                                 Email
                     </Text>
+                    <Gmail></Gmail>
 
                         </TouchableOpacity>
                     </View>
@@ -202,7 +210,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-       
+
 
     },
     cadre1: {
@@ -222,8 +230,9 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
-        borderWidth:2,
-        borderColor:"#27277A"
+        borderWidth: 2,
+        borderColor: "#27277A",
+        
     },
 });
 
