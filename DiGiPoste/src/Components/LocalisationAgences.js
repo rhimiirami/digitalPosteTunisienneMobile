@@ -16,9 +16,7 @@ class LocalisationAgences extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({ loading: true })
-        }, 20000)
+
     }
 
     goBack() {
@@ -35,7 +33,7 @@ class LocalisationAgences extends React.Component {
     Indicatir() {
         setTimeout(() => {
             this.setState({ loading: true })
-        }, 20000)
+        }, 2000)
         if (this.state.loading === false)
             return <Indicator />
         else {
@@ -62,9 +60,7 @@ class LocalisationAgences extends React.Component {
                 </View>
                 <View style={styles.body}>
 
-                    {this.state.loading === true && <WebView source={{
-                        uri: 'https://umap.openstreetmap.fr/fr/map/digipost_614276#13/36.8570/11.0785'
-                    }} />}
+                    {this.Indicatir()}
 
 
                 </View>
