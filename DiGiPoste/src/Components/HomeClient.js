@@ -234,7 +234,7 @@ function Loading({ navigation }) {
                     </Text>
                 </TouchableOpacity>
                 }
-                {(!ChangedClients) === false && <TouchableOpacity onPress={() => navigation.navigate('ContactSiege')}
+                {(!ChangedClients) === false && <TouchableOpacity onPress={() => navigation.navigate('ContactSiege',{ userClient: "client" })}
                     style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 15, fontWeight: "bold",

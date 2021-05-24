@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Image, TextInput ,Text} from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Image, TextInput,Text, Picker} from 'react-native';
 
 class DemandeCarteCredit extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-
+            reason: "",
         };
     }
 
@@ -62,6 +62,19 @@ class DemandeCarteCredit extends React.Component {
                     </Text>
 
                     
+
+
+                    <Picker 
+                                    selectedValue={this.state.reason}
+                                    //style={{ width: "80%", color: "#2699FB", marginLeft: "3%" }}
+                                    style={styles.inputStyle}
+                                    onValueChange={(itemValue, itemIndex) => this.setState({ reason: itemValue })}>
+                        
+                                    <Picker.Item label="" value="" />
+                                    <Picker.Item label="Bus en panne" value="Bus en panne" />
+                                    <Picker.Item label="Autre" value="Autre" />
+                                </Picker>
+
                    
                     <TextInput style={styles.inputStyle}
                         placeholder='Nom'

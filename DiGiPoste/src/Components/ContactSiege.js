@@ -45,11 +45,12 @@ class ContactSiege extends React.Component {
             //alert("im here")
         } else if (this.props.route.params.userClient === "client") {
             this.props.navigation.navigate('HomeClient')
-            // alert("im here----")
+           // alert("im here----")
         }
     }
 
     render() {
+        
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
@@ -226,7 +227,7 @@ const styles = StyleSheet.create({
     buttonNext: {
         backgroundColor: "#FAF5F0",
         marginTop: "20%",
-        height: "100%",
+        height: "50%",
         width: "40%",
         borderRadius: 25,
         flexDirection: "row",
