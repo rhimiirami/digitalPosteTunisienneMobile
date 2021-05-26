@@ -56,7 +56,7 @@ class SignIn extends React.Component {
             return false
         }
         else {
-            alert('Succès')
+         //   alert('Succès')
             return true
         }
     }

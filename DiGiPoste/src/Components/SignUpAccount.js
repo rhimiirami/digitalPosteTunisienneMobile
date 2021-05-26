@@ -4,8 +4,7 @@ import {
     Text, StyleSheet, View,
     TouchableOpacity,
     Image,
-    TextInput,
-    CheckBox
+    TextInput
 } from 'react-native';
 
 //const [isSelected, setSelection] = useState(false);
@@ -14,13 +13,58 @@ class SignUpAccount extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isSelected: false
+            isSelected: false,
+
+            numCompte: "",
+            nom: "",
+            prenom: "",
+            numCinPass: "",
+            numTel: "",
+
+            msgNumCompte: "",
+            msgNom: "",
+            msgPrenom: "",
+            msgCinPass: "",
+            msgTel: ""
 
         };
     }
 
-    componentDidMount() {
+    
+    handelLoginBtn = () => {
+        let { numCompte, nom, prenom, numCinPass ,numTel} = this.state;
+        let phoneTest = this.checked( numCompte, nom, prenom, numCinPass ,numTel)
+        if (numCompte && nom && prenom && numCinPass && numTel) {
+            this.setState({ CodeInput: true })
+        }
+    }
+    checked = (numCompte, nom, prenom, numCinPass, numTel) => {
 
+        if (numCompte == '') {
+            this.setState({ msgNumCompte: "Numéro compte obligatoire" })
+            return false
+        }
+
+        else if (nom == '') {
+            this.setState({ msgNom: "Nom obligatoire" })
+            return false
+        }
+        else if (prenom == '') {
+            this.setState({ msgPrenom: "Prénom obligatoire" })
+            return false
+        }
+        else if (numCinPass == '') {
+            this.setState({ msgCinPass: "N° CIN/Passeport obligatoire" })
+            return false
+        }
+        else if (numTel == '') {
+            this.setState({ msgTel: "N° Téléphone obligatoire" })
+            return false
+        }
+        else {
+          //  alert('Succès')
+            return true
+        }
     }
 
     setSelection() {
@@ -32,15 +76,8 @@ class SignUpAccount extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <TouchableOpacity style={{
-                        //justifyContent: "flex-start",
-                        //alignItems: "center",
-                        marginTop: '0%', marginLeft: "5%"
-                    }}
-                        onPress={() => {
-                            this.props.navigation.navigate('HomeAdmin')
-                        }}
-                    >
+                    <TouchableOpacity style={{marginTop: '0%', marginLeft: "5%"}}
+                        onPress={() => {this.props.navigation.navigate('HomeAdmin') }} >
                         <Image
                             style={{
                                 marginTop: '6%', marginRight: "0%",
@@ -48,7 +85,6 @@ class SignUpAccount extends React.Component {
                             }}
                             source={require('../Svg/b.png')} >
                         </Image>
-                        {/* <BackPage></BackPage> */}
                     </TouchableOpacity>
                 </View>
                 <View style={styles.body}>
@@ -67,38 +103,78 @@ class SignUpAccount extends React.Component {
                             autoCapitalize='none'
                             placeholderTextColor="#FAF5F0"
                             onChangeText={(text) => this.setState({ numCompte: text })}
-                        ></TextInput>
+                        ></TextInput>   
+                        <Text style={{
+                            color: "red", fontSize: 13, fontWeight: "bold",
+                            textAlign: "center", marginTop: "0%"
+                        }}>
+                            {this.state.msgNumCompte}
+                        </Text>
+
+
+
                         <TextInput style={styles.inputStyle}
                             placeholder='Nom'
                             autoCapitalize='none'
                             placeholderTextColor="#FAF5F0"
-                            onChangeText={(text) => this.setState({ email: text })}
+                            onChangeText={(text) => this.setState({ nom: text })}
                         ></TextInput>
+                        <Text style={{
+                            color: "red", fontSize: 13, fontWeight: "bold",
+                            textAlign: "center", marginTop: "0%"
+                        }}>
+                            {this.state.msgNom}
+                        </Text>
+
+
+
 
                         <TextInput style={styles.inputStyle}
                             placeholder='Prénom'
                             autoCapitalize='none'
                             placeholderTextColor="#FAF5F0"
-                            onChangeText={(text) => this.setState({ email: text })}
+                            onChangeText={(text) => this.setState({ prenom: text })}
                         ></TextInput>
+                        <Text style={{
+                            color: "red", fontSize: 13, fontWeight: "bold",
+                            textAlign: "center", marginTop: "0%"
+                        }}>
+                            {this.state.msgPrenom}
+                        </Text>
 
 
-                       
+
+
+
                         <TextInput style={styles.inputStyle}
                             placeholder='N° CIN/Passport'
                             autoCapitalize='none'
                             placeholderTextColor="#FAF5F0"
                             secureTextEntry
-                            onChangeText={(text) => this.setState({ password: text })}
+                            onChangeText={(text) => this.setState({ numCinPass: text })}
                         ></TextInput>
+                        <Text style={{
+                            color: "red", fontSize: 13, fontWeight: "bold",
+                            textAlign: "center", marginTop: "0%"
+                        }}>
+                            {this.state.msgCinPass}
+                        </Text>
+
+
+
                         <TextInput style={styles.inputStyle}
                             placeholder='N° Téléphone'
                             autoCapitalize='none'
                             placeholderTextColor="#FAF5F0"
                             secureTextEntry
-                            onChangeText={(text) => this.setState({ password: text })}
+                            onChangeText={(text) => this.setState({ numTel: text })}
                         ></TextInput>
-
+                        <Text style={{
+                            color: "red", fontSize: 13, fontWeight: "bold",
+                            textAlign: "center", marginTop: "0%"
+                        }}>
+                            {this.state.msgTel}
+                        </Text>
 
 
                     </View>
@@ -106,8 +182,10 @@ class SignUpAccount extends React.Component {
                 </View>
                 <View style={styles.footer}>
                     <TouchableOpacity style={styles.buttonSign}
-                         onPress={() => this.props.navigation.navigate('ListeComptesPostales')}
-                    >
+                      //  onPress={() => this.props.navigation.navigate('ListeComptesPostales')}
+                      onPress={() => {
+                        this.handelLoginBtn()
+                    }} >
                         <Text style={{
                             marginTop: '0%', fontSize: 18,
                             color: '#FAF5F0', textAlign: 'center'
@@ -125,21 +203,15 @@ const styles = StyleSheet.create({
         flex: 1
     },
     header: {
-        //backgroundColor: "red",
         flex: 0.5,
-        //justifyContent: "center",
-        //alignItems: "center",
     },
     body: {
-        //backgroundColor: "red",
         flex: 4,
-        //justifyContent: "center",
-        //alignItems: "center",
+       
     },
     footer: {
-        //backgroundColor: "red",
+       
         flex: 0.5,
-        //justifyContent: "center",
         alignItems: "center",
     },
     buttonSign: {
@@ -147,9 +219,6 @@ const styles = StyleSheet.create({
         marginTop: "3%",
         height: "60%",
         width: "80%",
-        //borderColor: '#fff',
-        //borderWidth: 1,
-        //width: "100%",
         borderRadius: 25,
         justifyContent: "center",
         alignItems: "center",

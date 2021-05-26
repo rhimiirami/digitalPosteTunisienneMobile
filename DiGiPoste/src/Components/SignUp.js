@@ -36,18 +36,9 @@ class SignUp extends React.Component {
         return pattern.test(String(email).toLowerCase())
     }
     handelLoginBtn = () => {
-        //alert("45d5d5za" + this.state.numero)
         let { firstname, lastname, email, address, numeroPassport, numero, dateNaiss, confirmPassword } = this.state;
         let phoneTest = this.checked(firstname, lastname, email, address, numeroPassport, numero, dateNaiss, confirmPassword)
-        //let usernameTest = checkUsername(username)
-        //let emailTest = checkEmail(email)
-        //let addressTest = checkAddress(address)
-        /* if (phoneTest && usernameTest && emailTest && addressTest) {
-            //setCodeInput(true)
-            this.setState({ CodeInput: true })
-        } */
         if (firstname && lastname && email && address && numeroPassport && numero && dateNaiss && confirmPassword) {
-            //setCodeInput(true)
             this.setState({ CodeInput: true })
         }
     }
@@ -96,7 +87,7 @@ class SignUp extends React.Component {
             return false
         }
         else {
-            alert('Succès')
+          //  alert('Succès')
             return true
         }
     }

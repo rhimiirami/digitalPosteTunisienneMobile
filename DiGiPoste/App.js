@@ -38,7 +38,7 @@ class App extends Component {
     const Stack = createStackNavigator();
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="SignUp" screenOptions={{ headerShown: false }} >
+        <Stack.Navigator initialRouteName="OneRun" screenOptions={{ headerShown: false }} >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="OneRun" component={OneRun} />
           <Stack.Screen name="TwoRun" component={TwoRun} />

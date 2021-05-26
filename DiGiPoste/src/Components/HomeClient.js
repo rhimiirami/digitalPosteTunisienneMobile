@@ -62,7 +62,7 @@ function Loading({ navigation }) {
         //setChanged(true);
     }
     function disabled() {
-        alert('te')
+     //   alert('te')
     }
     function dialCall() {
         let numeroSiege = "71831174"

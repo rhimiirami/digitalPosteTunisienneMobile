@@ -6,11 +6,56 @@ class TransfertArgent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            from:"",
+            to:"",
+            numCarte:"",
+            cvc:"",
+            montant:"",
+
+            msgfrom:"",
+            msgto:"",
+            msgnumCarte:"",
+            msgcvc:"",
+            msgmontant:""
 
         };
     }
 
-    componentDidMount() {
+    
+    handelLoginBtn = () => {
+        let { from, to, numCarte, cvc ,montant} = this.state;
+        let phoneTest = this.checked( from, to, numCarte, cvc ,montant)
+        if (from && to && numCarte && cvc && montant) {
+            this.setState({ CodeInput: true })
+        }
+    }
+    checked = ( from, to, numCarte, cvc ,montant) => {
+
+        if (from == '') {
+            this.setState({ msgfrom: "Identité obligatoire" })
+            return false
+        }
+
+        else if (to == '') {
+            this.setState({ msgto: "Destination obligatoire" })
+            return false
+        }
+        else if (numCarte == '') {
+            this.setState({ msgnumCarte: "Numéro Carte bancaire obligatoire" })
+            return false
+        }
+        else if (cvc == '') {
+            this.setState({ msgcvc: "N° CIN/Passeport obligatoire" })
+            return false
+        }
+        else if (montant == '') {
+            this.setState({ msgmontant: "N° Téléphone obligatoire" })
+            return false
+        }
+        else {
+           // alert('Succès')
+            return true
+        }
     }
 
 
@@ -67,45 +112,86 @@ class TransfertArgent extends React.Component {
                         placeholder='De'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        secureTextEntry
-                        onChangeText={(text) => this.setState({ password: text })}
+                        onChangeText={(text) => this.setState({ from: text })}
                     ></TextInput>
+                    <Text style={{
+                            color: "red", fontSize: 13, fontWeight: "bold",
+                            textAlign: "center", marginTop: "0%"
+                        }}>
+                            {this.state.msgfrom}
+                        </Text>
+
+
+
                      <TextInput style={styles.inputStyle}
                         placeholder='A'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        secureTextEntry
-                        onChangeText={(text) => this.setState({ password: text })}
+                        onChangeText={(text) => this.setState({ to: text })}
                     ></TextInput>
+                    <Text style={{
+                            color: "red", fontSize: 13, fontWeight: "bold",
+                            textAlign: "center", marginTop: "0%"
+                        }}>
+                            {this.state.msgto}
+                        </Text>
+
+
                      <TextInput style={styles.inputStyle}
                         placeholder='carte bancaire'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        secureTextEntry
-                        onChangeText={(text) => this.setState({ password: text })}
+                        onChangeText={(text) => this.setState({ numCarte: text })}
                     ></TextInput>
+                    <Text style={{
+                            color: "red", fontSize: 13, fontWeight: "bold",
+                            textAlign: "center", marginTop: "0%"
+                        }}>
+                            {this.state.msgnumCarte}
+                        </Text>
+
+
                     <TextInput style={styles.inputStyle}
                         placeholder='CVC'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        secureTextEntry
-                        onChangeText={(text) => this.setState({ password: text })}
+                        onChangeText={(text) => this.setState({ cvc: text })}
                     ></TextInput>
+                    <Text style={{
+                            color: "red", fontSize: 13, fontWeight: "bold",
+                            textAlign: "center", marginTop: "0%"
+                        }}>
+                            {this.state.msgcvc}
+                        </Text>
+
+
+                        
                     <TextInput style={styles.inputStyle}
                         placeholder='Montant'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        secureTextEntry
-                        onChangeText={(text) => this.setState({ password: text })}
+                        onChangeText={(text) => this.setState({ montant: text })}
                     ></TextInput>
+                     <Text style={{
+                            color: "red", fontSize: 13, fontWeight: "bold",
+                            textAlign: "center", marginTop: "0%"
+                        }}>
+                            {this.state.msgmontant}
+                        </Text>
+
+
+
                     </View>
                    </ScrollView>
                     </View>
               
                    <View style={styles.footer}>
                    <TouchableOpacity style={styles.buttonSign}
-                        onPress={() => {
+                        /* onPress={() => {
                             this.props.navigation.navigate('TransactionsClient')
+                        }} */
+                        onPress={() => {
+                            this.handelLoginBtn()
                         }}
                     >
                         <Text style={{
@@ -144,7 +230,7 @@ const styles = StyleSheet.create({
  
     inputStyle: {
         borderRadius: 25,
-        height: "15%",
+        height: "12%",
         width: '80%',
         fontSize: 18,
         marginTop: '3%',

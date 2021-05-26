@@ -79,7 +79,7 @@ class Acceuil extends React.Component {
     }
 
     disabled() {
-        alert('te')
+       // alert('te')
     }
     dialCall() {
         let numeroSiege = "71831174"
