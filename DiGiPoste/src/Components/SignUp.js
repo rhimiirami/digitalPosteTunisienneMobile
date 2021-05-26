@@ -2,7 +2,7 @@
 import React from "react";
 import {
     Text, StyleSheet, View,
-    TouchableOpacity,
+    TouchableOpacity, ScrollView,
     Image,
     TextInput,
     CheckBox
@@ -14,8 +14,11 @@ class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isSelected: false
-
+            message: '',
+            isSelected: false,
+            CodeInput: false,
+            firstname: '', lastname: '', email: '', address: '', numeroPassport: '', numero: '',
+            password: '', confirmPassword: ''
         };
     }
 
@@ -26,6 +29,109 @@ class SignUp extends React.Component {
     setSelection() {
         this.setState({ isSelected: true })
     }
+    isEmailValid = () => {
+        let pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        return pattern.test(String(email).toLowerCase())
+    }
+    handelLoginBtn = () => {
+        //alert("45d5d5za" + this.state.numero)
+        let { firstname, lastname, email, address, numeroPassport, numero, password, confirmPassword } = this.state;
+        let phoneTest = this.checked(firstname, lastname, email, password, address, numeroPassport, numero, password, confirmPassword)
+        //let usernameTest = checkUsername(username)
+        //let emailTest = checkEmail(email)
+        //let addressTest = checkAddress(address)
+        /* if (phoneTest && usernameTest && emailTest && addressTest) {
+            //setCodeInput(true)
+            this.setState({ CodeInput: true })
+        } */
+        if (firstname && lastname && email && address && numeroPassport && numero && password && confirmPassword) {
+            //setCodeInput(true)
+            this.setState({ CodeInput: true })
+        }
+    }
+    checked = (firstname, lastname, email, address, numeroPassport, numero, password, confirmPassword) => {
+
+        if (firstname == '') {
+            this.setState({ message: "This field is required" })
+            //alert("This field is required")
+            return false
+        }
+
+        else if (lastname == '') {
+            this.setState({ message: "This field is required" })
+            //alert("This field is required")
+            return false
+        }
+        else if (email == '') {
+            this.setState({ message: "This field is required" })
+            //alert("This field is required")
+            return false
+        }
+
+        else if (address == '') {
+            this.setState({ message: "This field is required" })
+            //alert("This field is required")
+            return false
+        }
+        else if (numeroPassport == '') {
+            this.setState({ message: "This field is required" })
+            //alert("This field is required")
+            return false
+        }
+        else if (numero == '') {
+            this.setState({ message: "This field is required" })
+            //alert("This field is required")
+            return false
+        }
+        else if (password == '') {
+            this.setState({ message: "This field is required" })
+            //alert("This field is required")
+            return false
+        }
+        else if (confirmPassword == '') {
+            this.setState({ message: "This field is required" })
+            //alert("This field is required")
+            return false
+        }
+        else {
+            alert('Succès')
+            return true
+        }
+    }
+    /* checkUsername = (username) => {
+        if (username == '') {
+            alert("This field is required")
+            return false
+        }
+        else {
+            alert('')
+            return true
+        }
+    }
+    checkEmail = (email) => {
+        if (email == '') {
+            alert("This field is required")
+            return false
+        }
+        else if (!isEmailValid()) {
+            alert('Email not valid')
+            return false
+        }
+        else {
+            alert('')
+            return true
+        }
+    }
+    checkAddress = (address) => {
+        if (address == '') {
+            alert("This field is required")
+            return false
+        }
+        else {
+            alert('Succès')
+            return true
+        }
+    } */
 
     render() {
         var { isSelected } = this.state;
@@ -35,7 +141,7 @@ class SignUp extends React.Component {
                     <TouchableOpacity style={{
                         //justifyContent: "flex-start",
                         //alignItems: "center",
-                        marginTop: '0%', marginLeft: "5%"
+                        marginTop: '2%', marginLeft: "5%"
                     }}
                         onPress={() => {
                             this.props.navigation.navigate('HomeAdmin')
@@ -43,87 +149,136 @@ class SignUp extends React.Component {
                     >
                         <Image
                             style={{
-                                marginTop: '6%', marginRight: "0%",
+                                marginTop: '0%', marginRight: "0%",
                                 width: 60, height: 60
                             }}
                             source={require('../Svg/b.png')} >
                         </Image>
                         {/* <BackPage></BackPage> */}
                     </TouchableOpacity>
-                </View>
-                <View style={styles.body}>
                     <Text style={{
-                        marginTop: '3%', marginLeft: "15%", fontSize: 40, width: "70%",
+                        marginTop: '5%', marginLeft: "0%", fontSize: 30, width: "70%",
                         color: '#FAF5F0', textAlign: "center", fontWeight: 'bold',
                     }}>Ajouter un nouveau client</Text>
+                </View>
+                <View style={styles.body}>
+                    <ScrollView>
 
-                    <View style={{
-                        marginTop: "5%", width: "99%", height: "100%"
-                    }} >
-                        <TextInput style={styles.inputStyle}
-                            placeholder='Nom'
-                            autoCapitalize='none'
-                            placeholderTextColor="#FAF5F0"
-                            onChangeText={(text) => this.setState({ email: text })}
-                        ></TextInput>
+                        <View style={{
+                            marginTop: "0%", width: "99%", height: "100%"
+                        }} >
+                            <TextInput style={styles.inputStyle}
+                                placeholder='Nom'
+                                autoCapitalize='none'
+                                placeholderTextColor="#FAF5F0"
+                                onChangeText={(text) => this.setState({ firstname: text })}
+                            ></TextInput>
+                            <Text style={{
+                                color: "red", fontSize: 13, fontWeight: "bold",
+                                textAlign: "center", marginTop: "0%"
+                            }}>
+                                {this.state.message}
+                            </Text>
+                            <TextInput style={styles.inputStyle}
+                                placeholder='Prénom'
+                                autoCapitalize='none'
+                                placeholderTextColor="#FAF5F0"
+                                onChangeText={(text) => this.setState({ lastname: text })}
+                            ></TextInput>
 
-                        <TextInput style={styles.inputStyle}
-                            placeholder='Prénom'
-                            autoCapitalize='none'
-                            placeholderTextColor="#FAF5F0"
-                            onChangeText={(text) => this.setState({ email: text })}
-                        ></TextInput>
+                            <Text style={{
+                                color: "red", fontSize: 13, fontWeight: "bold",
+                                textAlign: "center", marginTop: "0%"
+                            }}>
+                                {this.state.message}
+                            </Text>
+                            <TextInput style={styles.inputStyle}
+                                placeholder='Adresse Email '
+                                autoCapitalize='none'
+                                placeholderTextColor="#FAF5F0"
+                                onChangeText={(text) => this.setState({ email: text })}
+                            ></TextInput>
 
+                            <Text style={{
+                                color: "red", fontSize: 13, fontWeight: "bold",
+                                textAlign: "center", marginTop: "0%"
+                            }}>
+                                {this.state.message}
+                            </Text>
+                            <TextInput style={styles.inputStyle}
+                                placeholder='Adresse '
+                                autoCapitalize='none'
+                                placeholderTextColor="#FAF5F0"
+                                onChangeText={(text) => this.setState({ address: text })}
+                            ></TextInput>
+                            <Text style={{
+                                color: "red", fontSize: 13, fontWeight: "bold",
+                                textAlign: "center", marginTop: "0%"
+                            }}>
+                                {this.state.message}
+                            </Text>
+                            <TextInput style={styles.inputStyle}
+                                placeholder='N° CIN/Passport'
+                                autoCapitalize='none'
+                                keyboardType="numeric"
+                                placeholderTextColor="#FAF5F0"
 
-                        <TextInput style={styles.inputStyle}
-                            placeholder='Adresse Email '
-                            autoCapitalize='none'
-                            placeholderTextColor="#FAF5F0"
-                            onChangeText={(text) => this.setState({ password: text })}
-                        ></TextInput>
-                        <TextInput style={styles.inputStyle}
-                            placeholder='Adresse '
-                            autoCapitalize='none'
-                            placeholderTextColor="#FAF5F0"
-                            onChangeText={(text) => this.setState({ password: text })}
-                        ></TextInput>
-                        <TextInput style={styles.inputStyle}
-                            placeholder='N° CIN/Passport'
-                            autoCapitalize='none'
-                            placeholderTextColor="#FAF5F0"
-                            secureTextEntry
-                            onChangeText={(text) => this.setState({ password: text })}
-                        ></TextInput>
-                        <TextInput style={styles.inputStyle}
-                            placeholder='N° Téléphone'
-                            autoCapitalize='none'
-                            placeholderTextColor="#FAF5F0"
-                            secureTextEntry
-                            onChangeText={(text) => this.setState({ password: text })}
-                        ></TextInput>
-                        <TextInput style={styles.inputStyle}
-                            placeholder='Create password'
-                            autoCapitalize='none'
-                            placeholderTextColor="#FAF5F0"
-                            secureTextEntry
-                            onChangeText={(text) => this.setState({ password: text })}
-                        ></TextInput>
-                        <TextInput style={styles.inputStyle}
-                            placeholder='Confirm password'
-                            autoCapitalize='none'
-                            placeholderTextColor="#FAF5F0"
-                            secureTextEntry
-                            onChangeText={(text) => this.setState({ password: text })}
-                        ></TextInput>
+                                onChangeText={(text) => this.setState({ numeroPassport: text })}
+                            ></TextInput>
+                            <Text style={{
+                                color: "red", fontSize: 13, fontWeight: "bold",
+                                textAlign: "center", marginTop: "0%"
+                            }}>
+                                {this.state.message}
+                            </Text>
+                            <TextInput style={styles.inputStyle}
+                                placeholder='N° Téléphone'
+                                autoCapitalize='none'
+                                keyboardType="numeric"
+                                placeholderTextColor="#FAF5F0"
 
+                                onChangeText={(text) => this.setState({ numero: text })}
+                            ></TextInput>
+                            <Text style={{
+                                color: "red", fontSize: 13, fontWeight: "bold",
+                                textAlign: "center", marginTop: "0%"
+                            }}>
+                                {this.state.message}
+                            </Text>
+                            <TextInput style={styles.inputStyle}
+                                placeholder='Create password'
+                                autoCapitalize='none'
+                                placeholderTextColor="#FAF5F0"
+                                secureTextEntry
+                                onChangeText={(text) => this.setState({ password: text })}
+                            ></TextInput>
+                            <Text style={{
+                                color: "red", fontSize: 13, fontWeight: "bold",
+                                textAlign: "center", marginTop: "0%"
+                            }}>
+                                {this.state.message}
+                            </Text>
+                            <TextInput style={styles.inputStyle}
+                                placeholder='Confirm password'
+                                autoCapitalize='none'
+                                placeholderTextColor="#FAF5F0"
+                                secureTextEntry
+                                onChangeText={(text) => this.setState({ Confirmpassword: text })}
+                            ></TextInput>
+                            <Text style={{
+                                color: "red", fontSize: 13, fontWeight: "bold",
+                                textAlign: "center", marginTop: "0%"
+                            }}>
+                                {this.state.message}
+                            </Text>
 
-                    </View>
-
+                        </View>
+                    </ScrollView>
                 </View>
                 <View style={styles.footer}>
                     <TouchableOpacity style={styles.buttonSign}
                         onPress={() => {
-                            this.props.navigation.navigate('DataExplorer')
+                            this.handelLoginBtn()
                         }}
                     >
                         <Text style={{
@@ -144,7 +299,8 @@ const styles = StyleSheet.create({
     },
     header: {
         //backgroundColor: "red",
-        flex: 0.5,
+        flex: 0.6,
+        flexDirection: "row"
         //justifyContent: "center",
         //alignItems: "center",
     },

@@ -29,6 +29,8 @@ class SignIn extends React.Component {
 
     }
     login() {
+        let { email, password } = this.state;
+        let phoneTest = this.checked(email, password)
         // alert(this.state.email + this.state.password)
         if (this.state.email === "client" && this.state.password === "123456") {
             this.props.navigation.navigate('HomeClient')
@@ -37,8 +39,42 @@ class SignIn extends React.Component {
         } else {
             alert("Please checked your login and password")
         }
+    }
 
+    checked = (email, password) => {
 
+        if (email == '') {
+            this.setState({ message: "This field is required" })
+            //alert("This field is required")
+            return false
+        }
+
+        else if (password == '') {
+            this.setState({ message: "This field is required" })
+            //alert("This field is required")
+            return false
+        }
+        else {
+            alert('Succès')
+            return true
+        }
+    }
+
+    handelLoginBtn = () => {
+        //alert("45d5d5za" + this.state.numero)
+        let { firstname, lastname, email, address, numeroPassport, numero, password, confirmPassword } = this.state;
+        let phoneTest = this.checked(firstname, lastname, email, password, address, numeroPassport, numero, password, confirmPassword)
+        //let usernameTest = checkUsername(username)
+        //let emailTest = checkEmail(email)
+        //let addressTest = checkAddress(address)
+        /* if (phoneTest && usernameTest && emailTest && addressTest) {
+            //setCodeInput(true)
+            this.setState({ CodeInput: true })
+        } */
+        if (firstname && lastname && email && address && numeroPassport && numero && password && confirmPassword) {
+            //setCodeInput(true)
+            this.setState({ CodeInput: true })
+        }
     }
 
     render() {
@@ -74,7 +110,7 @@ class SignIn extends React.Component {
                 <View style={styles.body}>
                     <ScrollView style={{ width: "100%", height: "100%" }}>
                         <View style={{
-                            alignItems: "center", marginTop: "40%", width: "100%", height: "100%"
+                            alignItems: "center", marginTop: "30%", width: "100%", height: "100%"
                         }} >
                             <TextInput style={styles.inputStyle}
                                 placeholder='Login'
@@ -83,7 +119,12 @@ class SignIn extends React.Component {
                                 onChangeText={(text) => this.setState({ email: text })}
                             ></TextInput>
 
-
+                            <Text style={{
+                                color: "red", fontSize: 13, fontWeight: "bold",
+                                textAlign: "center", marginTop: "0%"
+                            }}>
+                                {this.state.message}
+                            </Text>
                             <TextInput style={styles.inputStyle}
                                 placeholder='Mot de passe'
                                 autoCapitalize='none'
@@ -91,6 +132,13 @@ class SignIn extends React.Component {
                                 secureTextEntry
                                 onChangeText={(text) => this.setState({ password: text })}
                             ></TextInput>
+
+                            <Text style={{
+                                color: "red", fontSize: 13, fontWeight: "bold",
+                                textAlign: "center", marginTop: "0%"
+                            }}>
+                                {this.state.message}
+                            </Text>
                             <TouchableOpacity style={styles.buttonSign}
                                 onPress={() => { this.login() }}
                             //disabled={busyClick}
