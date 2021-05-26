@@ -18,7 +18,9 @@ class SignUp extends React.Component {
             isSelected: false,
             CodeInput: false,
             firstname: '', lastname: '', email: '', address: '', numeroPassport: '', numero: '',
-            password: '', confirmPassword: ''
+            dateNaiss: '', dateInscrpi: '',
+            messageNom:"",messagePrenom:"",messageEmail:"",messageAdress:"",messageCinPass:"",
+            messageTel:"",messageNaiiss:"",messageInscrip:""
         };
     }
 
@@ -35,8 +37,8 @@ class SignUp extends React.Component {
     }
     handelLoginBtn = () => {
         //alert("45d5d5za" + this.state.numero)
-        let { firstname, lastname, email, address, numeroPassport, numero, password, confirmPassword } = this.state;
-        let phoneTest = this.checked(firstname, lastname, email, password, address, numeroPassport, numero, password, confirmPassword)
+        let { firstname, lastname, email, address, numeroPassport, numero, dateNaiss, confirmPassword } = this.state;
+        let phoneTest = this.checked(firstname, lastname, email, address, numeroPassport, numero, dateNaiss, confirmPassword)
         //let usernameTest = checkUsername(username)
         //let emailTest = checkEmail(email)
         //let addressTest = checkAddress(address)
@@ -44,52 +46,52 @@ class SignUp extends React.Component {
             //setCodeInput(true)
             this.setState({ CodeInput: true })
         } */
-        if (firstname && lastname && email && address && numeroPassport && numero && password && confirmPassword) {
+        if (firstname && lastname && email && address && numeroPassport && numero && dateNaiss && confirmPassword) {
             //setCodeInput(true)
             this.setState({ CodeInput: true })
         }
     }
-    checked = (firstname, lastname, email, address, numeroPassport, numero, password, confirmPassword) => {
+    checked = (firstname, lastname, email, address, numeroPassport, numero, dateNaiss, confirmPassword) => {
 
         if (firstname == '') {
-            this.setState({ message: "This field is required" })
+            this.setState({ messageNom: "Nom obligatoire" })
             //alert("This field is required")
             return false
         }
 
         else if (lastname == '') {
-            this.setState({ message: "This field is required" })
+            this.setState({ messagePrenom: "Prénom obligatoire" })
             //alert("This field is required")
             return false
         }
         else if (email == '') {
-            this.setState({ message: "This field is required" })
+            this.setState({ messageEmail: "Email obligatoire" })
             //alert("This field is required")
             return false
         }
 
         else if (address == '') {
-            this.setState({ message: "This field is required" })
+            this.setState({ messageAdress: "Adresse obligatoire" })
             //alert("This field is required")
             return false
         }
         else if (numeroPassport == '') {
-            this.setState({ message: "This field is required" })
+            this.setState({ messageCinPass: "N° CIN/Passeport obligatoire" })
             //alert("This field is required")
             return false
         }
         else if (numero == '') {
-            this.setState({ message: "This field is required" })
+            this.setState({ messageTel: "N° Téléphone obligatoire" })
             //alert("This field is required")
             return false
         }
-        else if (password == '') {
-            this.setState({ message: "This field is required" })
+        else if (dateNaiss == '') {
+            this.setState({ messageNaiiss: "Date Naissance obligatoire" })
             //alert("This field is required")
             return false
         }
-        else if (confirmPassword == '') {
-            this.setState({ message: "This field is required" })
+        else if (dateInscrpi == '') {
+            this.setState({ messageInscrip: "Date d'inscription obligatoire" })
             //alert("This field is required")
             return false
         }
@@ -98,55 +100,16 @@ class SignUp extends React.Component {
             return true
         }
     }
-    /* checkUsername = (username) => {
-        if (username == '') {
-            alert("This field is required")
-            return false
-        }
-        else {
-            alert('')
-            return true
-        }
-    }
-    checkEmail = (email) => {
-        if (email == '') {
-            alert("This field is required")
-            return false
-        }
-        else if (!isEmailValid()) {
-            alert('Email not valid')
-            return false
-        }
-        else {
-            alert('')
-            return true
-        }
-    }
-    checkAddress = (address) => {
-        if (address == '') {
-            alert("This field is required")
-            return false
-        }
-        else {
-            alert('Succès')
-            return true
-        }
-    } */
+   
 
     render() {
         var { isSelected } = this.state;
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <TouchableOpacity style={{
-                        //justifyContent: "flex-start",
-                        //alignItems: "center",
-                        marginTop: '2%', marginLeft: "5%"
-                    }}
+                    <TouchableOpacity style={{marginTop: '2%', marginLeft: "5%" }}
                         onPress={() => {
-                            this.props.navigation.navigate('HomeAdmin')
-                        }}
-                    >
+                            this.props.navigation.navigate('HomeAdmin')}}>
                         <Image
                             style={{
                                 marginTop: '0%', marginRight: "0%",
@@ -177,7 +140,7 @@ class SignUp extends React.Component {
                                 color: "red", fontSize: 13, fontWeight: "bold",
                                 textAlign: "center", marginTop: "0%"
                             }}>
-                                {this.state.message}
+                                {this.state.messageNom}
                             </Text>
                             <TextInput style={styles.inputStyle}
                                 placeholder='Prénom'
@@ -190,7 +153,7 @@ class SignUp extends React.Component {
                                 color: "red", fontSize: 13, fontWeight: "bold",
                                 textAlign: "center", marginTop: "0%"
                             }}>
-                                {this.state.message}
+                                {this.state.messagePrenom}
                             </Text>
                             <TextInput style={styles.inputStyle}
                                 placeholder='Adresse Email '
@@ -203,7 +166,7 @@ class SignUp extends React.Component {
                                 color: "red", fontSize: 13, fontWeight: "bold",
                                 textAlign: "center", marginTop: "0%"
                             }}>
-                                {this.state.message}
+                                {this.state.messageEmail}
                             </Text>
                             <TextInput style={styles.inputStyle}
                                 placeholder='Adresse '
@@ -215,7 +178,7 @@ class SignUp extends React.Component {
                                 color: "red", fontSize: 13, fontWeight: "bold",
                                 textAlign: "center", marginTop: "0%"
                             }}>
-                                {this.state.message}
+                                {this.state.messageAdress}
                             </Text>
                             <TextInput style={styles.inputStyle}
                                 placeholder='N° CIN/Passport'
@@ -229,7 +192,7 @@ class SignUp extends React.Component {
                                 color: "red", fontSize: 13, fontWeight: "bold",
                                 textAlign: "center", marginTop: "0%"
                             }}>
-                                {this.state.message}
+                                {this.state.messageCinPass}
                             </Text>
                             <TextInput style={styles.inputStyle}
                                 placeholder='N° Téléphone'
@@ -243,33 +206,33 @@ class SignUp extends React.Component {
                                 color: "red", fontSize: 13, fontWeight: "bold",
                                 textAlign: "center", marginTop: "0%"
                             }}>
-                                {this.state.message}
+                                {this.state.messageTel}
                             </Text>
                             <TextInput style={styles.inputStyle}
-                                placeholder='Create password'
+                                placeholder='Date de Naissance'
                                 autoCapitalize='none'
                                 placeholderTextColor="#FAF5F0"
-                                secureTextEntry
-                                onChangeText={(text) => this.setState({ password: text })}
+                               
+                                onChangeText={(text) => this.setState({ dateNaiss: text })}
                             ></TextInput>
                             <Text style={{
                                 color: "red", fontSize: 13, fontWeight: "bold",
                                 textAlign: "center", marginTop: "0%"
                             }}>
-                                {this.state.message}
+                                {this.state.messageNaiiss}
                             </Text>
                             <TextInput style={styles.inputStyle}
-                                placeholder='Confirm password'
+                                placeholder="Date d'inscription"
                                 autoCapitalize='none'
                                 placeholderTextColor="#FAF5F0"
-                                secureTextEntry
-                                onChangeText={(text) => this.setState({ Confirmpassword: text })}
+                              
+                                onChangeText={(text) => this.setState({ dateInscrpi: text })}
                             ></TextInput>
                             <Text style={{
                                 color: "red", fontSize: 13, fontWeight: "bold",
                                 textAlign: "center", marginTop: "0%"
                             }}>
-                                {this.state.message}
+                                {this.state.messageInscrip}
                             </Text>
 
                         </View>

@@ -96,7 +96,7 @@ class ProfileClient extends Component {
                         </View>
                         <View>
                             <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
-                                Poste: Chef de service <Text style={styles.textdata2}> </Text>
+                                Poste: utilisateur <Text style={styles.textdata2}> </Text>
                             </Text>
                         </View>
                     </View>

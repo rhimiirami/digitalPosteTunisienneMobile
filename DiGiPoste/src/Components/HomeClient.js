@@ -257,7 +257,7 @@ function CustomDrawerContent(props) {
                 <PhotoProfil></PhotoProfil>
             </View>
             <TouchableOpacity
-                onPress={() => props.navigation.navigate('ProfileClient')}
+                onPress={() => props.navigation.navigate('ProfileClient',{ userClient: "client" })}
                 style={{ alignItems: "center", marginTop: '11%', marginLeft: "20%", flexDirection: "row" }}
             >
                 <View style={{ marginTop: '0%', marginLeft: "0%" }}>
@@ -284,7 +284,7 @@ function CustomDrawerContent(props) {
                 </View>
             </TouchableOpacity>
             <TouchableOpacity
-                onPress={() => props.navigation.navigate('TransactionsClient')}
+                onPress={() => props.navigation.navigate('TransactionsClient',{ userClient: "client" })}
                 style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
             >
                 <View style={{ marginTop: '0%', marginLeft: "0%" }}>
@@ -309,7 +309,7 @@ function CustomDrawerContent(props) {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => props.navigation.navigate('ContactSiege')}
+            <TouchableOpacity onPress={() => props.navigation.navigate('ContactSiege',{ userClient: "client" })}
                 //onPress={() => props.navigation.closeDrawer()} 
                 style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
             >

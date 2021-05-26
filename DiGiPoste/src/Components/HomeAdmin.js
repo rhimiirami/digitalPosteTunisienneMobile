@@ -8,7 +8,7 @@ import {
 } from '@react-navigation/drawer';
 import Menu from '../Svg/Menu'
 import { Help, Home, Flech0, LogoP, Notification, Profil, Setting, Transaction } from '../Svg/TimeTokenIcons'
-import PhotoProfil from './PhotoProfil';
+import PhotoProfilAdmin from './PhotoProfilAdmin';
 //const { height, width } = Dimensions.get('screen');
 
 function Loading({ navigation }) {
@@ -225,7 +225,7 @@ function CustomDrawerContent(props) {
                 }}>Espace administrateur</Text>
             </View>
             <View style={{ marginTop: '11%', alignItems: "center" }}>
-                <PhotoProfil></PhotoProfil>
+                <PhotoProfilAdmin></PhotoProfilAdmin>
             </View>
             <TouchableOpacity
                  onPress={() => props.navigation.navigate('ProfileAdmin')}

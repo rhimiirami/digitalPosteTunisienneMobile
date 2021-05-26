@@ -29,6 +29,7 @@ import TransactionsClient from './src/Components/TransactionsClient';
 import DetailsTransactions from './src/Components/DetailsTransactions';
 import TransfertArgent from './src/Components/TransfertArgent';
 import modifProfilClient from './src/Components/modifProfilClient';
+import modifProfilAdmin from './src/Components/modifProfilAdmin';
 
 
 
@@ -37,7 +38,7 @@ class App extends Component {
     const Stack = createStackNavigator();
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="OneRun" screenOptions={{ headerShown: false }} >
+        <Stack.Navigator initialRouteName="SignUp" screenOptions={{ headerShown: false }} >
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="OneRun" component={OneRun} />
           <Stack.Screen name="TwoRun" component={TwoRun} />
@@ -64,6 +65,7 @@ class App extends Component {
           <Stack.Screen name="DetailsTransactions" component={DetailsTransactions} />
           <Stack.Screen name="TransfertArgent" component={TransfertArgent} />
           <Stack.Screen name="modifProfilClient" component={modifProfilClient} />
+          <Stack.Screen name="modifProfilAdmin" component={modifProfilAdmin} />
 
         </Stack.Navigator>
       </NavigationContainer >

@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Image, TouchableOpacity,TextInput } from 'react
 import PhotoProfil from './PhotoProfil';
 
 
-class modifProfilClient extends Component {
+class modifProfilAdmin extends Component {
 
     constructor(props) {
         super(props);
@@ -51,7 +51,7 @@ class modifProfilClient extends Component {
                             marginTop: '2%', marginLeft: "5%"
                         }}
                             onPress={() => {
-                                this.props.navigation.navigate('ProfileClient')
+                                this.props.navigation.navigate('ProfileAdmin')
                             }}
                         >
                             <Image
@@ -71,31 +71,31 @@ class modifProfilClient extends Component {
                      <View style={{flexDirection:"column",width:"80%"}}>
                          <Text style={{color:"#FFFFFF",fontSize:24}}>Nom</Text>
                      <TextInput style={styles.inputStyle}
-                        value='Trabelsi'
+                        value='Daraji'
                     ></TextInput>
                      </View>
                      <View style={{flexDirection:"column",width:"80%"}}>
                          <Text style={{color:"#FFFFFF",fontSize:24}}>Prénom</Text>
                      <TextInput style={styles.inputStyle}
-                        value='Aymen'
+                        value='Wael'
                     ></TextInput>
                      </View>
                      <View style={{flexDirection:"column",width:"80%"}}>
                          <Text style={{color:"#FFFFFF",fontSize:24}}>Email</Text>
                      <TextInput style={styles.inputStyle}
-                        value='trabelsiaymen@email.com'
+                        value='waeldarraji123@email.com'
                     ></TextInput>
                      </View>
                      <View style={{flexDirection:"column",width:"80%"}}>
                          <Text style={{color:"#FFFFFF",fontSize:24}}>Adress</Text>
                      <TextInput style={styles.inputStyle}
-                        value='Tunis'
+                        value='Nabeul'
                     ></TextInput>
                      </View>
                      <View style={{flexDirection:"column",width:"80%"}}>
                          <Text style={{color:"#FFFFFF",fontSize:24}}>Poste</Text>
                      <TextInput style={styles.inputStyle}
-                        value='utilisateur'
+                        value='Chef de service'
                     ></TextInput>
                      </View>
                    
@@ -128,7 +128,7 @@ class modifProfilClient extends Component {
 
 
 
-export default modifProfilClient;
+export default modifProfilAdmin;
 
 const styles = StyleSheet.create({
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
-import PhotoProfil from './PhotoProfil';
+import PhotoProfilAdmin from './PhotoProfilAdmin';
 
 
 class ProfileAdmin extends Component {
@@ -63,7 +63,7 @@ class ProfileAdmin extends Component {
                             </Image>
                             {/* <BackPage></BackPage> */}
                         </TouchableOpacity>
-                        <PhotoProfil></PhotoProfil>
+                       <PhotoProfilAdmin></PhotoProfilAdmin>
                     </View>
                 </View>
                 <View style={styles.body}>
@@ -72,26 +72,26 @@ class ProfileAdmin extends Component {
                         <View >
 
                             <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "4%" }}>
-                                Nom :Trabelsi  <Text style={styles.textdate}> </Text>
+                                Nom : Daraji  <Text style={styles.textdate}> </Text>
                             </Text>
 
                         </View>
 
                         <View>
                             <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
-                                Prénom : Aymen<Text style={styles.textdata2}> </Text>
+                                Prénom : Wael<Text style={styles.textdata2}> </Text>
                             </Text>
                         </View>
 
                         <View>
                             <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
-                                Email: trabelsiaymen@email.com <Text style={styles.textdata2}> </Text>
+                                Email: waeldarraji123@email.com <Text style={styles.textdata2}> </Text>
                             </Text>
                         </View>
 
                         <View>
                             <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
-                                Adress: Tunis<Text style={styles.textdata2}> </Text>
+                                Adress: Nabeul<Text style={styles.textdata2}> </Text>
                             </Text>
                         </View>
                         <View>
@@ -104,7 +104,7 @@ class ProfileAdmin extends Component {
                 <View style={styles.footer}>
                     <TouchableOpacity
                         style={styles.buttonNext}
-                    //onPress={() => {this.props.navigation.navigate('TwoRun')}}
+                        onPress={() => this.props.navigation.navigate('modifProfilAdmin')}
                     >
                         <Text
                             style={{

@@ -106,9 +106,7 @@ class SignUpAccount extends React.Component {
                 </View>
                 <View style={styles.footer}>
                     <TouchableOpacity style={styles.buttonSign}
-                        onPress={() => {
-                            this.props.navigation.navigate('DataExplorer')
-                        }}
+                         onPress={() => this.props.navigation.navigate('ListeComptesPostales')}
                     >
                         <Text style={{
                             marginTop: '0%', fontSize: 18,
