@@ -63,6 +63,16 @@ function Loading({ navigation }) {
     function disabled() {
         alert('te')
     }
+
+    function _logOut () {
+        var self = this;
+        AsyncStorage.clear((err) => {
+            self.props.navigation.navigate('Acceuil')
+        })
+
+    }
+
+
     return (
         <View style={styles.container}>
 
@@ -119,7 +129,7 @@ function Loading({ navigation }) {
                         color: "#1066FF", fontSize: 16, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
                     }}>
-                        Gérer les demandes de carent de chéque
+                        Gérer les demandes de carnet de chéque
                     </Text>
 
                 </TouchableOpacity>
@@ -135,7 +145,8 @@ function Loading({ navigation }) {
                     <Flech0></Flech0>
                 </TouchableOpacity>
                 {(!ChangedClients) === false && <TouchableOpacity
-                    onPress={() => navigation.navigate('ListeClients')} style={styles.select}>
+                    onPress={() => navigation.navigate('ListeClients')} 
+                    style={styles.select}>
                     <Text style={{
                         color: "#1066FF", fontSize: 16, fontWeight: "bold",
                         textAlign: "auto", marginTop: "0%"
@@ -217,14 +228,14 @@ function CustomDrawerContent(props) {
                 <PhotoProfil></PhotoProfil>
             </View>
             <TouchableOpacity
-                onPress={() => props.navigation.navigate('Profile'), () => { props.navigation.closeDrawer() }}
+                 onPress={() => props.navigation.navigate('ProfileAdmin')}
                 style={{ alignItems: "center", marginTop: '11%', marginLeft: "20%", flexDirection: "row" }}
             >
                 <View style={{ marginTop: '0%', marginLeft: "0%" }}>
                     <Profil></Profil>
                 </View>
 
-                <View style={{ marginTop: '0%', marginLeft: "10%" }}>
+                <View style={{ marginTop: '0%', marginLeft: "10%" }} >
                     <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Profil</Text>
                 </View>
             </TouchableOpacity>
@@ -241,19 +252,7 @@ function CustomDrawerContent(props) {
                     <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Notification</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity
-                //onPress={() => props.navigation.closeDrawer()} 
-                style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
-            >
-                <View style={{ marginTop: '0%', marginLeft: "0%" }}>
-                    <Transaction></Transaction>
-                </View>
-
-                <View style={{ marginTop: '0%', marginLeft: "10%" }}>
-                    <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Transaction</Text>
-                </View>
-            </TouchableOpacity>
-
+           
             <TouchableOpacity
                 //onPress={() => props.navigation.closeDrawer()} 
                 style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
@@ -289,6 +288,7 @@ function CustomDrawerContent(props) {
             </View >
 
             <TouchableOpacity
+             onPress={() => props.navigation.navigate('Acceuil')}
                 //onPress={() => props.navigation.closeDrawer()} 
                 style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
             >
@@ -390,150 +390,3 @@ const styles = StyleSheet.create({
     },
 
 });
-/* function Loading({ navigation }) {
-    const [ChangedDemandes, setChangedDemandes] = useState(false);
-    const [ChangedClients, setChangedClients] = useState(false);
-    const [ChangedComptes, setChangedComptes] = useState(false);
-
-    function showDemandes() {
-        //alert('test')
-        if (!ChangedDemandes === true) {
-            setChangedDemandes(true);
-            // alert("if" + Changed)
-        } else if (!ChangedDemandes === false) {
-            //alert("elseif" + Changed)
-            setChangedDemandes(false);
-        }
-        //setChanged(true);
-    }
-    function showClients() {
-        //alert('test')
-        if (!ChangedClients === true) {
-            setChangedClients(falsetrue);
-            // alert("if" + Changed)
-        } else if (!ChangedClients === false) {
-            //alert("elseif" + Changed)
-            setChangedClients(false);
-        }
-        //setChanged(true);
-    }
-    function showComptes() {
-        //alert('test')
-        if (!ChangedComptes === true) {
-            setChangedComptes(true);
-            // alert("if" + Changed)
-        } else if (!ChangedComptes === false) {
-            //alert("elseif" + Changed)
-            setChangedComptes(false);
-        }
-        //setChanged(true);
-    }
-    return (
-        <View style={styles.container}>
-
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.menu} >
-
-                    <View style={{ flexDirection: 'row', marginTop: "5%" }}>
-                        <Menu>
-                        </Menu>
-
-                    </View>
-
-                </TouchableOpacity>
-            </View>
-
-
-            <View style={styles.body}>
-
-                <TouchableOpacity onPress={showDemandes}
-                    style={styles.buttonNext0}>
-                    <Text style={{
-                        color: "#fff", fontSize: 18, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Gérer les demandes
-                    </Text>
-
-                </TouchableOpacity>
-                {(!ChangedDemandes) === true && <View style={styles.select}>
-                    <Text style={{
-                        color: "#1066FF", fontSize: 18, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Gérer les demandes
-                    </Text>
-                </View>
-                }
-                {(!ChangedDemandes) === true && <View style={styles.select}>
-                    <Text style={{
-                        color: "#1066FF", fontSize: 18, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Gérer les demandes
-                    </Text>
-                </View>
-                }
-
-                <TouchableOpacity onPress={showClients}
-                    style={styles.buttonNext}>
-                    <Text style={{
-                        color: "#fff", fontSize: 18, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Gérer les clients
-                    </Text>
-
-                </TouchableOpacity>
-                {(!ChangedClients) === true && <View style={styles.select}>
-                    <Text style={{
-                        color: "#1066FF", fontSize: 18, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Gérer les clients
-                    </Text>
-                </View>
-                }
-                {(!ChangedClients) === true && <View style={styles.select}>
-                    <Text style={{
-                        color: "#1066FF", fontSize: 18, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Gérer les clients
-                    </Text>
-                </View>
-                }
-
-                <TouchableOpacity onPress={showComptes}
-                    style={styles.buttonNext}>
-                    <Text style={{
-                        color: "#fff", fontSize: 18, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Gérer les comptes
-                    </Text>
-
-                </TouchableOpacity>
-                {(!ChangedComptes) === true && <View style={styles.select}>
-                    <Text style={{
-                        color: "#1066FF", fontSize: 18, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Gérer les comptes
-                    </Text>
-                </View>
-                }
-                {(!ChangedComptes) === true && <View style={styles.select}>
-                    <Text style={{
-                        color: "#1066FF", fontSize: 18, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Gérer les comptes
-                    </Text>
-                </View>
-                }
-            </View>
-
-        </View>
-    );
-} */

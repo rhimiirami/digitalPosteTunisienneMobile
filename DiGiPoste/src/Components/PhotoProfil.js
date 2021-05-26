@@ -35,7 +35,7 @@ class PhotoProfil extends Component {
             <View style={{ alignItems: "center", marginTop: "5%", borderRadius: 15 }}>
                 <View style={{}}>
                     <Image
-                        source={require('../Svg/profil.png')}
+                        source={require('../Svg/profilclients.jpg')}
                         //source={{ uri: `data:image/jpeg;base64,${photoUser}` }}
                         resizeMode="cover"
                         style={styles.image}

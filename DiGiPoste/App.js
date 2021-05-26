@@ -16,7 +16,6 @@ import ProfileAdmin from './src/Components/ProfileAdmin';
 import SignUp from './src/Components/SignUp';
 import SignUpAccount from './src/Components/SignUpAccount';
 import DemandeCarteCredit from './src/Components/DemandeCarteCredit';
-import DemandeCarnetCheque from './src/Components/DemandeCarnetCheque';
 import ListeClients from './src/Components/ListeClients';
 import ListeComptesPostales from './src/Components/ListeComptesPostales';
 import ContactSiege from './src/Components/ContactSiege';
@@ -29,6 +28,7 @@ import LocalisationAgences from './src/Components/LocalisationAgences';
 import TransactionsClient from './src/Components/TransactionsClient';
 import DetailsTransactions from './src/Components/DetailsTransactions';
 import TransfertArgent from './src/Components/TransfertArgent';
+import modifProfilClient from './src/Components/modifProfilClient';
 
 
 
@@ -50,7 +50,6 @@ class App extends Component {
           <Stack.Screen name="ProfileAdmin" component={ProfileAdmin} />
           <Stack.Screen name="SignUp" component={SignUp} />
           <Stack.Screen name="DemandeCarteCredit" component={DemandeCarteCredit} />
-          <Stack.Screen name="DemandeCarnetCheque" component={DemandeCarnetCheque} />
           <Stack.Screen name="SignUpAccount" component={SignUpAccount} />
           <Stack.Screen name="ListeClients" component={ListeClients} />
           <Stack.Screen name="ListeComptesPostales" component={ListeComptesPostales} />
@@ -64,6 +63,7 @@ class App extends Component {
           <Stack.Screen name="TransactionsClient" component={TransactionsClient} />
           <Stack.Screen name="DetailsTransactions" component={DetailsTransactions} />
           <Stack.Screen name="TransfertArgent" component={TransfertArgent} />
+          <Stack.Screen name="modifProfilClient" component={modifProfilClient} />
 
         </Stack.Navigator>
       </NavigationContainer >

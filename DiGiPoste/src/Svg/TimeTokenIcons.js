@@ -716,7 +716,7 @@ function Delete() {
   return (
 
 
-    <Svg id="no" xmlns="http://www.w3.org/2000/svg" width="50" height="45" viewBox="0 0 56 56">
+    <Svg id="no" xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 56 56">
       <Defs>
       </Defs>
       <G id="Ellipse_212" data-name="Ellipse 212" fill="#FAF5F0" stroke="#FAF5F0" stroke-width="1">

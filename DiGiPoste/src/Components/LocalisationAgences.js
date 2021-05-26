@@ -33,7 +33,7 @@ class LocalisationAgences extends React.Component {
     Indicatir() {
         setTimeout(() => {
             this.setState({ loading: true })
-        }, 2000)
+        }, 500)
         if (this.state.loading === false)
             return <Indicator />
         else {

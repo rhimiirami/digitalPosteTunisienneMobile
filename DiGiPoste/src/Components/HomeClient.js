@@ -65,7 +65,7 @@ function Loading({ navigation }) {
         alert('te')
     }
     function dialCall() {
-        let numeroSiege = "222222"
+        let numeroSiege = "71831174"
         let phoneNumber = '';
         if (Platform.OS === 'android') {
             phoneNumber = `tel:${numeroSiege}`;
@@ -106,6 +106,7 @@ function Loading({ navigation }) {
             <View style={styles.body}>
 
                 <TouchableOpacity onPress={showDemandes}
+                onPress={() => navigation.navigate('DemandeCarteCredit')}
                     style={styles.buttonNext0}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",
@@ -115,27 +116,8 @@ function Loading({ navigation }) {
                     </Text>
                     <Flech0></Flech0>
                 </TouchableOpacity>
-                {(!ChangedDemandes) === false && <TouchableOpacity
-                    onPress={() => navigation.navigate('DemandeCarteCredit')} style={styles.select}>
-                    <Text style={{
-                        color: "#1066FF", fontSize: 15, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Demander une carte de crédit
-                    </Text>
-                </TouchableOpacity>
-                }
-                {(!ChangedDemandes) === false && <TouchableOpacity
-                    onPress={() => navigation.navigate('DemandeCarnetCheque')} style={styles.select}>
-                    <Text style={{
-                        color: "#1066FF", fontSize: 15, fontWeight: "bold",
-                        textAlign: "auto", marginTop: "0%"
-                    }}>
-                        Demander un carnet de chèque
-                    </Text>
-
-                </TouchableOpacity>
-                }
+            
+                
 
                 <TouchableOpacity onPress={showComptes}
                     style={styles.buttonNext}>
@@ -192,7 +174,7 @@ function Loading({ navigation }) {
                     <Flech0></Flech0>
                 </TouchableOpacity>
 
-                <TouchableOpacity
+                <TouchableOpacity onPress={() => navigation.navigate('Simuler')}
                     style={styles.buttonNext}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",
@@ -275,7 +257,7 @@ function CustomDrawerContent(props) {
                 <PhotoProfil></PhotoProfil>
             </View>
             <TouchableOpacity
-                onPress={() => props.navigation.navigate('Profile'), () => { props.navigation.closeDrawer() }}
+                onPress={() => props.navigation.navigate('ProfileClient')}
                 style={{ alignItems: "center", marginTop: '11%', marginLeft: "20%", flexDirection: "row" }}
             >
                 <View style={{ marginTop: '0%', marginLeft: "0%" }}>
@@ -287,18 +269,7 @@ function CustomDrawerContent(props) {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity
-                //onPress={() => props.navigation.closeDrawer()} 
-                style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
-            >
-                <View style={{ marginTop: '0%', marginLeft: "0%" }}>
-                    <Notification></Notification>
-                </View>
-
-                <View style={{ marginTop: '0%', marginLeft: "10%" }}>
-                    <Text style={{ fontSize: 20, fontWeight: "bold", color: '#27277A', textAlign: "center" }}>Compte</Text>
-                </View>
-            </TouchableOpacity>
+            
 
             <TouchableOpacity
                 //onPress={() => props.navigation.closeDrawer()} 
@@ -361,6 +332,7 @@ function CustomDrawerContent(props) {
             </View >
 
             <TouchableOpacity
+             onPress={() => props.navigation.navigate('Acceuil')}
                 //onPress={() => props.navigation.closeDrawer()} 
                 style={{ alignItems: "center", marginTop: '5%', marginLeft: "20%", flexDirection: "row" }}
             >

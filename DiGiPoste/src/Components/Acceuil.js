@@ -4,7 +4,7 @@ import FermeSVG from '../Svg/FermeSVG';
 import { Flech0 } from '../Svg/TimeTokenIcons'
 
 
-class CovertisseurDevises extends React.Component {
+class Acceuil extends React.Component {
 
     constructor(props) {
         super(props);
@@ -82,7 +82,7 @@ class CovertisseurDevises extends React.Component {
         alert('te')
     }
     dialCall() {
-        let numeroSiege = "222222"
+        let numeroSiege = "71831174"
         let phoneNumber = '';
         if (Platform.OS === 'android') {
             phoneNumber = `tel:${numeroSiege}`;
@@ -348,4 +348,4 @@ const styles = StyleSheet.create({
     },
 
 });
-export default CovertisseurDevises;
+export default Acceuil;

@@ -134,7 +134,7 @@ class ListeDemandeCarteCredit extends React.Component {
                         </TouchableOpacity>
 
 
-                        <Text style={{ color: "#27277A", fontWeight: "bold", fontSize: 24, textAlign: "center", marginLeft: "10%" }}>Liste des demandes des cartes de credits</Text>
+                        <Text style={{ color: "#27277A", fontWeight: "bold", fontSize: 24, textAlign: "center",width:"80%" }}>Liste des demandes des cartes de credits</Text>
 
                     </View>
 

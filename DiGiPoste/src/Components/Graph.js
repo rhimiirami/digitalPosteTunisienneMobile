@@ -44,7 +44,7 @@ class Graph extends React.Component {
     }
 
     render() {
-        alert("userClient==>" + this.props.route.params.userClient + "=========>userAcceuil==>" + this.props.route.params.userAcceuil + "=========>userAcceuil==>" + this.props.route.params.userAcceuil)
+        //alert("userClient==>" + this.props.route.params.userClient + "=========>userAcceuil==>" + this.props.route.params.userAcceuil + "=========>userAcceuil==>" + this.props.route.params.userAcceuil)
         return (
             <View style={styles.container}>
                 <View style={styles.header}>

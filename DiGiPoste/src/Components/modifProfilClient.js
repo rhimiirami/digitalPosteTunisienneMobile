@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity,TextInput } from 'react-native';
 import PhotoProfil from './PhotoProfil';
 
 
-class ProfileClient extends Component {
+class modifProfilClient extends Component {
 
     constructor(props) {
         super(props);
@@ -68,43 +68,47 @@ class ProfileClient extends Component {
                 </View>
                 <View style={styles.body}>
                     <View style={{ alignItems: "flex-start" }}>
-                        <Text style={{ fontSize: 24, fontWeight: "700", color: "#fff", marginTop: "1%", textAlign: "center" }}> </Text>
-                        <View >
 
-                            <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "4%" }}>
-                                Nom :Trabelsi  <Text style={styles.textdate}> </Text>
-                            </Text>
+                     <View style={{flexDirection:"row"}}>
+                         <Text style={{color:"#FFFFFF",fontSize:24}}>Nom</Text>
+                     <TextInput style={styles.inputStyle}
+                        value='Trabelsi'
+                    ></TextInput>
+                     </View>
+                     <View style={{flexDirection:"row"}}>
+                         <Text style={{color:"#FFFFFF",fontSize:24}}>Prénom</Text>
+                     <TextInput style={styles.inputStyle}
+                        value='Aymen'
+                    ></TextInput>
+                     </View>
+                     <View style={{flexDirection:"row"}}>
+                         <Text style={{color:"#FFFFFF",fontSize:24}}>Email</Text>
+                     <TextInput style={styles.inputStyle}
+                        value='trabelsiaymen@email.com'
+                    ></TextInput>
+                     </View>
+                     <View style={{flexDirection:"row"}}>
+                         <Text style={{color:"#FFFFFF",fontSize:24}}>Adress</Text>
+                     <TextInput style={styles.inputStyle}
+                        value='Tunis'
+                    ></TextInput>
+                     </View>
+                     <View style={{flexDirection:"row"}}>
+                         <Text style={{color:"#FFFFFF",fontSize:24}}>Poste</Text>
+                     <TextInput style={styles.inputStyle}
+                        value='Chef de service'
+                    ></TextInput>
+                     </View>
+                   
+                   
 
-                        </View>
-
-                        <View>
-                            <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
-                                Prénom : Aymen<Text style={styles.textdata2}> </Text>
-                            </Text>
-                        </View>
-
-                        <View>
-                            <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
-                                Email: trabelsiaymen@email.com <Text style={styles.textdata2}> </Text>
-                            </Text>
-                        </View>
-
-                        <View>
-                            <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
-                                Adress: Tunis<Text style={styles.textdata2}> </Text>
-                            </Text>
-                        </View>
-                        <View>
-                            <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold", textAlign: "auto", marginTop: "5%", }}>
-                                Poste: Chef de service <Text style={styles.textdata2}> </Text>
-                            </Text>
-                        </View>
+                        
                     </View>
                 </View>
                 <View style={styles.footer}>
                     <TouchableOpacity
                         style={styles.buttonNext}
-                        onPress={() => this.props.navigation.navigate('modifProfilClient')}
+                        onPress={() => this.props.navigation.navigate('HomeClient')}
                     //onPress={() => {this.props.navigation.navigate('TwoRun')}}
                     >
                         <Text
@@ -112,7 +116,7 @@ class ProfileClient extends Component {
                                 fontSize: 20,
                                 color: '#FFFFFF', textAlign: "center"
                             }}
-                        >Modifier</Text>
+                        >Enregistrer</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -125,7 +129,7 @@ class ProfileClient extends Component {
 
 
 
-export default ProfileClient;
+export default modifProfilClient;
 
 const styles = StyleSheet.create({
 
@@ -214,7 +218,18 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
-
+    inputStyle: {
+        borderRadius: 25,
+        height: "40%",
+        width: '60%',
+        fontSize: 18,
+        marginTop: '2%',
+        //marginLeft: "10%",
+        paddingLeft: 30,
+        borderWidth: 1,
+        color: '#FAF5F0',
+        borderColor: '#FAF5F0',
+    },
 });
 
 //export default Profile;

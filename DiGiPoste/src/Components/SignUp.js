@@ -101,21 +101,14 @@ class SignUp extends React.Component {
                             secureTextEntry
                             onChangeText={(text) => this.setState({ password: text })}
                         ></TextInput>
-                        <TextInput style={styles.inputStyle}
-                            placeholder='Create password'
+                         <TextInput style={styles.inputStyle}
+                            placeholder="Date d'inscription"
                             autoCapitalize='none'
                             placeholderTextColor="#FAF5F0"
                             secureTextEntry
                             onChangeText={(text) => this.setState({ password: text })}
                         ></TextInput>
-                        <TextInput style={styles.inputStyle}
-                            placeholder='Confirm password'
-                            autoCapitalize='none'
-                            placeholderTextColor="#FAF5F0"
-                            secureTextEntry
-                            onChangeText={(text) => this.setState({ password: text })}
-                        ></TextInput>
-
+                        
 
                     </View>
 

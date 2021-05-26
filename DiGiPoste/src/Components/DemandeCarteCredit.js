@@ -55,7 +55,7 @@ class DemandeCarteCredit extends React.Component {
 
                 <View style={styles.body}>
                    
-                <Text style={{marginTop: '-40%',fontSize: 20, width: "70%",
+                <Text style={{marginTop: '-10%',fontSize: 20, width: "70%",
                 color: '#FAF5F0', textAlign: "center", fontWeight: 'bold'}}>
                 Demander une carte de crédit
                     
@@ -63,17 +63,19 @@ class DemandeCarteCredit extends React.Component {
 
                     
 
-
-                    <Picker 
+             <View style={styles.inputStyle}>
+             <Picker 
                                     selectedValue={this.state.reason}
                                     //style={{ width: "80%", color: "#2699FB", marginLeft: "3%" }}
                                     style={styles.inputStyle}
                                     onValueChange={(itemValue, itemIndex) => this.setState({ reason: itemValue })}>
                         
                                     <Picker.Item label="" value="" />
-                                    <Picker.Item label="Bus en panne" value="Bus en panne" />
-                                    <Picker.Item label="Autre" value="Autre" />
+                                    <Picker.Item label="Carte de crédit" value="Carte de crédit" />
+                                    <Picker.Item label="Carnet de chèque" value="Carnet de chèque" />
                                 </Picker>
+             </View>
+                    
 
                    
                     <TextInput style={styles.inputStyle}
@@ -104,7 +106,7 @@ class DemandeCarteCredit extends React.Component {
                    <View style={styles.footer}>
                    <TouchableOpacity style={styles.buttonSign}
                         onPress={() => {
-                            this.props.navigation.navigate('DataExplorer')
+                            this.props.navigation.navigate('HomeClient')
                         }}
                     >
                         <Text style={{
