@@ -19,8 +19,8 @@ class SignUp extends React.Component {
             CodeInput: false,
             firstname: '', lastname: '', email: '', address: '', numeroPassport: '', numero: '',
             dateNaiss: '', dateInscrpi: '',
-            messageNom:"",messagePrenom:"",messageEmail:"",messageAdress:"",messageCinPass:"",
-            messageTel:"",messageNaiiss:"",messageInscrip:""
+            messageNom: "", messagePrenom: "", messageEmail: "", messageAdress: "", messageCinPass: "",
+            messageTel: "", messageNaiiss: "", messageInscrip: ""
         };
     }
 
@@ -87,20 +87,21 @@ class SignUp extends React.Component {
             return false
         }
         else {
-          //  alert('Succès')
+            //  alert('Succès')
             return true
         }
     }
-   
+
 
     render() {
         var { isSelected } = this.state;
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <TouchableOpacity style={{marginTop: '2%', marginLeft: "5%" }}
+                    <TouchableOpacity style={{ marginTop: '2%', marginLeft: "5%" }}
                         onPress={() => {
-                            this.props.navigation.navigate('HomeAdmin')}}>
+                            this.props.navigation.navigate('HomeAdmin')
+                        }}>
                         <Image
                             style={{
                                 marginTop: '0%', marginRight: "0%",
@@ -190,7 +191,6 @@ class SignUp extends React.Component {
                                 autoCapitalize='none'
                                 keyboardType="numeric"
                                 placeholderTextColor="#FAF5F0"
-
                                 onChangeText={(text) => this.setState({ numero: text })}
                             ></TextInput>
                             <Text style={{
@@ -203,7 +203,7 @@ class SignUp extends React.Component {
                                 placeholder='Date de Naissance'
                                 autoCapitalize='none'
                                 placeholderTextColor="#FAF5F0"
-                               
+
                                 onChangeText={(text) => this.setState({ dateNaiss: text })}
                             ></TextInput>
                             <Text style={{
@@ -216,7 +216,7 @@ class SignUp extends React.Component {
                                 placeholder="Date d'inscription"
                                 autoCapitalize='none'
                                 placeholderTextColor="#FAF5F0"
-                              
+
                                 onChangeText={(text) => this.setState({ dateInscrpi: text })}
                             ></TextInput>
                             <Text style={{

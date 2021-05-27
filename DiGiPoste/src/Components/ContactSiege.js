@@ -6,7 +6,7 @@ import {
     Image,
     Linking
 } from 'react-native';
-import { AppelIcon,Facebook,Youtube,Gmail,Twitter } from '../Svg/telSVG';
+import { AppelIcon, Facebook, Youtube, Gmail, Twitter } from '../Svg/telSVG';
 
 class ContactSiege extends React.Component {
 
@@ -45,12 +45,12 @@ class ContactSiege extends React.Component {
             //alert("im here")
         } else if (this.props.route.params.userClient === "client") {
             this.props.navigation.navigate('HomeClient')
-           // alert("im here----")
+            // alert("im here----")
         }
     }
 
     render() {
-        
+
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
@@ -88,13 +88,13 @@ class ContactSiege extends React.Component {
                             }}>
                                 Site web
                     </Text>
-                    <Image
-                            style={{
-                                marginTop: '0%',
-                                width: 25, height: 25
-                            }}
-                            source={require('../Svg/logo.png')} >
-                        </Image>
+                            <Image
+                                style={{
+                                    marginTop: '0%',
+                                    width: 25, height: 25
+                                }}
+                                source={require('../Svg/w.png')} >
+                            </Image>
                         </TouchableOpacity>
                         <View style={{ width: "10%" }}>
 
@@ -108,7 +108,7 @@ class ContactSiege extends React.Component {
                             }}>
                                 Facebook
                     </Text>
-                              <Facebook></Facebook>
+                            <Facebook></Facebook>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.cadre1}>
@@ -122,7 +122,7 @@ class ContactSiege extends React.Component {
                             }}>
                                 YouTube
                     </Text>
-                    <Youtube></Youtube>
+                            <Youtube></Youtube>
 
                         </TouchableOpacity>
 
@@ -137,7 +137,7 @@ class ContactSiege extends React.Component {
                             }}>
                                 Twitter
                     </Text>
-                    <Twitter></Twitter>
+                            <Twitter></Twitter>
 
                         </TouchableOpacity>
                     </View>
@@ -155,7 +155,7 @@ class ContactSiege extends React.Component {
                             }}>
                                 Téléphone
                     </Text>
-                    <AppelIcon></AppelIcon>
+                            <AppelIcon></AppelIcon>
 
                         </TouchableOpacity>
                         <View style={{ width: "10%" }}>
@@ -169,7 +169,7 @@ class ContactSiege extends React.Component {
                             }}>
                                 Email
                     </Text>
-                    <Gmail></Gmail>
+                            <Gmail></Gmail>
 
                         </TouchableOpacity>
                     </View>
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     },
 
     buttonNext: {
-        backgroundColor: "#FAF5F0",
+        backgroundColor: "#FFFFFF",
         marginTop: "20%",
         height: "50%",
         width: "40%",

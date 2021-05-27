@@ -66,8 +66,8 @@ class DemandeCarteCredit extends React.Component {
              <View style={styles.inputStyle}>
              <Picker 
                                     selectedValue={this.state.reason}
-                                    //style={{ width: "80%", color: "#2699FB", marginLeft: "3%" }}
-                                    style={styles.inputStyle}
+                                    style={{ width: "80%", color: "#fff", marginLeft: "0%" }}
+                                    //style={styles.inputStyle}
                                     onValueChange={(itemValue, itemIndex) => this.setState({ reason: itemValue })}>
                         
                                     <Picker.Item label="" value="" />
@@ -82,21 +82,21 @@ class DemandeCarteCredit extends React.Component {
                         placeholder='Nom'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        secureTextEntry
+                        
                         onChangeText={(text) => this.setState({ password: text })}
                     ></TextInput>
                      <TextInput style={styles.inputStyle}
                         placeholder='Prénom'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        secureTextEntry
+                       
                         onChangeText={(text) => this.setState({ password: text })}
                     ></TextInput>
                      <TextInput style={styles.inputStyle}
                         placeholder='Num CIN/Passeport'
                         autoCapitalize='none'
                         placeholderTextColor="#FAF5F0"
-                        secureTextEntry
+                        
                         onChangeText={(text) => this.setState({ password: text })}
                     ></TextInput>
                     

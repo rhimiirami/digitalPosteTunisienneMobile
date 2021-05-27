@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Image, TouchableOpacity,TextInput } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity, TextInput } from 'react-native';
 import PhotoProfil from './PhotoProfil';
 
 
@@ -62,46 +62,47 @@ class modifProfilClient extends Component {
                                 source={require('../Svg/b.png')} >
                             </Image>
                         </TouchableOpacity>
-                     {/*    <PhotoProfil></PhotoProfil> */}
+                        {/*    <PhotoProfil></PhotoProfil> */}
                     </View>
                 </View>
                 <View style={styles.body}>
-                    <View style={{width:"100%",marginLeft:"20%" }}>
+                    <View style={{ width: "100%", marginLeft: "20%" }}>
 
-                     <View style={{flexDirection:"column",width:"80%"}}>
-                         <Text style={{color:"#FFFFFF",fontSize:24}}>Nom</Text>
-                     <TextInput style={styles.inputStyle}
-                        value='Trabelsi'
-                    ></TextInput>
-                     </View>
-                     <View style={{flexDirection:"column",width:"80%"}}>
-                         <Text style={{color:"#FFFFFF",fontSize:24}}>Prénom</Text>
-                     <TextInput style={styles.inputStyle}
-                        value='Aymen'
-                    ></TextInput>
-                     </View>
-                     <View style={{flexDirection:"column",width:"80%"}}>
-                         <Text style={{color:"#FFFFFF",fontSize:24}}>Email</Text>
-                     <TextInput style={styles.inputStyle}
-                        value='trabelsiaymen@email.com'
-                    ></TextInput>
-                     </View>
-                     <View style={{flexDirection:"column",width:"80%"}}>
-                         <Text style={{color:"#FFFFFF",fontSize:24}}>Adress</Text>
-                     <TextInput style={styles.inputStyle}
-                        value='Tunis'
-                    ></TextInput>
-                     </View>
-                     <View style={{flexDirection:"column",width:"80%"}}>
-                         <Text style={{color:"#FFFFFF",fontSize:24}}>Poste</Text>
-                     <TextInput style={styles.inputStyle}
-                        value='utilisateur'
-                    ></TextInput>
-                     </View>
-                   
-                   
+                        <View style={{ flexDirection: "column", width: "80%" }}>
+                            <Text style={{ color: "#FFFFFF", fontSize: 24 }}>Nom</Text>
+                            <TextInput style={styles.inputStyle}
+                                value='Trabelsi'
+                            ></TextInput>
+                        </View>
+                        <View style={{ flexDirection: "column", width: "80%" }}>
+                            <Text style={{ color: "#FFFFFF", fontSize: 24 }}>Prénom</Text>
+                            <TextInput style={styles.inputStyle}
+                                value='Aymen'
+                            ></TextInput>
+                        </View>
+                        <View style={{ flexDirection: "column", width: "80%" }}>
+                            <Text style={{ color: "#FFFFFF", fontSize: 24 }}>Email</Text>
+                            <TextInput
+                                style={styles.inputStyle}
+                                value='trabelsiaymen@email.com'
+                            ></TextInput>
+                        </View>
+                        <View style={{ flexDirection: "column", width: "80%" }}>
+                            <Text style={{ color: "#FFFFFF", fontSize: 24 }}>Adress</Text>
+                            <TextInput style={styles.inputStyle}
+                                value='Tunis'
+                            ></TextInput>
+                        </View>
+                        <View style={{ flexDirection: "column", width: "80%" }}>
+                            <Text style={{ color: "#FFFFFF", fontSize: 24 }}>Poste</Text>
+                            <TextInput style={styles.inputStyle}
+                                value='utilisateur'
+                            ></TextInput>
+                        </View>
 
-                        
+
+
+
                     </View>
                 </View>
                 <View style={styles.footer}>
@@ -219,12 +220,12 @@ const styles = StyleSheet.create({
     },
     inputStyle: {
         borderRadius: 25,
-      //  height: "10%",
+        //  height: "10%",
         width: '100%',
-       fontSize: 18,
-     //  marginTop: '2%',
-     //  marginLeft: "10%",
-     //  paddingLeft: 30,
+        fontSize: 18,
+        //  marginTop: '2%',
+        //  marginLeft: "10%",
+        paddingLeft: 30,
         borderWidth: 1,
         color: '#FAF5F0',
         borderColor: '#FAF5F0',

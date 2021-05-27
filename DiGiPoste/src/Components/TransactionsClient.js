@@ -11,6 +11,7 @@ import {
     Alert
 } from 'react-native';
 import { color } from 'react-native-reanimated';
+import ProfilSvg from '../Svg/ProfilSvg';
 import { EditP, WitnessP, SearchIcon, Delete } from '../Svg/TimeTokenIcons'
 
 
@@ -21,7 +22,9 @@ class TransactionsClient extends React.Component {
         super(props);
         this.state = {
             busy: true,
-            listeClients: [
+            helpVisiblle: false,
+            modalVisible: false,
+            filteredDataSource: [
                 { "id": 1, "transaction": "0x45458a1sb445e44d5158", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
                 { "id": 2, "transaction": "0x0547a1sb444e44d56467", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
                 { "id": 3, "transaction": "0x2568a1sb444e44d56460", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
@@ -33,19 +36,57 @@ class TransactionsClient extends React.Component {
                 { "id": 9, "transaction": "0xfe588a1sb444e44d5640", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
                 { "id": 10, "transaction": "0xde258a1sb444e44d5643", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
             ],
-            helpVisiblle: false,
-            modalVisible: false,
-
+            masterDataSource: [
+                { "id": 1, "transaction": "0x45458a1sb445e44d5158", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
+                { "id": 2, "transaction": "0x0547a1sb444e44d56467", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
+                { "id": 3, "transaction": "0x2568a1sb444e44d56460", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
+                { "id": 4, "transaction": "0xef48a1sb444e44d5646f", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
+                { "id": 5, "transaction": "0x08dea1sb444e44d56462", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
+                { "id": 6, "transaction": "0xef45a1sb444e44d56466", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
+                { "id": 7, "transaction": "0xdf158a1sb444e44d56469", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
+                { "id": 8, "transaction": "0xz58f8a1sb444e44d5641", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
+                { "id": 9, "transaction": "0xfe588a1sb444e44d5640", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
+                { "id": 10, "transaction": "0xde258a1sb444e44d5643", "from": "319562879563275127841", "to": "319562879563275127841", "date": "02/05/2022" },
+            ],
+            search: ''
         };
     }
 
     componentDidMount() {
 
     }
+    searchFilterFunction = (text) => {
+        console.log(text);
+        // Check if searched text is not blank
+        if (text) {
+            // Inserted text is not blank
+            // Filter the masterDataSource
+            // Update FilteredDataSource
+            const newData = this.state.masterDataSource.filter(
 
+                function (item) {
+                    //console.log(item)
+                    const itemData = item.transaction
+                        ? item.transaction.toUpperCase()
+                        : ''.toUpperCase();
+                    const textData = text.toUpperCase();
+                    return itemData.indexOf(textData) > -1;
+                });
+            //console.log("newData" + JSON.stringify(newData));
+            this.setState({ filteredDataSource: newData, search: text })
+            //setFilteredDataSource(newData);
+            //setSearch(text);
+        } else {
+            // Inserted text is blank
+            // Update FilteredDataSource with masterDataSource
+            //setFilteredDataSource(masterDataSource);
+            //setSearch(text);
+            this.setState({ filteredDataSource: this.state.masterDataSource, search: text })
+        }
+    };
 
     rendergetListClient() {
-        if (this.state.listeClients.length == 0) {
+        if (this.state.filteredDataSource.length == 0) {
             return (
                 <View style={{ flexDirection: "row", height: "100%", width: "100%" }}>
                     <ActivityIndicator size="large" color="green" />
@@ -55,10 +96,14 @@ class TransactionsClient extends React.Component {
         }
         else {
             return (
-                this.state.listeClients.map((element, index) => {
+                this.state.filteredDataSource.map((element, index) => {
                     return (
 
-                        <ScrollView key={index} showsVerticalScrollIndicator={false}>
+                        <ScrollView key={index} showsVerticalScrollIndicator={false}
+                            tyle={{
+                                width: "100%", height: "100%"
+                            }}
+                        >
                             <View style={{
                                 width: "100%", marginTop: '0%', marginLeft: "0%",
                                 alignItems: "center", height: "100%"
@@ -68,10 +113,7 @@ class TransactionsClient extends React.Component {
                                         flexDirection: "row", alignItems: "center",
                                         justifyContent: "space-between"
                                     }}>
-                                        <Image
-                                            style={{ marginLeft: "0%", width: 50, height: 45 }}
-                                            source={require('../Svg/bPro.png')} >
-                                        </Image>
+                                        <ProfilSvg></ProfilSvg>
 
                                         <Text key={index} style={{
                                             color: "#27277A", fontWeight: "bold",
@@ -182,13 +224,18 @@ class TransactionsClient extends React.Component {
                             <TextInput
                                 placeholder='Rechercher'
                                 autoCapitalize='none'
+                                style={styles.textInputStyle}
+                                //style={{ width: "100%", height: "100%", }}
+                                onChangeText={(text) => this.searchFilterFunction(text)}
+                                value={this.state.search}
+                                underlineColorAndroid="transparent"
                             // onChangeText={(search) => this.value(search)}
                             ></TextInput>
 
 
                         </View>
                         <View style={{ width: "100%", height: "100%", marginTop: "5%" }}>
-                            <ScrollView>
+                            <ScrollView style={{ width: "100%", height: "100%" }}>
                                 {this.rendergetListClient()}
                             </ScrollView>
                         </View>
@@ -306,7 +353,7 @@ const styles = StyleSheet.create({
         width: '90%',
         justifyContent: "space-around",
         alignItems: "center",
-        height: '70%',
+        height: '69%',
         borderWidth: 1,
         borderColor: '#27277A',
         marginTop: '5%',
@@ -384,7 +431,14 @@ const styles = StyleSheet.create({
         marginTop: "5%",
         color: '#27277A',
         fontSize: 14,
-    }
+    }, textInputStyle: {
+        height: 40,
+        //borderWidth: 1,
+        paddingLeft: 20,
+        //margin: 5,
+        //borderColor: '#009688',
+        //backgroundColor: '#FFFFFF',
+    },
 });
 
 export default TransactionsClient;

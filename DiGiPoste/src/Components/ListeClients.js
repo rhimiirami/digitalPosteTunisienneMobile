@@ -24,7 +24,7 @@ class ListeClients extends React.Component {
         super(props);
         this.state = {
             busy: true,
-            listeClients: [
+            filteredDataSource: [
                 { "id": 1, "nom": "aymen", "prenom": "darajii" },
                 { "id": 2, "nom": "tafwik", "prenom": "darajii" },
                 { "id": 3, "nom": "rami", "prenom": "darajii" },
@@ -50,7 +50,35 @@ class ListeClients extends React.Component {
                 { "id": 2, "nom": "tafwik", "prenom": "darajii" },
                 { "id": 3, "nom": "rami", "prenom": "darajii" },
                 { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 5, "nom": "ali", "prenom": "darajii" }]
+                { "id": 5, "nom": "ali", "prenom": "darajii" }],
+            masterDataSource: [
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 5, "nom": "ali", "prenom": "darajii" },
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
+                { "id": 3, "nom": "rami", "prenom": "darajii" },
+                { "id": 4, "nom": "tom", "prenom": "darajii" },
+                { "id": 5, "nom": "ali", "prenom": "darajii" }],
+            search: ''
 
         };
     }
@@ -59,9 +87,38 @@ class ListeClients extends React.Component {
 
     }
 
+    searchFilterFunction = (text) => {
+        //console.log(text);
+        // Check if searched text is not blank
+        if (text) {
+            // Inserted text is not blank
+            // Filter the masterDataSource
+            // Update FilteredDataSource
+            const newData = this.state.masterDataSource.filter(
+
+                function (item) {
+                    //console.log(item)
+                    const itemData = item.nom
+                        ? item.nom.toUpperCase()
+                        : ''.toUpperCase();
+                    const textData = text.toUpperCase();
+                    return itemData.indexOf(textData) > -1;
+                });
+            //console.log("newData" + JSON.stringify(newData));
+            this.setState({ filteredDataSource: newData, search: text })
+            //setFilteredDataSource(newData);
+            //setSearch(text);
+        } else {
+            // Inserted text is blank
+            // Update FilteredDataSource with masterDataSource
+            //setFilteredDataSource(masterDataSource);
+            //setSearch(text);
+            this.setState({ filteredDataSource: this.state.masterDataSource, search: text })
+        }
+    };
 
     rendergetListClient() {
-        if (this.state.listeClients.length == 0) {
+        if (this.state.filteredDataSource.length == 0) {
             return (
                 <View style={{ flexDirection: "row", height: "100%", width: "100%" }}>
                     <ActivityIndicator size="large" color="green" />
@@ -71,7 +128,7 @@ class ListeClients extends React.Component {
         }
         else {
             return (
-                this.state.listeClients.map((element, index) => {
+                this.state.filteredDataSource.map((element, index) => {
                     return (
 
                         <ScrollView key={index} showsVerticalScrollIndicator={false}>
@@ -152,6 +209,11 @@ class ListeClients extends React.Component {
                         <TextInput
                             placeholder='Rechercher'
                             autoCapitalize='none'
+                            //style={styles.textInputStyle}
+                            //style={{ width: "100%", height: "100%", }}
+                            onChangeText={(text) => this.searchFilterFunction(text)}
+                            value={this.state.search}
+                            underlineColorAndroid="transparent"
                         // onChangeText={(search) => this.value(search)}
                         ></TextInput>
 
