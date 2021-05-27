@@ -66,38 +66,66 @@ class modifProfilClient extends Component {
                     </View>
                 </View>
                 <View style={styles.body}>
-                    <View style={{ width: "100%", marginLeft: "20%" }}>
+                    <View style={{ width: "100%", marginLeft: "20%",padding:"5%",marginTop:"-5%"}}>
 
                         <View style={{ flexDirection: "column", width: "80%" }}>
-                            <Text style={{ color: "#FFFFFF", fontSize: 24 }}>Nom</Text>
-                            <TextInput style={styles.inputStyle}
+                            <View>
+                            <Text style={{ color: "#FFFFFF", fontSize: 22}}>Nom</Text>
+                            </View>
+                           <View style={{marginTop:"3%"}}>
+                           <TextInput style={styles.inputStyle}
                                 value='Trabelsi'
                             ></TextInput>
+                           </View>
+                            
                         </View>
-                        <View style={{ flexDirection: "column", width: "80%" }}>
-                            <Text style={{ color: "#FFFFFF", fontSize: 24 }}>Prénom</Text>
-                            <TextInput style={styles.inputStyle}
+                        <View style={{ flexDirection: "column", width: "80%" ,marginTop:"5%" }}>
+                            <View>
+                            <Text style={{ color: "#FFFFFF", fontSize: 22}}>Prénom</Text>
+                            </View>
+                          <View>
+                          <TextInput style={styles.inputStyle}
                                 value='Aymen'
                             ></TextInput>
+                          </View>
+                            
                         </View>
-                        <View style={{ flexDirection: "column", width: "80%" }}>
-                            <Text style={{ color: "#FFFFFF", fontSize: 24 }}>Email</Text>
+                        <View style={{ flexDirection: "column", width: "80%",marginTop:"5%" }}>
+                            <View>
+                            <Text style={{ color: "#FFFFFF", fontSize: 22 }}>Email</Text>
+                            </View>
+                            <View>
                             <TextInput
                                 style={styles.inputStyle}
                                 value='trabelsiaymen@email.com'
                             ></TextInput>
+                            </View>
+                           
+                            
                         </View>
-                        <View style={{ flexDirection: "column", width: "80%" }}>
-                            <Text style={{ color: "#FFFFFF", fontSize: 24 }}>Adress</Text>
+                        <View style={{ flexDirection: "column", width: "80%" ,marginTop:"5%"}}>
+                            <View>
+                            <Text style={{ color: "#FFFFFF", fontSize: 22}}>Adress</Text>
+                            </View>
+                            <View>
                             <TextInput style={styles.inputStyle}
                                 value='Tunis'
                             ></TextInput>
+                            </View>
+                           
+                            
                         </View>
-                        <View style={{ flexDirection: "column", width: "80%" }}>
-                            <Text style={{ color: "#FFFFFF", fontSize: 24 }}>Poste</Text>
+                        <View style={{ flexDirection: "column", width: "80%" ,marginTop:"5%"}}>
+                            <View>
+                            <Text style={{ color: "#FFFFFF", fontSize: 22 }}>Poste</Text>
+                            </View>
+                            <View>
                             <TextInput style={styles.inputStyle}
                                 value='utilisateur'
                             ></TextInput>
+                            </View>
+                            
+                           
                         </View>
 
 
@@ -223,7 +251,7 @@ const styles = StyleSheet.create({
         //  height: "10%",
         width: '100%',
         fontSize: 18,
-        //  marginTop: '2%',
+         marginTop: '2%',
         //  marginLeft: "10%",
         paddingLeft: 30,
         borderWidth: 1,

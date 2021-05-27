@@ -70,7 +70,7 @@ class DemandeCarteCredit extends React.Component {
                                     //style={styles.inputStyle}
                                     onValueChange={(itemValue, itemIndex) => this.setState({ reason: itemValue })}>
                         
-                                    <Picker.Item label="" value="" />
+                                    <Picker.Item style={{color:"red"}} label="choisir votre demande" value="" />
                                     <Picker.Item label="Carte de crédit" value="Carte de crédit" />
                                     <Picker.Item label="Carnet de chèque" value="Carnet de chèque" />
                                 </Picker>

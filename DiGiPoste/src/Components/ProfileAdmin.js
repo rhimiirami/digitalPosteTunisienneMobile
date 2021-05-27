@@ -101,19 +101,7 @@ class ProfileAdmin extends Component {
                         </View>
                     </View>
                 </View>
-                <View style={styles.footer}>
-                    <TouchableOpacity
-                        style={styles.buttonNext}
-                        onPress={() => this.props.navigation.navigate('modifProfilAdmin')}
-                    >
-                        <Text
-                            style={{
-                                fontSize: 20,
-                                color: '#FFFFFF', textAlign: "center"
-                            }}
-                        >Modifier</Text>
-                    </TouchableOpacity>
-                </View>
+            
             </View>
 
         )

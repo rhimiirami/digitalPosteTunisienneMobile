@@ -174,7 +174,7 @@ function Loading({ navigation }) {
                     <Flech0></Flech0>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigation.navigate('Simuler')}
+                <TouchableOpacity onPress={() => navigation.navigate('Simuler',{ userClient: "client" })}
                     style={styles.buttonNext}>
                     <Text style={{
                         color: "#fff", fontSize: 15, fontWeight: "bold",

@@ -28,6 +28,7 @@ class TransfertArgent extends React.Component {
         if (from && to && numCarte && cvc && montant) {
             this.setState({ CodeInput: true })
         }
+        this.props.navigation.navigate('TransactionsClient')
     }
     checked = ( from, to, numCarte, cvc ,montant) => {
 
