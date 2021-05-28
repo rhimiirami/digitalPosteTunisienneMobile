@@ -5,7 +5,9 @@ import WebView from 'react-native-webview';
 const myScript = `
       //document.body.style.backgroundColor = '#27277A';
       //document.getElementById('your_iframes_id').scrolling = 'no';
-      document.getElementsByClassName('tab-box__ContentContainer-sc-28io75-3 jFGFzo')[0].innerHTML
+      //document.getElementsByClassName('tab-box__ContentContainer-sc-28io75-3 jFGFzo')[0].innerHTML
+      document.querySelector(".tribal-fusion-ad__AdWrapper-sc-7nznaa-0.gKugcA.advertSlot").remove();
+      document.querySelector(".header__NavConstrictor-sc-1htv52r-1.eqiqBh").remove();
       //document.querySelector("header").remove();
       //document.getElementById("real_estate_loan_amount_simulator-simulator").remove("");
      
@@ -40,7 +42,7 @@ class CovertisseurDevises extends React.Component {
   }
 
   render() {
-  //  alert("userClient==>" + this.props.route.params.userClient + "=========>userAcceuil==>" + this.props.route.params.userAcceuil + "=========>userAcceuil==>" + this.props.route.params.userAcceuil)
+    //  alert("userClient==>" + this.props.route.params.userClient + "=========>userAcceuil==>" + this.props.route.params.userAcceuil + "=========>userAcceuil==>" + this.props.route.params.userAcceuil)
     return (
       <View style={styles.container}>
         <View style={styles.header}>

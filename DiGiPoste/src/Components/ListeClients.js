@@ -8,7 +8,6 @@ import {
     ActivityIndicator,
     TextInput
 } from 'react-native';
-import { color } from 'react-native-reanimated';
 import { EditP, SearchIcon, Delete } from '../Svg/TimeTokenIcons'
 
 
@@ -26,58 +25,22 @@ class ListeClients extends React.Component {
             busy: true,
             filteredDataSource: [
                 { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 5, "nom": "ali", "prenom": "darajii" },
-                { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 5, "nom": "ali", "prenom": "darajii" }],
+                { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                { "id": 4, "nom": "tom", "prenom": "tomi" },
+                { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                { "id": 7, "nom": "rania", "prenom": "nasri" },
+                { "id": 8, "nom": "hamza", "prenom": "hadda" }],
             masterDataSource: [
                 { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 5, "nom": "ali", "prenom": "darajii" },
-                { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 1, "nom": "aymen", "prenom": "darajii" },
-                { "id": 2, "nom": "tafwik", "prenom": "darajii" },
-                { "id": 3, "nom": "rami", "prenom": "darajii" },
-                { "id": 4, "nom": "tom", "prenom": "darajii" },
-                { "id": 5, "nom": "ali", "prenom": "darajii" }],
+                { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                { "id": 4, "nom": "tom", "prenom": "tomi" },
+                { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                { "id": 7, "nom": "rania", "prenom": "nasri" },
+                { "id": 8, "nom": "hamza", "prenom": "hadda" }],
             search: ''
 
         };
@@ -154,7 +117,10 @@ class ListeClients extends React.Component {
                                         alignItems: "center"
                                     }}>
                                         <EditP></EditP>
-                                        <Delete></Delete>
+                                        <TouchableOpacity onPress={() => { this.delete(index) }}>
+                                            <Delete></Delete>
+                                        </TouchableOpacity>
+
                                     </View>
 
 
@@ -231,6 +197,202 @@ class ListeClients extends React.Component {
 
             </View>
         );
+    }
+
+    delete(index) {
+
+        if (index === 0) {
+            this.setState({
+                filteredDataSource: [
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+                masterDataSource: [
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+            })
+            //alert("00000" + index)
+        }
+        if (index === 1) {
+            this.setState({
+                filteredDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+                masterDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+            })
+            //alert("00000" + index)
+        }
+        if (index === 2) {
+            this.setState({
+                filteredDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+                masterDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+            })
+            //alert("00000" + index)
+        }
+        if (index === 3) {
+            this.setState({
+                filteredDataSource: [
+
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+                masterDataSource: [
+
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+            })
+            //alert("00000" + index)
+        }
+        if (index === 4) {
+            this.setState({
+                filteredDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+                masterDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+            })
+            //alert("00000" + index)
+        }
+        if (index === 5) {
+            this.setState({
+                filteredDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+                masterDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+            })
+            //alert("00000" + index)
+        }
+        if (index === 6) {
+            this.setState({
+                filteredDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+                masterDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+            })
+            //alert("00000" + index)
+        }
+        if (index === 7) {
+            this.setState({
+                filteredDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                ],
+                masterDataSource: [
+                    { "id": 1, "nom": "aymen", "prenom": "darajii" },
+                    { "id": 2, "nom": "tafwik", "prenom": "tounsi" },
+                    { "id": 3, "nom": "rami", "prenom": "rhimi" },
+                    { "id": 4, "nom": "tom", "prenom": "tomi" },
+                    { "id": 5, "nom": "olfa", "prenom": "sahli" },
+                    { "id": 6, "nom": "Yoser", "prenom": "meliki" },
+                    { "id": 7, "nom": "rania", "prenom": "nasri" },
+                    { "id": 8, "nom": "hamza", "prenom": "hadda" }],
+            })
+            //alert("00000" + index)
+        }
+        if (index === 8) {
+            this.setState({
+                filteredDataSource: [],
+                masterDataSource: [],
+            })
+            //alert("00000" + index)
+        }
+        /* else {
+            alert("" + index)
+        } */
     }
 }
 

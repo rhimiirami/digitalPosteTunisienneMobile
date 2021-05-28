@@ -14,11 +14,14 @@ const myScript = `
       document.getElementById("real_estate_loan_amount_simulator-simulator").remove("");
       document.getElementById("real_estate_loan_payback_duration_simulator-simulator").remove("");
       document.querySelector(".content-footer-container").remove();
+      document.querySelector(".action-banner").remove();
       document.querySelector(".wysiwyg-container").remove();
       document.querySelector("footer").remove();
       true; // note: this is required, or you'll sometimes get silent failures
     `;
-
+const injectedJavaScript = `const meta = document.createElement('meta'); 
+    meta.setAttribute('content', 'width=10, initial-scale=0.5, maximum-scale=0.5, user-scalable=0');
+     meta.setAttribute('name', 'viewport'); document.getElementsByTagName('head')[0].appendChild(meta); `
 class Simuler extends React.Component {
 
     constructor(props) {
@@ -66,6 +69,7 @@ class Simuler extends React.Component {
                     <WebView source={{
                         uri: 'https://www.lacentraledefinancement.fr/pret-credit-immobilier/les-simulateurs-de-prets-et-de-credit-immobilier/simulateur-pret-immobilier/'
                     }}
+                        scalesPageToFit={false}
                         //useWebKit={true}
                         injectedJavaScript={myScript}
                     />
