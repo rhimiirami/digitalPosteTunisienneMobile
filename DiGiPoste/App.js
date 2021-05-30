@@ -29,6 +29,7 @@ import TransactionsClient from './src/Components/TransactionsClient';
 import DetailsTransactions from './src/Components/DetailsTransactions';
 import TransfertArgent from './src/Components/TransfertArgent';
 import modifProfilClient from './src/Components/modifProfilClient';
+import UpdateClient from './src/Components/UpdateClient';
 
 
 
@@ -64,7 +65,7 @@ class App extends Component {
           <Stack.Screen name="DetailsTransactions" component={DetailsTransactions} />
           <Stack.Screen name="TransfertArgent" component={TransfertArgent} />
           <Stack.Screen name="modifProfilClient" component={modifProfilClient} />
-
+          <Stack.Screen name="UpdateClient" component={UpdateClient} />
         </Stack.Navigator>
       </NavigationContainer >
     )

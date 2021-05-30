@@ -130,29 +130,43 @@ class ListeComptesPostales extends React.Component {
                 >
                     <View style={styles.centeredView}>
                         <View style={styles.modalView}>
-                            <Text style={styles.modalText}>Details Transactions</Text>
-                            <Text style={styles.text}>Transaction Num: <Text style={styles.text}>
+                            <Text style={styles.modalText}>Details Compte postale</Text>
+                            <Text style={{fontWeight:"bold"}}>Num compte: <Text style={styles.text}>
                                 0x45458a1sb444e44d5646</Text></Text>
 
-                            <Text style={styles.text}>From: <Text style={styles.text}>
-                                319562879563275127841</Text></Text>
+                            <Text style={{fontWeight:"bold"}}>Status: <Text style={styles.text}>
+                                Activé</Text></Text>
 
 
 
-                            <Text style={styles.text}>To: <Text style={styles.text}>
-                                789562879563287512498</Text></Text>
+                            <Text style={{fontWeight:"bold"}}>Propriétaire du compte: <Text style={styles.text}>
+                                Mahdi touati</Text></Text>
 
 
-                            <Text style={styles.text}>Date: <Text style={styles.text}>
-                                01/02/2021</Text></Text>
+                            
+                             
 
-                            <TouchableOpacity
-                                style={styles.buttonOK}
+                             <View style={{flexDirection:"row",justifyContent:"space-between",marginTop:"5%"}}>
+                                 <View style={{width:"40%",height:"150%",backgroundColor:"green"}}>
+                                 <TouchableOpacity
+                
                                 onPress={() => { this._ModelDis() }}
                             >
-                                <Text style={styles.textStyle}>OK</Text>
+                                <Text style={{color:"#FFFFFF",textAlign:"center"}}>Activer</Text>
                             </TouchableOpacity>
 
+                                 </View>
+                                 <View style={{width:"40%",height:"150%",backgroundColor:"red"}}>
+                                 <TouchableOpacity
+                                
+                                onPress={() => { this._ModelDis() }}
+                            >
+                                <Text style={{color:"#FFFFFF",textAlign:"center"}}>Desactiver</Text>
+                            </TouchableOpacity>
+
+                                 </View>
+                             </View>
+                            
                         </View>
 
                     </View>
