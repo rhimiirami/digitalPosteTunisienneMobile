@@ -115,8 +115,13 @@ class ListeClients extends React.Component {
                                     <View style={{
                                         justifyContent: "space-evenly", flexDirection: "row",
                                         alignItems: "center"
-                                    }}>
+                                    }}> 
+
+
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate('UpdateClient')}>
                                         <EditP></EditP>
+                                        </TouchableOpacity>
+                                        
                                         <TouchableOpacity onPress={() => { this.delete(index) }}>
                                             <Delete></Delete>
                                         </TouchableOpacity>
