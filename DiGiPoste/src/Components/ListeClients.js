@@ -47,7 +47,9 @@ class ListeClients extends React.Component {
     }
 
     componentDidMount() {
+        setInterval(() => {
 
+        }, 2000)
     }
 
     searchFilterFunction = (text) => {
@@ -222,7 +224,7 @@ class ListeClients extends React.Component {
             })
             //alert("00000" + index)
         }
-        if (index === 1) {
+        else if (index === 1) {
             this.setState({
                 filteredDataSource: [
                     { "id": 1, "nom": "aymen", "prenom": "darajii" },
@@ -243,7 +245,7 @@ class ListeClients extends React.Component {
             })
             //alert("00000" + index)
         }
-        if (index === 2) {
+        else if (index === 2) {
             this.setState({
                 filteredDataSource: [
                     { "id": 1, "nom": "aymen", "prenom": "darajii" },
@@ -266,7 +268,7 @@ class ListeClients extends React.Component {
             })
             //alert("00000" + index)
         }
-        if (index === 3) {
+        else if (index === 3) {
             this.setState({
                 filteredDataSource: [
 
@@ -291,7 +293,7 @@ class ListeClients extends React.Component {
             })
             //alert("00000" + index)
         }
-        if (index === 4) {
+        else if (index === 4) {
             this.setState({
                 filteredDataSource: [
                     { "id": 1, "nom": "aymen", "prenom": "darajii" },
@@ -314,7 +316,7 @@ class ListeClients extends React.Component {
             })
             //alert("00000" + index)
         }
-        if (index === 5) {
+        else if (index === 5) {
             this.setState({
                 filteredDataSource: [
                     { "id": 1, "nom": "aymen", "prenom": "darajii" },
@@ -337,7 +339,7 @@ class ListeClients extends React.Component {
             })
             //alert("00000" + index)
         }
-        if (index === 6) {
+        else if (index === 6) {
             this.setState({
                 filteredDataSource: [
                     { "id": 1, "nom": "aymen", "prenom": "darajii" },
@@ -360,7 +362,7 @@ class ListeClients extends React.Component {
             })
             //alert("00000" + index)
         }
-        if (index === 7) {
+        else if (index === 7) {
             this.setState({
                 filteredDataSource: [
                     { "id": 1, "nom": "aymen", "prenom": "darajii" },
@@ -383,7 +385,7 @@ class ListeClients extends React.Component {
             })
             //alert("00000" + index)
         }
-        if (index === 8) {
+        else if (index === 8) {
             this.setState({
                 filteredDataSource: [],
                 masterDataSource: [],
